@@ -431,6 +431,30 @@ namespace ProjetoFaculdade
 
 
         #region Buttons de funcionalidade
+
+        private string GerarMatricula()
+        {
+            string letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            string numeros = "0123456789";
+
+            StringBuilder matricula = new StringBuilder();
+            Random random = new Random();
+
+            for (int i = 0; i < 6; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    matricula.Append(letras[random.Next(0, letras.Length)]);
+                }
+                else
+                {
+                    matricula.Append(numeros[random.Next(0, numeros.Length)]);
+                }
+            }
+            return matricula.ToString();
+        }
+
+
         private void MBNT_Limpar_Click(object sender, EventArgs e)
         {
             tB_NomeCompleto.Clear();
@@ -446,8 +470,14 @@ namespace ProjetoFaculdade
             tB_Cargo.Clear();
             MtB_Admissao.Clear();
             tB_Salario.Clear();
+            tB_id_Matricula.Clear();
 
-            tB_NomeCompleto.Focus();
+            tB_id_Matricula.Focus();
+
+            tB_id_Matricula.Text = GerarMatricula();
+
+
+
         }
 
         #endregion
