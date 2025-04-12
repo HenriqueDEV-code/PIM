@@ -461,7 +461,7 @@ namespace ProjetoFaculdade
 
         private string GerarMatricula()
         {
-            string letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+           
             string numeros = "0123456789";
 
             StringBuilder matricula = new StringBuilder();
@@ -469,14 +469,9 @@ namespace ProjetoFaculdade
 
             for (int i = 0; i < 6; i++)
             {
-                if (i % 2 == 0)
-                {
-                    matricula.Append(letras[random.Next(0, letras.Length)]);
-                }
-                else
-                {
-                    matricula.Append(numeros[random.Next(0, numeros.Length)]);
-                }
+     
+               matricula.Append(numeros[random.Next(0, numeros.Length)]);
+            
             }
             return matricula.ToString();
         }

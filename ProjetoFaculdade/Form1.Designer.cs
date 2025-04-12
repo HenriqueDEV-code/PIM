@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label_Support_Titulo_Login = new System.Windows.Forms.Label();
             this.label_Tech_Titulo_Login = new System.Windows.Forms.Label();
             this.label_Car_Titulo_Login = new System.Windows.Forms.Label();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -42,23 +41,12 @@
             this.tB_Usuario_Login = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.abel_Support_Titulo_Cadastro = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label_Support_Titulo_Login
-            // 
-            this.label_Support_Titulo_Login.AutoSize = true;
-            this.label_Support_Titulo_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F);
-            this.label_Support_Titulo_Login.ForeColor = System.Drawing.Color.White;
-            this.label_Support_Titulo_Login.Location = new System.Drawing.Point(460, 22);
-            this.label_Support_Titulo_Login.Name = "label_Support_Titulo_Login";
-            this.label_Support_Titulo_Login.Size = new System.Drawing.Size(187, 54);
-            this.label_Support_Titulo_Login.TabIndex = 9;
-            this.label_Support_Titulo_Login.Text = "Support";
-            this.label_Support_Titulo_Login.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label_Tech_Titulo_Login
             // 
@@ -201,6 +189,21 @@
             this.label1.Text = "Login";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // abel_Support_Titulo_Cadastro
+            // 
+            this.abel_Support_Titulo_Cadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.abel_Support_Titulo_Cadastro.AutoSize = true;
+            this.abel_Support_Titulo_Cadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F);
+            this.abel_Support_Titulo_Cadastro.ForeColor = System.Drawing.Color.White;
+            this.abel_Support_Titulo_Cadastro.Location = new System.Drawing.Point(467, 22);
+            this.abel_Support_Titulo_Cadastro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.abel_Support_Titulo_Cadastro.Name = "abel_Support_Titulo_Cadastro";
+            this.abel_Support_Titulo_Cadastro.Size = new System.Drawing.Size(149, 54);
+            this.abel_Support_Titulo_Cadastro.TabIndex = 19;
+            this.abel_Support_Titulo_Cadastro.Text = "Assist";
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +212,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(884, 589);
+            this.Controls.Add(this.abel_Support_Titulo_Cadastro);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Esqueceu_Senha);
             this.Controls.Add(this.groupBox1);
@@ -216,7 +220,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
-            this.Controls.Add(this.label_Support_Titulo_Login);
             this.Controls.Add(this.label_Tech_Titulo_Login);
             this.Controls.Add(this.label_Car_Titulo_Login);
             this.ForeColor = System.Drawing.Color.Black;
@@ -239,7 +242,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label_Support_Titulo_Login;
         private System.Windows.Forms.Label label_Tech_Titulo_Login;
         private System.Windows.Forms.Label label_Car_Titulo_Login;
         private MetroFramework.Controls.MetroButton metroButton1;
@@ -253,6 +255,7 @@
         private System.Windows.Forms.TextBox tB_Usuario_Login;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label abel_Support_Titulo_Cadastro;
     }
 }
 
