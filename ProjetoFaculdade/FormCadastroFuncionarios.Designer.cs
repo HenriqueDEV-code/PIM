@@ -1289,7 +1289,6 @@
         private MetroFramework.Controls.MetroRadioButton MrB_Masculino;
         private System.Windows.Forms.GroupBox Grupo_Endereco;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.MaskedTextBox MtB_Cep;
         private MetroFramework.Controls.MetroButton MBNT_Pesquisa_CEP;
         private System.Windows.Forms.TextBox tB_Logradouro;
         private System.Windows.Forms.Label label13;
@@ -1301,12 +1300,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.MaskedTextBox MtB_Nascimento;
-        private System.Windows.Forms.MaskedTextBox MtB_CPF;
-        private System.Windows.Forms.MaskedTextBox MtB_Telefone;
-        private System.Windows.Forms.TextBox tB_Email;
-        private System.Windows.Forms.TextBox tB_NomeCompleto;
-        private System.Windows.Forms.TextBox tB_id_Matricula;
         private System.Windows.Forms.Label label19;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton3;
@@ -1317,11 +1310,8 @@
         private System.Windows.Forms.GroupBox Grupo_Status;
         private MetroFramework.Controls.MetroRadioButton MrB_Inativo;
         private MetroFramework.Controls.MetroRadioButton MrB_Ativo;
-        private System.Windows.Forms.MaskedTextBox MtB_Admissao;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox tB_Cargo;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox tB_Salario;
         private System.Windows.Forms.Label label22;
         private MetroFramework.Controls.MetroButton metroButton6;
         private System.Windows.Forms.GroupBox Grupo_Funcoes;
@@ -1343,5 +1333,15 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
+        public System.Windows.Forms.MaskedTextBox MtB_Cep;
+        public System.Windows.Forms.MaskedTextBox MtB_Nascimento;
+        public System.Windows.Forms.MaskedTextBox MtB_CPF;
+        public System.Windows.Forms.MaskedTextBox MtB_Telefone;
+        public System.Windows.Forms.TextBox tB_Email;
+        public System.Windows.Forms.TextBox tB_NomeCompleto;
+        public System.Windows.Forms.TextBox tB_id_Matricula;
+        public System.Windows.Forms.MaskedTextBox MtB_Admissao;
+        public System.Windows.Forms.TextBox tB_Cargo;
+        public System.Windows.Forms.TextBox tB_Salario;
     }
 }

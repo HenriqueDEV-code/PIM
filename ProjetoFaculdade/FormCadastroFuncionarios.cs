@@ -26,8 +26,35 @@ namespace ProjetoFaculdade
         public FormCadastroFuncionarios()
         {
             InitializeComponent();
+
+            DefinirEnabledNosCampos(this, false);
         }
 
+        #region boqueio e Desbloqueio de TextoBox
+
+        private void DefinirEnabledNosCampos(Control parent, bool enabled)
+        {
+            foreach (Control controle in parent.Controls)
+            {
+                if (controle is TextBox)
+                {
+                    ((TextBox)controle).Enabled = enabled;
+                }
+                else if (controle is MaskedTextBox)
+                {
+                    ((MaskedTextBox)controle).Enabled = enabled;
+                }
+                else if (controle.HasChildren)
+                {
+                    // Se for GroupBox, Panel, etc, entra neles também
+                    DefinirEnabledNosCampos(controle, enabled);
+                }
+            }
+        }
+
+
+
+        #endregion
 
 
         #region TRATAMENTO DE ENTRADA DE DADOS EVENTO KEYPRESS
@@ -476,7 +503,7 @@ namespace ProjetoFaculdade
 
             tB_id_Matricula.Text = GerarMatricula();
 
-
+            DefinirEnabledNosCampos(this, true); 
 
         }
 
@@ -487,6 +514,9 @@ namespace ProjetoFaculdade
             localizar.ShowDialog();
             this.Show();
         }
+
+
+
 
         #endregion
 
