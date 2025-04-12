@@ -32,6 +32,5 @@ namespace ProjetoFaculdade
 
 
 
-// teste
 
 // Lucas Mostrar Front e POO parte de documentação
