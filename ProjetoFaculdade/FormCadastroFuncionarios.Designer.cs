@@ -1185,6 +1185,7 @@
             this.MBNT_Localizar.TabIndex = 23;
             this.MBNT_Localizar.Text = "Localizar Usuário";
             this.MBNT_Localizar.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MBNT_Localizar.Click += new System.EventHandler(this.MBNT_Localizar_Click);
             // 
             // MBNT_Excluir
             // 

@@ -480,9 +480,15 @@ namespace ProjetoFaculdade
 
         }
 
+
+        private void MBNT_Localizar_Click(object sender, EventArgs e)
+        {
+            Localizar localizar = new Localizar();
+            localizar.ShowDialog();
+            this.Show();
+        }
+
         #endregion
-
-
 
 
     }

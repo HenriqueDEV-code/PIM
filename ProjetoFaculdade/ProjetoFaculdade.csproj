@@ -93,6 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class_Funcionarios.cs" />
+    <Compile Include="Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,13 +111,25 @@
     <Compile Include="FormCadastroFuncionarios.Designer.cs">
       <DependentUpon>FormCadastroFuncionarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Localizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Localizar.Designer.cs">
+      <DependentUpon>Localizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroFuncionarios.resx">
       <DependentUpon>FormCadastroFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localizar.resx">
+      <DependentUpon>Localizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
