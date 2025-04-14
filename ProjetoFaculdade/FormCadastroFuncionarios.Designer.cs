@@ -1212,6 +1212,7 @@
             this.MBNT_Editar.TabIndex = 21;
             this.MBNT_Editar.Text = "Editar Usuário";
             this.MBNT_Editar.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MBNT_Editar.Click += new System.EventHandler(this.MBNT_Editar_Click);
             // 
             // MBNT_Limpar
             // 
@@ -1225,6 +1226,7 @@
             this.MBNT_Limpar.TabIndex = 20;
             this.MBNT_Limpar.Text = "Novo Usuário";
             this.MBNT_Limpar.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MBNT_Limpar.Visible = false;
             this.MBNT_Limpar.Click += new System.EventHandler(this.MBNT_Limpar_Click);
             // 
             // FormCadastroFuncionarios
