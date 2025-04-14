@@ -22,14 +22,6 @@ namespace ProjetoFaculdade
             
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            FormCadastroFuncionarios cadastro = new FormCadastroFuncionarios();
-            this.Hide();
-            cadastro.ShowDialog();
-            this.Show();
-        }
-
         
 
         private void tB_Usuario_Login_Leave(object sender, EventArgs e)
@@ -40,6 +32,14 @@ namespace ProjetoFaculdade
                 tB_Usuario_Login.Text = "Informe a matrícula";
                 tB_Usuario_Login.ForeColor = Color.Gray; // Cor mais apagada para placeholder
             }
+        }
+
+        private void MButon_Login_Click(object sender, EventArgs e)
+        {
+            AreaDeChamados Chamados = new AreaDeChamados();
+            this.Hide();
+            Chamados.ShowDialog();
+            this.Show();
         }
     }
 }

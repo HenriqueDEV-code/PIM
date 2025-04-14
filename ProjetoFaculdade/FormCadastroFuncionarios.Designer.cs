@@ -1225,7 +1225,6 @@
             this.MBNT_Limpar.TabIndex = 20;
             this.MBNT_Limpar.Text = "Novo Usuário";
             this.MBNT_Limpar.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.MBNT_Limpar.Visible = false;
             this.MBNT_Limpar.Click += new System.EventHandler(this.MBNT_Limpar_Click);
             // 
             // FormCadastroFuncionarios
@@ -1249,6 +1248,7 @@
             this.Name = "FormCadastroFuncionarios";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -30,7 +30,6 @@
         {
             this.label_Tech_Titulo_Login = new System.Windows.Forms.Label();
             this.label_Car_Titulo_Login = new System.Windows.Forms.Label();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.MButon_Login = new MetroFramework.Controls.MetroButton();
             this.CBX_LembrarSenha = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -72,30 +71,18 @@
             this.label_Car_Titulo_Login.Text = "Car";
             this.label_Car_Titulo_Login.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // metroButton1
-            // 
-            this.metroButton1.Highlight = false;
-            this.metroButton1.Location = new System.Drawing.Point(140, 514);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(245, 63);
-            this.metroButton1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroButton1.StyleManager = null;
-            this.metroButton1.TabIndex = 16;
-            this.metroButton1.Text = "Cadastrar";
-            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
             // MButon_Login
             // 
             this.MButon_Login.Highlight = false;
-            this.MButon_Login.Location = new System.Drawing.Point(500, 514);
+            this.MButon_Login.Location = new System.Drawing.Point(702, 514);
             this.MButon_Login.Name = "MButon_Login";
-            this.MButon_Login.Size = new System.Drawing.Size(245, 63);
+            this.MButon_Login.Size = new System.Drawing.Size(170, 63);
             this.MButon_Login.Style = MetroFramework.MetroColorStyle.Blue;
             this.MButon_Login.StyleManager = null;
             this.MButon_Login.TabIndex = 17;
             this.MButon_Login.Text = "Login";
             this.MButon_Login.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MButon_Login.Click += new System.EventHandler(this.MButon_Login_Click);
             // 
             // CBX_LembrarSenha
             // 
@@ -220,7 +207,6 @@
             this.Controls.Add(this.CBX_LembrarSenha);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.MButon_Login);
-            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.label_Tech_Titulo_Login);
             this.Controls.Add(this.label_Car_Titulo_Login);
             this.ForeColor = System.Drawing.Color.Black;
@@ -231,6 +217,7 @@
             this.Name = "FormLogin";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -245,7 +232,6 @@
         #endregion
         private System.Windows.Forms.Label label_Tech_Titulo_Login;
         private System.Windows.Forms.Label label_Car_Titulo_Login;
-        private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton MButon_Login;
         private System.Windows.Forms.CheckBox CBX_LembrarSenha;
         private System.Windows.Forms.GroupBox groupBox2;
