@@ -19,7 +19,7 @@ namespace ProjetoFaculdade
         public FormLogin()
         {
             InitializeComponent();
-            tB_Senha_Usuario.Focus();
+            
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
