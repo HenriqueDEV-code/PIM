@@ -19,6 +19,7 @@ namespace ProjetoFaculdade
         public FormLogin()
         {
             InitializeComponent();
+            tB_Senha_Usuario.Focus();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -27,6 +28,18 @@ namespace ProjetoFaculdade
             this.Hide();
             cadastro.ShowDialog();
             this.Show();
+        }
+
+        
+
+        private void tB_Usuario_Login_Leave(object sender, EventArgs e)
+        {
+           
+            if (string.IsNullOrWhiteSpace(tB_Usuario_Login.Text))
+            {
+                tB_Usuario_Login.Text = "Informe a matrícula";
+                tB_Usuario_Login.ForeColor = Color.Gray; // Cor mais apagada para placeholder
+            }
         }
     }
 }
