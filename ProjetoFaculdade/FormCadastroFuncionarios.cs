@@ -516,10 +516,7 @@ namespace ProjetoFaculdade
 
         #endregion
 
-        private void MBNT_Editar_Click(object sender, EventArgs e)
-        {
-            this.MBNT_Limpar.Visible = true;
-        }
+        
 
     }
 }

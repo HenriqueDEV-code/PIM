@@ -1212,7 +1212,6 @@
             this.MBNT_Editar.TabIndex = 21;
             this.MBNT_Editar.Text = "Editar Usuário";
             this.MBNT_Editar.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.MBNT_Editar.Click += new System.EventHandler(this.MBNT_Editar_Click);
             // 
             // MBNT_Limpar
             // 
