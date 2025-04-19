@@ -16,29 +16,33 @@ namespace ProjetoFaculdade
 {
     public partial class FormLogin: Form
     {
+
+       
         public FormLogin()
         {
             InitializeComponent();
+
             
         }
 
         
 
-        private void tB_Usuario_Login_Leave(object sender, EventArgs e)
-        {
-           
-            if (string.IsNullOrWhiteSpace(tB_Usuario_Login.Text))
-            {
-                tB_Usuario_Login.Text = "Informe a matrícula";
-                tB_Usuario_Login.ForeColor = Color.Gray; // Cor mais apagada para placeholder
-            }
-        }
+       
 
         private void MButon_Login_Click(object sender, EventArgs e)
         {
+
+            /* Criar o codigo de verificação antes de acessar */
             AreaDeChamados Chamados = new AreaDeChamados();
             this.Hide();
             Chamados.ShowDialog();
+            this.Show();
+        }
+
+        private void Esqueceu_Senha_Click(object sender, EventArgs e)
+        {
+            EsquecerSenha Senhas = new EsquecerSenha();
+            Senhas.ShowDialog();
             this.Show();
         }
     }

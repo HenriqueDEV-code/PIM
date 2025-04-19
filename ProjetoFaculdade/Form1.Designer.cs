@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label_Tech_Titulo_Login = new System.Windows.Forms.Label();
             this.label_Car_Titulo_Login = new System.Windows.Forms.Label();
             this.MButon_Login = new MetroFramework.Controls.MetroButton();
-            this.CBX_LembrarSenha = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tB_Senha_Usuario = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -41,6 +41,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.abel_Support_Titulo_Cadastro = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -74,27 +75,15 @@
             // MButon_Login
             // 
             this.MButon_Login.Highlight = false;
-            this.MButon_Login.Location = new System.Drawing.Point(702, 514);
+            this.MButon_Login.Location = new System.Drawing.Point(605, 439);
             this.MButon_Login.Name = "MButon_Login";
-            this.MButon_Login.Size = new System.Drawing.Size(170, 63);
+            this.MButon_Login.Size = new System.Drawing.Size(140, 48);
             this.MButon_Login.Style = MetroFramework.MetroColorStyle.Blue;
             this.MButon_Login.StyleManager = null;
             this.MButon_Login.TabIndex = 17;
             this.MButon_Login.Text = "Login";
             this.MButon_Login.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MButon_Login.Click += new System.EventHandler(this.MButon_Login_Click);
-            // 
-            // CBX_LembrarSenha
-            // 
-            this.CBX_LembrarSenha.AutoSize = true;
-            this.CBX_LembrarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.CBX_LembrarSenha.ForeColor = System.Drawing.Color.White;
-            this.CBX_LembrarSenha.Location = new System.Drawing.Point(140, 437);
-            this.CBX_LembrarSenha.Name = "CBX_LembrarSenha";
-            this.CBX_LembrarSenha.Size = new System.Drawing.Size(175, 29);
-            this.CBX_LembrarSenha.TabIndex = 13;
-            this.CBX_LembrarSenha.Text = "Lembrar senha";
-            this.CBX_LembrarSenha.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -114,6 +103,7 @@
             this.tB_Senha_Usuario.PasswordChar = '*';
             this.tB_Senha_Usuario.Size = new System.Drawing.Size(524, 53);
             this.tB_Senha_Usuario.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.tB_Senha_Usuario, "Digite a sua senha.");
             // 
             // pictureBox2
             // 
@@ -130,11 +120,14 @@
             this.Esqueceu_Senha.AutoSize = true;
             this.Esqueceu_Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.Esqueceu_Senha.ForeColor = System.Drawing.Color.White;
-            this.Esqueceu_Senha.Location = new System.Drawing.Point(542, 437);
+            this.Esqueceu_Senha.Location = new System.Drawing.Point(135, 462);
             this.Esqueceu_Senha.Name = "Esqueceu_Senha";
             this.Esqueceu_Senha.Size = new System.Drawing.Size(203, 25);
             this.Esqueceu_Senha.TabIndex = 14;
             this.Esqueceu_Senha.Text = "Esqueceu a senha?";
+            this.toolTip1.SetToolTip(this.Esqueceu_Senha, "Esqueceu Senha ou                             \r\nÉ seu primeiro Acesso!           " +
+        "               \r\nCique aqui.                                             ");
+            this.Esqueceu_Senha.Click += new System.EventHandler(this.Esqueceu_Senha_Click);
             // 
             // groupBox1
             // 
@@ -153,7 +146,7 @@
             this.tB_Usuario_Login.Name = "tB_Usuario_Login";
             this.tB_Usuario_Login.Size = new System.Drawing.Size(524, 53);
             this.tB_Usuario_Login.TabIndex = 13;
-            this.tB_Usuario_Login.Leave += new System.EventHandler(this.tB_Usuario_Login_Leave);
+            this.toolTip1.SetToolTip(this.tB_Usuario_Login, "Digite a sua Matricula.");
             // 
             // pictureBox1
             // 
@@ -192,6 +185,15 @@
             this.abel_Support_Titulo_Cadastro.TabIndex = 19;
             this.abel_Support_Titulo_Cadastro.Text = "Assist";
             // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 0;
+            this.toolTip1.AutoPopDelay = 0;
+            this.toolTip1.InitialDelay = 0;
+            this.toolTip1.ReshowDelay = 0;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Informção!";
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,7 +206,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Esqueceu_Senha);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.CBX_LembrarSenha);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.MButon_Login);
             this.Controls.Add(this.label_Tech_Titulo_Login);
@@ -233,7 +234,6 @@
         private System.Windows.Forms.Label label_Tech_Titulo_Login;
         private System.Windows.Forms.Label label_Car_Titulo_Login;
         private MetroFramework.Controls.MetroButton MButon_Login;
-        private System.Windows.Forms.CheckBox CBX_LembrarSenha;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox tB_Senha_Usuario;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -243,6 +243,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label abel_Support_Titulo_Cadastro;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

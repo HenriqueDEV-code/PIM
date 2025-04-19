@@ -145,17 +145,19 @@ namespace ProjetoFaculdade
                 int idade = Calc_Idade(dataNascimento);
 
                 // Validação da idade permitida
-                if (idade <= 16 )
+                if (idade <= 16)
                 {
                     MessageBox.Show("Idade não permitida, funcionário parece ser menor de idade! ",
                         "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     MtB_Nascimento.Clear();
                     MtB_Nascimento.Focus();
-                } else if (idade >= 16 && idade < 18 || idade >= 60 && idade <= 80)
+                }
+                else if (idade >= 16 && idade < 18 || idade >= 60 && idade <= 80)
                 {
                     MessageBox.Show("Idade não parece permitida! Gostaria de inserir mesmo assim? ", "Aviso", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                     return;
-                }else if (idade >= 81)
+                }
+                else if (idade >= 81)
                 {
                     MessageBox.Show("Idade não permitida, funcionário parece que já aposentou! ",
                      "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -180,7 +182,7 @@ namespace ProjetoFaculdade
             int idade = hoje.Year - DataNascimeto.Year;
 
             // Ajustar se ainda nao fez Aniverario este ano
-            if(DataNascimeto.Date > hoje.AddYears(-idade))
+            if (DataNascimeto.Date > hoje.AddYears(-idade))
             {
                 idade--;
             }
@@ -461,7 +463,7 @@ namespace ProjetoFaculdade
 
         private string GerarMatricula()
         {
-           
+
             string numeros = "0123456789";
 
             StringBuilder matricula = new StringBuilder();
@@ -469,9 +471,9 @@ namespace ProjetoFaculdade
 
             for (int i = 0; i < 6; i++)
             {
-     
-               matricula.Append(numeros[random.Next(0, numeros.Length)]);
-            
+
+                matricula.Append(numeros[random.Next(0, numeros.Length)]);
+
             }
             return matricula.ToString();
         }
@@ -498,7 +500,16 @@ namespace ProjetoFaculdade
 
             tB_id_Matricula.Text = GerarMatricula();
 
-            DefinirEnabledNosCampos(this, true); 
+            DefinirEnabledNosCampos(this, true);
+
+        }
+
+
+        private void MBNT_Editar_Click(object sender, EventArgs e)
+        {
+            DefinirEnabledNosCampos(this, true);
+
+            /* Busca no banco a Matricula e coloca nos campos*/
 
         }
 
@@ -516,7 +527,7 @@ namespace ProjetoFaculdade
 
         #endregion
 
-        
+
 
     }
 }

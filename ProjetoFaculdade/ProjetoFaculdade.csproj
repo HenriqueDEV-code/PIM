@@ -99,6 +99,12 @@
       <DependentUpon>AreaDeChamados.cs</DependentUpon>
     </Compile>
     <Compile Include="Class_Funcionarios.cs" />
+    <Compile Include="EsquecerSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EsquecerSenha.Designer.cs">
+      <DependentUpon>EsquecerSenha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AreaDeChamados.resx">
       <DependentUpon>AreaDeChamados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EsquecerSenha.resx">
+      <DependentUpon>EsquecerSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

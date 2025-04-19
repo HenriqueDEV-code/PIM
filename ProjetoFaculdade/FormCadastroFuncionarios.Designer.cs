@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -102,6 +103,7 @@
             this.MBNT_Excluir = new MetroFramework.Controls.MetroButton();
             this.MBNT_Editar = new MetroFramework.Controls.MetroButton();
             this.MBNT_Limpar = new MetroFramework.Controls.MetroButton();
+            this.ToolTip_mensagens = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.Grupo_Dados_P_Funcionarios.SuspendLayout();
             this.Grupo_Sexo.SuspendLayout();
@@ -534,7 +536,7 @@
             this.tB_id_Matricula.Margin = new System.Windows.Forms.Padding(4);
             this.tB_id_Matricula.Name = "tB_id_Matricula";
             this.tB_id_Matricula.ReadOnly = true;
-            this.tB_id_Matricula.Size = new System.Drawing.Size(207, 31);
+            this.tB_id_Matricula.Size = new System.Drawing.Size(129, 31);
             this.tB_id_Matricula.TabIndex = 28;
             // 
             // label19
@@ -551,6 +553,7 @@
             this.label19.Size = new System.Drawing.Size(106, 26);
             this.label19.TabIndex = 19;
             this.label19.Text = "Matrícula:";
+            this.ToolTip_mensagens.SetToolTip(this.label19, "Clique em Novo Usuário para libera o acesso.");
             // 
             // Grupo_Sexo
             // 
@@ -1212,6 +1215,7 @@
             this.MBNT_Editar.TabIndex = 21;
             this.MBNT_Editar.Text = "Editar Usuário";
             this.MBNT_Editar.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MBNT_Editar.Click += new System.EventHandler(this.MBNT_Editar_Click);
             // 
             // MBNT_Limpar
             // 
@@ -1226,6 +1230,10 @@
             this.MBNT_Limpar.Text = "Novo Usuário";
             this.MBNT_Limpar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MBNT_Limpar.Click += new System.EventHandler(this.MBNT_Limpar_Click);
+            // 
+            // ToolTip_mensagens
+            // 
+            this.ToolTip_mensagens.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // FormCadastroFuncionarios
             // 
@@ -1344,5 +1352,6 @@
         public System.Windows.Forms.MaskedTextBox MtB_Admissao;
         public System.Windows.Forms.TextBox tB_Cargo;
         public System.Windows.Forms.TextBox tB_Salario;
+        private System.Windows.Forms.ToolTip ToolTip_mensagens;
     }
 }
