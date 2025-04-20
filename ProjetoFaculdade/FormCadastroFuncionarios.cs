@@ -16,6 +16,7 @@ using System.Text.RegularExpressions;
 using Newtonsoft.Json.Linq;
 using System.Linq.Expressions;  // Não pode esquecer de instalar o pacote dele via NuGet
 using System.Web.UI.Design.WebControls.WebParts;
+using Npgsql;
 
 
 
@@ -76,8 +77,6 @@ namespace ProjetoFaculdade
 
 
         #endregion
-
-
 
 
         #region TRATAMENTO DE DADOS NULOS
@@ -143,7 +142,7 @@ namespace ProjetoFaculdade
             {
                 // Calcular a idade
                 int idade = Calc_Idade(dataNascimento);
-
+                
                 // Validação da idade permitida
                 if (idade <= 16)
                 {
@@ -453,10 +452,25 @@ namespace ProjetoFaculdade
         }
 
 
+        private string ObterSexo()
+        {
+            if (MrB_Masculino.Checked) return "Masculino";
+            if (MrB_Feminino.Checked) return "Feminino";
+            if (MrB_Outro.Checked) return "Outro";
+            if (MrB_Nao_Dizer.Checked) return "Prefiro não dizer";
+
+            return string.Empty;
+        }
+
+        private string StatusFuncionario()
+        {
+            if (MrB_Ativo.Checked) return "Ativo";
+            if (MrB_Inativo.Checked) return "Inativo";
+            return string.Empty;
+        }
+
 
         #endregion
-
-
 
 
         #region Buttons de funcionalidade
@@ -504,7 +518,6 @@ namespace ProjetoFaculdade
 
         }
 
-
         private void MBNT_Editar_Click(object sender, EventArgs e)
         {
             DefinirEnabledNosCampos(this, true);
@@ -521,11 +534,109 @@ namespace ProjetoFaculdade
             this.Show();
         }
 
+        private void MBNT_Salvar_Click(object sender, EventArgs e)
+        {
 
+            try
+            {
+                // Obter a String da Conexão
+                string connString = "Host=localhost;Port=5432;Database=car_tech_assist;Username=postgres;Password=1@2b3!4?5#C;";
 
+                // Criar um Objeto Funcionario
+                Funcionarios f = new Funcionarios()
+                {
+                    UID_Funcionario = Convert.ToInt32(tB_id_Matricula.Text),
+                    NomeCompleto_Funcionario = tB_NomeCompleto.Text,
+                    CPF = MtB_CPF.Text,
+                    Nascimento = DateTime.ParseExact(MtB_Nascimento.Text, "dd/MM/yyyy", null),
+                    Idade = Calc_Idade(DateTime.ParseExact(MtB_Nascimento.Text, "dd/MM/yyyy", null)),
+                    Sexo = ObterSexo(),
+                    Telefone = MtB_Telefone.Text,
+                    Email = tB_Email.Text,
+                    Cep = MtB_Cep.Text,
+                    Logradouro = tB_Logradouro.Text,
+                    Bairro = tB_Bairro.Text,
+                    Cidade = tB_Cidade.Text,
+                    UF = tB_UF.Text,
+                    Cargo = tB_Cargo.Text,
+                    Data_Admissao = DateTime.ParseExact(MtB_Admissao.Text, "dd/MM/yyyy", null),
+                    Salario = tB_Salario.Text,
+                    Status = StatusFuncionario(),
+                };
+               
+
+                // Abrir conexão com o banco
+                using (NpgsqlConnection conn = new NpgsqlConnection(connString))
+                {
+                    conn.Open();
+
+                    string sql = @"INSERT INTO funcionarios (
+                         uid_funcionario, nomecompleto_funcionario, cpf, nascimento, idade, sexo, telefone, email, cep,
+                            logradouro, bairro, cidade, uf, cargo, data_admissao, salario, status)
+
+                            VALUES (
+                            @uid, @nome, @cpf, @nascimento, @idade, @sexo, @telefone, @email, @cep,
+                            @logradouro, @bairro, @cidade, @uf, @cargo, @admissao, @salario, @status)
+                         ";
+
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@uid", f.UID_Funcionario);
+                        cmd.Parameters.AddWithValue("@nome", f.NomeCompleto_Funcionario);
+                        cmd.Parameters.AddWithValue("@cpf", f.CPF);
+                        cmd.Parameters.AddWithValue("@nascimento", f.Nascimento);
+                        cmd.Parameters.AddWithValue("@idade", f.Idade);
+                        cmd.Parameters.AddWithValue("@sexo", f.Sexo);
+                        cmd.Parameters.AddWithValue("@telefone", f.Telefone);
+                        cmd.Parameters.AddWithValue("@email", f.Email);
+                        cmd.Parameters.AddWithValue("@cep", f.Cep);
+                        cmd.Parameters.AddWithValue("@logradouro", f.Logradouro);
+                        cmd.Parameters.AddWithValue("@bairro", f.Bairro);
+                        cmd.Parameters.AddWithValue("@cidade", f.Cidade);
+                        cmd.Parameters.AddWithValue("@uf", f.UF);
+                        cmd.Parameters.AddWithValue("@cargo", f.Cargo);
+                        cmd.Parameters.AddWithValue("@admissao", f.Data_Admissao);
+                        cmd.Parameters.AddWithValue("@salario", f.Salario);
+                        cmd.Parameters.AddWithValue("@status", f.Status);
+                        
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Funcionário salvo com sucesso!");
+
+                    tB_NomeCompleto.Clear();
+                    tB_Email.Clear();
+                    MtB_Telefone.Clear();
+                    MtB_CPF.Clear();
+                    MtB_Nascimento.Clear();
+                    MtB_Cep.Clear();
+                    tB_Logradouro.Clear();
+                    tB_Bairro.Clear();
+                    tB_Cidade.Clear();
+                    tB_UF.Clear();
+                    tB_Cargo.Clear();
+                    MtB_Admissao.Clear();
+                    tB_Salario.Clear();
+                    tB_id_Matricula.Clear();
+
+                    tB_id_Matricula.Focus();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Erro ao salvar o funcionário: " + ex.Message
+                    );
+
+            }
+        }
 
 
         #endregion
+
+
+
 
 
 

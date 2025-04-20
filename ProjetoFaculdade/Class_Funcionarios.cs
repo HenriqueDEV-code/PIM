@@ -11,7 +11,7 @@ namespace ProjetoFaculdade
         public int UID_Funcionario { get; set; }  // Matricula do Funcionario
         public string NomeCompleto_Funcionario { get; set; }
         public string CPF { get; set; }
-        public  DateTime Nascimento { get; set; }
+        public DateTime Nascimento { get; set; }
         public int Idade { get; set; }
         public string Sexo { get; set; }
         public string Telefone { get; set; }
@@ -23,8 +23,8 @@ namespace ProjetoFaculdade
         public string UF { get; set; }
         public string Cargo { get; set; }
         public DateTime Data_Admissao { get; set; }
-        public decimal Salario { get; set; }
-        public bool Status { get; set; }  // true = Ativo || false = Inativo
+        public string Salario { get; set; }
+        public string Status { get; set; }  // true = Ativo || false = Inativo
         public string Senha { get; set; }
 
     }

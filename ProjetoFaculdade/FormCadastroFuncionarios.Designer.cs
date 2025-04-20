@@ -1175,6 +1175,7 @@
             this.MBNT_Salvar.TabIndex = 24;
             this.MBNT_Salvar.Text = "Salvar";
             this.MBNT_Salvar.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MBNT_Salvar.Click += new System.EventHandler(this.MBNT_Salvar_Click);
             // 
             // MBNT_Localizar
             // 
