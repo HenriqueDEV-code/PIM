@@ -1203,6 +1203,7 @@
             this.MBNT_Excluir.TabIndex = 22;
             this.MBNT_Excluir.Text = "Excluir Usuário";
             this.MBNT_Excluir.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MBNT_Excluir.Click += new System.EventHandler(this.MBNT_Excluir_Click);
             // 
             // MBNT_Editar
             // 
@@ -1329,7 +1330,6 @@
         private System.Windows.Forms.Label label23;
         private MetroFramework.Controls.MetroButton MBNT_Limpar;
         private MetroFramework.Controls.MetroButton MBNT_Salvar;
-        private MetroFramework.Controls.MetroButton MBNT_Localizar;
         private MetroFramework.Controls.MetroButton MBNT_Excluir;
         private MetroFramework.Controls.MetroButton MBNT_Editar;
         private System.Windows.Forms.Label label28;
@@ -1354,5 +1354,6 @@
         public System.Windows.Forms.TextBox tB_Cargo;
         public System.Windows.Forms.TextBox tB_Salario;
         private System.Windows.Forms.ToolTip ToolTip_mensagens;
+        public MetroFramework.Controls.MetroButton MBNT_Localizar;
     }
 }

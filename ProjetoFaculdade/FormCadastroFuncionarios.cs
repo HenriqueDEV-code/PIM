@@ -509,6 +509,7 @@ namespace ProjetoFaculdade
             MtB_Admissao.Clear();
             tB_Salario.Clear();
             tB_id_Matricula.Clear();
+            
 
             tB_id_Matricula.Focus();
 
@@ -518,21 +519,28 @@ namespace ProjetoFaculdade
 
         }
 
+        private void MBNT_Localizar_Click(object sender, EventArgs e)
+        {
+            /* Abrir a Janela de Localizar*/
+            Localizar localizar = new Localizar();
+            localizar.ShowDialog();
+            this.Show();
+
+
+        }
+
         private void MBNT_Editar_Click(object sender, EventArgs e)
         {
             DefinirEnabledNosCampos(this, true);
 
-            /* Busca no banco a Matricula e coloca nos campos*/
-
         }
 
-
-        private void MBNT_Localizar_Click(object sender, EventArgs e)
+        private void MBNT_Excluir_Click(object sender, EventArgs e)
         {
-            Localizar localizar = new Localizar();
-            localizar.ShowDialog();
-            this.Show();
+            /* Excluir Cadastro no banco */
         }
+
+
 
         private void MBNT_Salvar_Click(object sender, EventArgs e)
         {
@@ -540,7 +548,7 @@ namespace ProjetoFaculdade
             try
             {
                 // Obter a String da Conexão
-                string connString = "Host=localhost;Port=5432;Database=car_tech_assist;Username=postgres;Password=1@2b3!4?5#C;";
+                string conexao = "Host=localhost;Port=5432;Database=car_tech_assist;Username=postgres;Password=1@2b3!4?5#C;";
 
                 // Criar um Objeto Funcionario
                 Funcionarios f = new Funcionarios()
@@ -566,7 +574,7 @@ namespace ProjetoFaculdade
                
 
                 // Abrir conexão com o banco
-                using (NpgsqlConnection conn = new NpgsqlConnection(connString))
+                using (NpgsqlConnection conn = new NpgsqlConnection(conexao))
                 {
                     conn.Open();
 
@@ -603,7 +611,6 @@ namespace ProjetoFaculdade
                         cmd.ExecuteNonQuery();
                     }
                     MessageBox.Show("Funcionário salvo com sucesso!");
-
                     tB_NomeCompleto.Clear();
                     tB_Email.Clear();
                     MtB_Telefone.Clear();
@@ -619,7 +626,8 @@ namespace ProjetoFaculdade
                     tB_Salario.Clear();
                     tB_id_Matricula.Clear();
 
-                    tB_id_Matricula.Focus();
+                    DefinirEnabledNosCampos(this, false);
+
                 }
 
             }
@@ -633,12 +641,14 @@ namespace ProjetoFaculdade
         }
 
 
+
+
+
+
+
+
         #endregion
 
-
-
-
-
-
+        
     }
 }
