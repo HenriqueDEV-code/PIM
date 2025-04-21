@@ -535,7 +535,6 @@
             this.tB_id_Matricula.Location = new System.Drawing.Point(216, 33);
             this.tB_id_Matricula.Margin = new System.Windows.Forms.Padding(4);
             this.tB_id_Matricula.Name = "tB_id_Matricula";
-            this.tB_id_Matricula.ReadOnly = true;
             this.tB_id_Matricula.Size = new System.Drawing.Size(129, 31);
             this.tB_id_Matricula.TabIndex = 28;
             // 

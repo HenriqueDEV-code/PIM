@@ -386,7 +386,7 @@ namespace ProjetoFaculdade
         {
 
             // vamos verificar se o campo esta vazio
-            if (string.IsNullOrWhiteSpace(MtB_Nascimento.Text))
+            if (string.IsNullOrWhiteSpace(MtB_Admissao.Text))
             {
                 return;
             }
@@ -519,15 +519,6 @@ namespace ProjetoFaculdade
 
         }
 
-        private void MBNT_Localizar_Click(object sender, EventArgs e)
-        {
-            /* Abrir a Janela de Localizar*/
-            Localizar localizar = new Localizar();
-            localizar.ShowDialog();
-            this.Show();
-
-
-        }
 
         private void MBNT_Editar_Click(object sender, EventArgs e)
         {
@@ -641,14 +632,68 @@ namespace ProjetoFaculdade
         }
 
 
-
-
-
-
-
-
         #endregion
 
-        
+
+
+        private void MBNT_Localizar_Click(object sender, EventArgs e)
+        {
+           
+            tB_id_Matricula.Enabled = true;
+
+            if (string.IsNullOrEmpty(tB_id_Matricula.Text))
+            {
+                return;
+            }
+
+            try
+            {
+
+                // obter a String de conexao
+                string conexao = "Host=localhost;Port=5432;Database=car_tech_assist;Username=postgres;Password=1@2b3!4?5#C;";
+
+                Funcionarios f = new Funcionarios()
+                {
+                    UID_Funcionario = Convert.ToInt32(tB_id_Matricula.Text)
+                };
+
+                // Abrir conexao com o banco
+                using (NpgsqlConnection conn = new NpgsqlConnection(conexao))
+                {
+                    conn.Open();
+
+                    // QUERY
+                    string sql = @"SELECT nomecompleto_funcionario, cpf, nascimento, idade, sexo, telefone, email, cep, logradouro, bairro, cidade, uf, cargo, data_admissao, salario, status FROM funcionarios WHERE uid_funcionario = @uid";
+
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@uid", f.UID_Funcionario);
+
+                        cmd.ExecuteNonQuery();
+
+                        using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Preenchendo os TextBox com os dados da consulta
+                                tB_NomeCompleto.Text = reader["nomecompleto_funcionario"].ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Funcionário não encontrado.");
+                            }
+                        }
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Erro ao salvar o funcionário: " + ex.Message
+                    );
+            }
+        }
     }
 }
