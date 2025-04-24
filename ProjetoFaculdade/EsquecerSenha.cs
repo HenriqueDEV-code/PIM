@@ -102,6 +102,26 @@ namespace ProjetoFaculdade
 
                 senhaTemporaria = sbSenhaTemporaria.ToString(); // Armazena para validação posterior
                 emailService.EnviarSenhaTemporaria(senhaTemporaria, emailFuncionario);
+
+                // GRAVAR A SENHA TEMPORÁRIA NO BANCO
+                try
+                {
+                    using (var conexao = new NpgsqlConnection("Host=localhost;Port=5432;Database=car_tech_assist;Username=postgres;Password=1@2b3!4?5#C;"))
+                    {
+                        conexao.Open();
+                        string query = @"UPDATE funcionarios SET senha = @senha WHERE email = @email";
+                        using (var comando = new NpgsqlCommand(query, conexao))
+                        {
+                            comando.Parameters.AddWithValue("@senha", senhaTemporaria);
+                            comando.Parameters.AddWithValue("@email", emailFuncionario);
+                            comando.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao salvar a senha temporária no banco: " + ex.Message);
+                }
             }
             else
             {
