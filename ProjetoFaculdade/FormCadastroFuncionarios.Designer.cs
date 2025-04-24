@@ -104,6 +104,8 @@
             this.MBNT_Editar = new MetroFramework.Controls.MetroButton();
             this.MBNT_Limpar = new MetroFramework.Controls.MetroButton();
             this.ToolTip_mensagens = new System.Windows.Forms.ToolTip(this.components);
+            this.tB_Busca_Matricula = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.Grupo_Dados_P_Funcionarios.SuspendLayout();
             this.Grupo_Sexo.SuspendLayout();
@@ -112,6 +114,7 @@
             this.Grupo_Dados_Contrato.SuspendLayout();
             this.Grupo_Status.SuspendLayout();
             this.Grupo_Funcoes.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -369,11 +372,11 @@
             this.Grupo_Dados_P_Funcionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.Grupo_Dados_P_Funcionarios.ForeColor = System.Drawing.Color.White;
             this.Grupo_Dados_P_Funcionarios.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Grupo_Dados_P_Funcionarios.Location = new System.Drawing.Point(403, 23);
+            this.Grupo_Dados_P_Funcionarios.Location = new System.Drawing.Point(403, 106);
             this.Grupo_Dados_P_Funcionarios.Margin = new System.Windows.Forms.Padding(4);
             this.Grupo_Dados_P_Funcionarios.Name = "Grupo_Dados_P_Funcionarios";
             this.Grupo_Dados_P_Funcionarios.Padding = new System.Windows.Forms.Padding(4);
-            this.Grupo_Dados_P_Funcionarios.Size = new System.Drawing.Size(1488, 473);
+            this.Grupo_Dados_P_Funcionarios.Size = new System.Drawing.Size(1488, 407);
             this.Grupo_Dados_P_Funcionarios.TabIndex = 1;
             this.Grupo_Dados_P_Funcionarios.TabStop = false;
             this.Grupo_Dados_P_Funcionarios.Text = "DADOS PESSOAIS DO FUNCIONÁRIO";
@@ -386,7 +389,7 @@
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label28.ForeColor = System.Drawing.Color.Red;
-            this.label28.Location = new System.Drawing.Point(1145, 205);
+            this.label28.Location = new System.Drawing.Point(1113, 185);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(13, 17);
@@ -562,11 +565,11 @@
             this.Grupo_Sexo.Controls.Add(this.MrB_Masculino);
             this.Grupo_Sexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.Grupo_Sexo.ForeColor = System.Drawing.Color.White;
-            this.Grupo_Sexo.Location = new System.Drawing.Point(538, 194);
+            this.Grupo_Sexo.Location = new System.Drawing.Point(506, 184);
             this.Grupo_Sexo.Margin = new System.Windows.Forms.Padding(4);
             this.Grupo_Sexo.Name = "Grupo_Sexo";
             this.Grupo_Sexo.Padding = new System.Windows.Forms.Padding(4);
-            this.Grupo_Sexo.Size = new System.Drawing.Size(599, 242);
+            this.Grupo_Sexo.Size = new System.Drawing.Size(599, 200);
             this.Grupo_Sexo.TabIndex = 18;
             this.Grupo_Sexo.TabStop = false;
             this.Grupo_Sexo.Text = "Sexo";
@@ -577,7 +580,7 @@
             this.MrB_Nao_Dizer.CustomBackground = false;
             this.MrB_Nao_Dizer.FontSize = MetroFramework.MetroLinkSize.Small;
             this.MrB_Nao_Dizer.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.MrB_Nao_Dizer.Location = new System.Drawing.Point(33, 190);
+            this.MrB_Nao_Dizer.Location = new System.Drawing.Point(25, 167);
             this.MrB_Nao_Dizer.Margin = new System.Windows.Forms.Padding(4);
             this.MrB_Nao_Dizer.Name = "MrB_Nao_Dizer";
             this.MrB_Nao_Dizer.Size = new System.Drawing.Size(109, 15);
@@ -596,7 +599,7 @@
             this.MrB_Outro.CustomBackground = false;
             this.MrB_Outro.FontSize = MetroFramework.MetroLinkSize.Small;
             this.MrB_Outro.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.MrB_Outro.Location = new System.Drawing.Point(33, 143);
+            this.MrB_Outro.Location = new System.Drawing.Point(25, 120);
             this.MrB_Outro.Margin = new System.Windows.Forms.Padding(4);
             this.MrB_Outro.Name = "MrB_Outro";
             this.MrB_Outro.Size = new System.Drawing.Size(54, 15);
@@ -615,7 +618,7 @@
             this.MrB_Feminino.CustomBackground = false;
             this.MrB_Feminino.FontSize = MetroFramework.MetroLinkSize.Small;
             this.MrB_Feminino.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.MrB_Feminino.Location = new System.Drawing.Point(33, 98);
+            this.MrB_Feminino.Location = new System.Drawing.Point(25, 75);
             this.MrB_Feminino.Margin = new System.Windows.Forms.Padding(4);
             this.MrB_Feminino.Name = "MrB_Feminino";
             this.MrB_Feminino.Size = new System.Drawing.Size(73, 15);
@@ -634,7 +637,7 @@
             this.MrB_Masculino.CustomBackground = false;
             this.MrB_Masculino.FontSize = MetroFramework.MetroLinkSize.Small;
             this.MrB_Masculino.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.MrB_Masculino.Location = new System.Drawing.Point(33, 51);
+            this.MrB_Masculino.Location = new System.Drawing.Point(25, 28);
             this.MrB_Masculino.Margin = new System.Windows.Forms.Padding(4);
             this.MrB_Masculino.Name = "MrB_Masculino";
             this.MrB_Masculino.Size = new System.Drawing.Size(78, 15);
@@ -1148,7 +1151,6 @@
             // Grupo_Funcoes
             // 
             this.Grupo_Funcoes.Controls.Add(this.MBNT_Salvar);
-            this.Grupo_Funcoes.Controls.Add(this.MBNT_Localizar);
             this.Grupo_Funcoes.Controls.Add(this.MBNT_Excluir);
             this.Grupo_Funcoes.Controls.Add(this.MBNT_Editar);
             this.Grupo_Funcoes.Controls.Add(this.MBNT_Limpar);
@@ -1179,7 +1181,7 @@
             // MBNT_Localizar
             // 
             this.MBNT_Localizar.Highlight = false;
-            this.MBNT_Localizar.Location = new System.Drawing.Point(1067, 35);
+            this.MBNT_Localizar.Location = new System.Drawing.Point(276, 18);
             this.MBNT_Localizar.Margin = new System.Windows.Forms.Padding(4);
             this.MBNT_Localizar.Name = "MBNT_Localizar";
             this.MBNT_Localizar.Size = new System.Drawing.Size(114, 36);
@@ -1193,7 +1195,7 @@
             // MBNT_Excluir
             // 
             this.MBNT_Excluir.Highlight = false;
-            this.MBNT_Excluir.Location = new System.Drawing.Point(720, 35);
+            this.MBNT_Excluir.Location = new System.Drawing.Point(913, 35);
             this.MBNT_Excluir.Margin = new System.Windows.Forms.Padding(4);
             this.MBNT_Excluir.Name = "MBNT_Excluir";
             this.MBNT_Excluir.Size = new System.Drawing.Size(114, 36);
@@ -1207,7 +1209,7 @@
             // MBNT_Editar
             // 
             this.MBNT_Editar.Highlight = false;
-            this.MBNT_Editar.Location = new System.Drawing.Point(371, 35);
+            this.MBNT_Editar.Location = new System.Drawing.Point(471, 35);
             this.MBNT_Editar.Margin = new System.Windows.Forms.Padding(4);
             this.MBNT_Editar.Name = "MBNT_Editar";
             this.MBNT_Editar.Size = new System.Drawing.Size(114, 36);
@@ -1236,12 +1238,36 @@
             // 
             this.ToolTip_mensagens.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
+            // tB_Busca_Matricula
+            // 
+            this.tB_Busca_Matricula.BackColor = System.Drawing.Color.White;
+            this.tB_Busca_Matricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.tB_Busca_Matricula.Location = new System.Drawing.Point(26, 21);
+            this.tB_Busca_Matricula.Margin = new System.Windows.Forms.Padding(4);
+            this.tB_Busca_Matricula.Name = "tB_Busca_Matricula";
+            this.tB_Busca_Matricula.Size = new System.Drawing.Size(242, 31);
+            this.tB_Busca_Matricula.TabIndex = 29;
+            this.tB_Busca_Matricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tB_Busca_Matricula_KeyPress);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.MBNT_Localizar);
+            this.groupBox1.Controls.Add(this.tB_Busca_Matricula);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Location = new System.Drawing.Point(403, 23);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1484, 70);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "BUSCA";
+            // 
             // FormCadastroFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Grupo_Funcoes);
             this.Controls.Add(this.Grupo_Dados_Contrato);
             this.Controls.Add(this.groupBox4);
@@ -1273,6 +1299,8 @@
             this.Grupo_Status.ResumeLayout(false);
             this.Grupo_Status.PerformLayout();
             this.Grupo_Funcoes.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1354,5 +1382,7 @@
         public System.Windows.Forms.TextBox tB_Salario;
         private System.Windows.Forms.ToolTip ToolTip_mensagens;
         public MetroFramework.Controls.MetroButton MBNT_Localizar;
+        public System.Windows.Forms.TextBox tB_Busca_Matricula;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

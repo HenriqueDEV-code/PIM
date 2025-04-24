@@ -75,6 +75,14 @@ namespace ProjetoFaculdade
             }
         }
 
+        private void tB_Busca_Matricula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Permite a entrada
+            }
+        }
+
 
         #endregion
 
@@ -509,29 +517,93 @@ namespace ProjetoFaculdade
             MtB_Admissao.Clear();
             tB_Salario.Clear();
             tB_id_Matricula.Clear();
-            
-
+            tB_Busca_Matricula.Clear();
             tB_id_Matricula.Focus();
 
             tB_id_Matricula.Text = GerarMatricula();
 
             DefinirEnabledNosCampos(this, true);
+            tB_Busca_Matricula.Enabled = false;
+
 
         }
 
 
         private void MBNT_Editar_Click(object sender, EventArgs e)
         {
-            DefinirEnabledNosCampos(this, true);
-
+            EditarForm Edit = new EditarForm();
+            Edit.ShowDialog();
+            this.Show();
         }
 
         private void MBNT_Excluir_Click(object sender, EventArgs e)
         {
-            /* Excluir Cadastro no banco */
+            try
+            {
+                DialogResult resultado = MessageBox.Show(
+                    "Tem certeza que deseja excluir este funcionário?",
+                    "Confirmação de Exclusão",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (resultado == DialogResult.Yes)
+                {
+                    // Obter a String da Conexão
+                    string conexao = "Host=localhost;Port=5432;Database=car_tech_assist;Username=postgres;Password=1@2b3!4?5#C;";
+
+                    // Criar um Objeto Funcionario
+                    Funcionarios f = new Funcionarios()
+                    {
+                        UID_Funcionario = Convert.ToInt32(tB_Busca_Matricula.Text)
+                    };
+
+                    // Abrir conexão com o banco
+                    using (NpgsqlConnection conn = new NpgsqlConnection(conexao))
+                    {
+                        conn.Open();
+
+                        // QUERY
+                        string sql = @"DELETE FROM funcionarios WHERE uid_funcionario = @uid";
+
+                        using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@uid", f.UID_Funcionario);
+
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        MessageBox.Show("Funcionário apagado com sucesso!");
+
+                        // Limpar os campos do formulário
+                        tB_NomeCompleto.Clear();
+                        tB_Email.Clear();
+                        MtB_Telefone.Clear();
+                        MtB_CPF.Clear();
+                        MtB_Nascimento.Clear();
+                        MtB_Cep.Clear();
+                        tB_Logradouro.Clear();
+                        tB_Bairro.Clear();
+                        tB_Cidade.Clear();
+                        tB_UF.Clear();
+                        tB_Cargo.Clear();
+                        MtB_Admissao.Clear();
+                        tB_Salario.Clear();
+                        tB_id_Matricula.Clear();
+
+                        DefinirEnabledNosCampos(this, false);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Exclusão cancelada.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir o funcionário: " + ex.Message);
+            }
         }
-
-
 
         private void MBNT_Salvar_Click(object sender, EventArgs e)
         {
@@ -631,17 +703,15 @@ namespace ProjetoFaculdade
             }
         }
 
-
-        #endregion
-
-
-
         private void MBNT_Localizar_Click(object sender, EventArgs e)
         {
-           
-            tB_id_Matricula.Enabled = true;
+            DefinirEnabledNosCampos(this, false);
+            tB_Busca_Matricula.Enabled = true;
+            tB_id_Matricula.Clear();
 
-            if (string.IsNullOrEmpty(tB_id_Matricula.Text))
+
+
+            if (string.IsNullOrEmpty(tB_Busca_Matricula.Text))
             {
                 return;
             }
@@ -654,7 +724,7 @@ namespace ProjetoFaculdade
 
                 Funcionarios f = new Funcionarios()
                 {
-                    UID_Funcionario = Convert.ToInt32(tB_id_Matricula.Text)
+                    UID_Funcionario = Convert.ToInt32(tB_Busca_Matricula.Text)
                 };
 
                 // Abrir conexao com o banco
@@ -677,6 +747,37 @@ namespace ProjetoFaculdade
                             {
                                 // Preenchendo os TextBox com os dados da consulta
                                 tB_NomeCompleto.Text = reader["nomecompleto_funcionario"].ToString();
+                                tB_Email.Text = reader["email"].ToString();
+                                MtB_Telefone.Text = reader["telefone"].ToString();
+                                MtB_CPF.Text = reader["cpf"].ToString();
+                                MtB_Nascimento.Text = reader["nascimento"].ToString();
+                                MtB_Cep.Text = reader["cep"].ToString();
+                                tB_Logradouro.Text = reader["logradouro"].ToString();
+                                tB_Bairro.Text = reader["bairro"].ToString();
+                                tB_Cidade.Text = reader["cidade"].ToString();
+                                tB_UF.Text = reader["uf"].ToString();
+                                tB_Cargo.Text = reader["cargo"].ToString();
+                                MtB_Admissao.Text = reader["data_admissao"].ToString();
+                                tB_Salario.Text = reader["salario"].ToString();
+                                string sexo = reader["sexo"].ToString();
+
+                                if (sexo == "Masculino")
+
+                                    MrB_Masculino.Checked = true;
+                                else if (sexo == "Feminino")
+                                    MrB_Feminino.Checked = true;
+                                else if (sexo == "Outro")
+                                    MrB_Outro.Checked = true;
+                                else if (sexo == "Prefiro não dizer")
+                                    MrB_Nao_Dizer.Checked = true;
+
+                                string Status = reader["status"].ToString();
+
+                                if (Status == "Ativo")
+                                    MrB_Ativo.Checked = true;
+                                else if (Status == "Inativo")
+                                    MrB_Inativo.Checked = true;
+
                             }
                             else
                             {
@@ -695,5 +796,10 @@ namespace ProjetoFaculdade
                     );
             }
         }
+
+
+
+        #endregion
+
     }
 }
