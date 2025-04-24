@@ -26,7 +26,30 @@ namespace ProjetoFaculdade
         public EditarForm()
         {
             InitializeComponent();
+            DefinirEnabledNosCampos(this, false);
+
         }
+
+        private void DefinirEnabledNosCampos(Control parent, bool enabled)
+        {
+            foreach (Control controle in parent.Controls)
+            {
+                if (controle is TextBox)
+                {
+                    ((TextBox)controle).Enabled = enabled;
+                }
+                else if (controle is MaskedTextBox)
+                {
+                    ((MaskedTextBox)controle).Enabled = enabled;
+                }
+                else if (controle.HasChildren)
+                {
+                    // Se for GroupBox, Panel, etc, entra neles também
+                    DefinirEnabledNosCampos(controle, enabled);
+                }
+            }
+        }
+
 
         #region TRATAMENTO DE ENTRADA DE DADOS EVENTO KEYPRESS
         private void tB_Busca_Matricula_Edit_KeyPress(object sender, KeyPressEventArgs e)
@@ -50,6 +73,9 @@ namespace ProjetoFaculdade
         #region Localizar e Salvar Edicao de Cadastro
         private void MBNT_Localizar_Click(object sender, EventArgs e)
         {
+            DefinirEnabledNosCampos(this, true);
+            tB_Busca_Matricula_Edit.Focus();
+
             if (string.IsNullOrEmpty(tB_Busca_Matricula_Edit.Text))
             {
                 return;
