@@ -99,10 +99,10 @@
             this.label20 = new System.Windows.Forms.Label();
             this.Grupo_Funcoes = new System.Windows.Forms.GroupBox();
             this.MBNT_Salvar = new MetroFramework.Controls.MetroButton();
-            this.MBNT_Localizar = new MetroFramework.Controls.MetroButton();
             this.MBNT_Excluir = new MetroFramework.Controls.MetroButton();
             this.MBNT_Editar = new MetroFramework.Controls.MetroButton();
             this.MBNT_Limpar = new MetroFramework.Controls.MetroButton();
+            this.MBNT_Localizar = new MetroFramework.Controls.MetroButton();
             this.ToolTip_mensagens = new System.Windows.Forms.ToolTip(this.components);
             this.tB_Busca_Matricula = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -1178,20 +1178,6 @@
             this.MBNT_Salvar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MBNT_Salvar.Click += new System.EventHandler(this.MBNT_Salvar_Click);
             // 
-            // MBNT_Localizar
-            // 
-            this.MBNT_Localizar.Highlight = false;
-            this.MBNT_Localizar.Location = new System.Drawing.Point(276, 18);
-            this.MBNT_Localizar.Margin = new System.Windows.Forms.Padding(4);
-            this.MBNT_Localizar.Name = "MBNT_Localizar";
-            this.MBNT_Localizar.Size = new System.Drawing.Size(114, 36);
-            this.MBNT_Localizar.Style = MetroFramework.MetroColorStyle.Blue;
-            this.MBNT_Localizar.StyleManager = null;
-            this.MBNT_Localizar.TabIndex = 23;
-            this.MBNT_Localizar.Text = "Localizar Usuário";
-            this.MBNT_Localizar.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.MBNT_Localizar.Click += new System.EventHandler(this.MBNT_Localizar_Click);
-            // 
             // MBNT_Excluir
             // 
             this.MBNT_Excluir.Highlight = false;
@@ -1233,6 +1219,20 @@
             this.MBNT_Limpar.Text = "Novo Usuário";
             this.MBNT_Limpar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MBNT_Limpar.Click += new System.EventHandler(this.MBNT_Limpar_Click);
+            // 
+            // MBNT_Localizar
+            // 
+            this.MBNT_Localizar.Highlight = false;
+            this.MBNT_Localizar.Location = new System.Drawing.Point(276, 18);
+            this.MBNT_Localizar.Margin = new System.Windows.Forms.Padding(4);
+            this.MBNT_Localizar.Name = "MBNT_Localizar";
+            this.MBNT_Localizar.Size = new System.Drawing.Size(114, 36);
+            this.MBNT_Localizar.Style = MetroFramework.MetroColorStyle.Blue;
+            this.MBNT_Localizar.StyleManager = null;
+            this.MBNT_Localizar.TabIndex = 23;
+            this.MBNT_Localizar.Text = "Localizar Usuário";
+            this.MBNT_Localizar.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MBNT_Localizar.Click += new System.EventHandler(this.MBNT_Localizar_Click);
             // 
             // ToolTip_mensagens
             // 

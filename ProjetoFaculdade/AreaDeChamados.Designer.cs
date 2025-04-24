@@ -34,9 +34,9 @@
             // MButton_Cadastro
             // 
             this.MButton_Cadastro.Highlight = false;
-            this.MButton_Cadastro.Location = new System.Drawing.Point(12, 966);
+            this.MButton_Cadastro.Location = new System.Drawing.Point(12, 989);
             this.MButton_Cadastro.Name = "MButton_Cadastro";
-            this.MButton_Cadastro.Size = new System.Drawing.Size(147, 63);
+            this.MButton_Cadastro.Size = new System.Drawing.Size(147, 40);
             this.MButton_Cadastro.Style = MetroFramework.MetroColorStyle.Blue;
             this.MButton_Cadastro.StyleManager = null;
             this.MButton_Cadastro.TabIndex = 17;

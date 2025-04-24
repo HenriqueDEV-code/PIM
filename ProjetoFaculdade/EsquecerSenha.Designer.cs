@@ -33,13 +33,14 @@
             this.label_Senha = new System.Windows.Forms.Label();
             this.label_Senha_Confirm = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.MBNT_Verificar = new MetroFramework.Controls.MetroButton();
+            this.MBNT_Verificar_Codigo = new MetroFramework.Controls.MetroButton();
             this.tB_Senha_Temp = new System.Windows.Forms.TextBox();
             this.tB_New_Senha = new System.Windows.Forms.TextBox();
             this.tB_Confir_New_Senha = new System.Windows.Forms.TextBox();
             this.BnT_Verificar_Senha_Temp = new MetroFramework.Controls.MetroButton();
-            this.MtB_Telefone = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.MtB_Busca_Matricula_Senha = new System.Windows.Forms.MaskedTextBox();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.MtB_Codigo_Verificacao = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Esqueceu_Senha
@@ -100,19 +101,19 @@
             this.label4.TabIndex = 41;
             this.label4.Text = "Matrícula:";
             // 
-            // MBNT_Verificar
+            // MBNT_Verificar_Codigo
             // 
-            this.MBNT_Verificar.Highlight = false;
-            this.MBNT_Verificar.Location = new System.Drawing.Point(376, 73);
-            this.MBNT_Verificar.Margin = new System.Windows.Forms.Padding(4);
-            this.MBNT_Verificar.Name = "MBNT_Verificar";
-            this.MBNT_Verificar.Size = new System.Drawing.Size(100, 32);
-            this.MBNT_Verificar.Style = MetroFramework.MetroColorStyle.Blue;
-            this.MBNT_Verificar.StyleManager = null;
-            this.MBNT_Verificar.TabIndex = 44;
-            this.MBNT_Verificar.Text = "Verificar";
-            this.MBNT_Verificar.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.MBNT_Verificar.Click += new System.EventHandler(this.MBNT_Verificar_Click);
+            this.MBNT_Verificar_Codigo.Highlight = false;
+            this.MBNT_Verificar_Codigo.Location = new System.Drawing.Point(376, 73);
+            this.MBNT_Verificar_Codigo.Margin = new System.Windows.Forms.Padding(4);
+            this.MBNT_Verificar_Codigo.Name = "MBNT_Verificar_Codigo";
+            this.MBNT_Verificar_Codigo.Size = new System.Drawing.Size(100, 32);
+            this.MBNT_Verificar_Codigo.Style = MetroFramework.MetroColorStyle.Blue;
+            this.MBNT_Verificar_Codigo.StyleManager = null;
+            this.MBNT_Verificar_Codigo.TabIndex = 44;
+            this.MBNT_Verificar_Codigo.Text = "Verificar";
+            this.MBNT_Verificar_Codigo.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MBNT_Verificar_Codigo.Click += new System.EventHandler(this.MBNT_Verificar_Click);
             // 
             // tB_Senha_Temp
             // 
@@ -163,28 +164,43 @@
             this.BnT_Verificar_Senha_Temp.Text = "Verificar";
             this.BnT_Verificar_Senha_Temp.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BnT_Verificar_Senha_Temp.Visible = false;
+            this.BnT_Verificar_Senha_Temp.Click += new System.EventHandler(this.BnT_Verificar_Senha_Temp_Click);
             // 
-            // MtB_Telefone
+            // MtB_Busca_Matricula_Senha
             // 
-            this.MtB_Telefone.BackColor = System.Drawing.Color.White;
-            this.MtB_Telefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.MtB_Telefone.Location = new System.Drawing.Point(240, 9);
-            this.MtB_Telefone.Margin = new System.Windows.Forms.Padding(4);
-            this.MtB_Telefone.Mask = "000000";
-            this.MtB_Telefone.Name = "MtB_Telefone";
-            this.MtB_Telefone.Size = new System.Drawing.Size(128, 31);
-            this.MtB_Telefone.TabIndex = 49;
+            this.MtB_Busca_Matricula_Senha.BackColor = System.Drawing.Color.White;
+            this.MtB_Busca_Matricula_Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.MtB_Busca_Matricula_Senha.Location = new System.Drawing.Point(240, 9);
+            this.MtB_Busca_Matricula_Senha.Margin = new System.Windows.Forms.Padding(4);
+            this.MtB_Busca_Matricula_Senha.Mask = "000000";
+            this.MtB_Busca_Matricula_Senha.Name = "MtB_Busca_Matricula_Senha";
+            this.MtB_Busca_Matricula_Senha.Size = new System.Drawing.Size(128, 31);
+            this.MtB_Busca_Matricula_Senha.TabIndex = 49;
             // 
-            // maskedTextBox1
+            // metroButton1
             // 
-            this.maskedTextBox1.BackColor = System.Drawing.Color.White;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.maskedTextBox1.Location = new System.Drawing.Point(240, 73);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.maskedTextBox1.Mask = "000 - 000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(128, 31);
-            this.maskedTextBox1.TabIndex = 50;
+            this.metroButton1.Highlight = false;
+            this.metroButton1.Location = new System.Drawing.Point(376, 9);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(100, 32);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroButton1.StyleManager = null;
+            this.metroButton1.TabIndex = 51;
+            this.metroButton1.Text = "Enviar Código";
+            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
+            // MtB_Codigo_Verificacao
+            // 
+            this.MtB_Codigo_Verificacao.BackColor = System.Drawing.Color.White;
+            this.MtB_Codigo_Verificacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.MtB_Codigo_Verificacao.Location = new System.Drawing.Point(240, 74);
+            this.MtB_Codigo_Verificacao.Margin = new System.Windows.Forms.Padding(4);
+            this.MtB_Codigo_Verificacao.Name = "MtB_Codigo_Verificacao";
+            this.MtB_Codigo_Verificacao.Size = new System.Drawing.Size(129, 31);
+            this.MtB_Codigo_Verificacao.TabIndex = 52;
+            this.MtB_Codigo_Verificacao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MtB_Codigo_Verificacao_KeyPress);
             // 
             // EsquecerSenha
             // 
@@ -192,13 +208,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(600, 371);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.MtB_Telefone);
+            this.Controls.Add(this.MtB_Codigo_Verificacao);
+            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.MtB_Busca_Matricula_Senha);
             this.Controls.Add(this.BnT_Verificar_Senha_Temp);
             this.Controls.Add(this.tB_Confir_New_Senha);
             this.Controls.Add(this.tB_New_Senha);
             this.Controls.Add(this.tB_Senha_Temp);
-            this.Controls.Add(this.MBNT_Verificar);
+            this.Controls.Add(this.MBNT_Verificar_Codigo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label_Senha_Confirm);
             this.Controls.Add(this.label_Senha);
@@ -222,12 +239,13 @@
         private System.Windows.Forms.Label label_Senha;
         private System.Windows.Forms.Label label_Senha_Confirm;
         private System.Windows.Forms.Label label4;
-        private MetroFramework.Controls.MetroButton MBNT_Verificar;
         public System.Windows.Forms.TextBox tB_Senha_Temp;
         public System.Windows.Forms.TextBox tB_New_Senha;
         public System.Windows.Forms.TextBox tB_Confir_New_Senha;
         private MetroFramework.Controls.MetroButton BnT_Verificar_Senha_Temp;
-        public System.Windows.Forms.MaskedTextBox MtB_Telefone;
-        public System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        public System.Windows.Forms.MaskedTextBox MtB_Busca_Matricula_Senha;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        public System.Windows.Forms.TextBox MtB_Codigo_Verificacao;
+        public MetroFramework.Controls.MetroButton MBNT_Verificar_Codigo;
     }
 }
