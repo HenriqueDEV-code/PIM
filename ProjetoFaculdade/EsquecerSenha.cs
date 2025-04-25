@@ -109,7 +109,7 @@ namespace ProjetoFaculdade
                     using (var conexao = new NpgsqlConnection("Host=localhost;Port=5432;Database=car_tech_assist;Username=postgres;Password=1@2b3!4?5#C;"))
                     {
                         conexao.Open();
-                        string query = @"UPDATE funcionarios SET senha = @senha WHERE email = @email";
+                        string query = @"UPDATE pessoas SET senha = @senha WHERE email = @email";
                         using (var comando = new NpgsqlCommand(query, conexao))
                         {
                             comando.Parameters.AddWithValue("@senha", senhaTemporaria);
@@ -145,7 +145,7 @@ namespace ProjetoFaculdade
                 using (var conn = new NpgsqlConnection(conexao))
                 {
                     conn.Open();
-                    string sql = @"SELECT email FROM funcionarios WHERE uid_Funcionario = @uid";
+                    string sql = @"SELECT email FROM pessoas WHERE uid_Funcionario = @uid";
 
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
@@ -210,7 +210,7 @@ namespace ProjetoFaculdade
                 using (var conn = new NpgsqlConnection(conexao))
                 {
                     conn.Open();
-                    string sql = @"UPDATE funcionarios SET senha = @novaSenha WHERE email = @Email";
+                    string sql = @"UPDATE pessoas SET senha = @novaSenha WHERE email = @Email";
 
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {

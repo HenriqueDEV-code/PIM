@@ -98,7 +98,7 @@ namespace ProjetoFaculdade
                     conn.Open();
 
                     // QUERY
-                    string sql = @"SELECT nomecompleto_funcionario, telefone, email, cep, logradouro, bairro, cidade, uf, status FROM funcionarios WHERE uid_funcionario = @uid";
+                    string sql = @"SELECT nomecompleto_funcionario, telefone, email, cep, logradouro, bairro, cidade, uf, status, tipo_de_usuario FROM pessoas WHERE uid_funcionario = @uid";
 
                     using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                     {
@@ -120,12 +120,16 @@ namespace ProjetoFaculdade
                                 tB_UF_Edit.Text = reader["uf"].ToString();
 
                                 string Status = reader["status"].ToString();
-
                                 if (Status == "Ativo")
                                     MrB_Ativo_Edit.Checked = true;
                                 else if (Status == "Inativo")
                                     MrB_Inativo_Edit.Checked = true;
 
+                                string Tipo = reader["tipo_de_usuario"].ToString();
+                                if (Tipo == "Operador")
+                                    MtB_Oper_Edit.Checked = true;
+                                else if (Tipo == "Cliente")
+                                    MtB_Clien_Edit.Checked = true;
                             }
                             else
                             {
@@ -175,7 +179,7 @@ namespace ProjetoFaculdade
                     conn.Open();
 
                     string sql = @"
-                         UPDATE funcionarios SET 
+                         UPDATE pessoas SET 
                          nomecompleto_funcionario = @nome,
                          email = @email,
                          telefone = @telefone,
@@ -184,7 +188,8 @@ namespace ProjetoFaculdade
                          bairro = @bairro,
                          cidade = @cidade,
                          uf = @uf,
-                        status = @status
+                        status = @status,
+                        tipo_de_usuario = @tipo_de_usuario
                         WHERE uid_funcionario = @uid";
 
                     using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
@@ -198,6 +203,7 @@ namespace ProjetoFaculdade
                         cmd.Parameters.AddWithValue("@cidade", f.Cidade);
                         cmd.Parameters.AddWithValue("@uf", f.UF);
                         cmd.Parameters.AddWithValue("@status", f.Status);
+                        cmd.Parameters.AddWithValue("@tipo_de_usuario", f.Tipo_De_Usuario);
                         cmd.Parameters.AddWithValue("@uid", f.UID_Funcionario);
 
                         int linhasAfetadas = cmd.ExecuteNonQuery();

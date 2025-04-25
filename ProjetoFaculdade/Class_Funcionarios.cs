@@ -24,7 +24,8 @@ namespace ProjetoFaculdade
         public string Cargo { get; set; }
         public DateTime Data_Admissao { get; set; }
         public string Salario { get; set; }
-        public string Status { get; set; }  // true = Ativo || false = Inativo
+        public string Status { get; set; } 
+        public string Tipo_De_Usuario { get; set; } 
         public string Senha { get; set; }
 
     }

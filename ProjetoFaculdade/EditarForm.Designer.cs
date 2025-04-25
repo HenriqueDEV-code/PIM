@@ -45,6 +45,9 @@
             this.MtB_Cep_Edit = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.Grupo_Dados_P_Funcionarios = new System.Windows.Forms.GroupBox();
+            this.Grupo_Status = new System.Windows.Forms.GroupBox();
+            this.MrB_Inativo_Edit = new MetroFramework.Controls.MetroRadioButton();
+            this.MrB_Ativo_Edit = new MetroFramework.Controls.MetroRadioButton();
             this.label28 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,14 +58,15 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.Grupo_Status = new System.Windows.Forms.GroupBox();
-            this.MrB_Inativo_Edit = new MetroFramework.Controls.MetroRadioButton();
-            this.MrB_Ativo_Edit = new MetroFramework.Controls.MetroRadioButton();
             this.BNT_Salvar_Edit = new MetroFramework.Controls.MetroButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.MtB_Clien_Edit = new MetroFramework.Controls.MetroRadioButton();
+            this.MtB_Oper_Edit = new MetroFramework.Controls.MetroRadioButton();
             this.groupBox1.SuspendLayout();
             this.Grupo_Endereco.SuspendLayout();
             this.Grupo_Dados_P_Funcionarios.SuspendLayout();
             this.Grupo_Status.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -87,7 +91,7 @@
             this.MBNT_Localizar.Style = MetroFramework.MetroColorStyle.Blue;
             this.MBNT_Localizar.StyleManager = null;
             this.MBNT_Localizar.TabIndex = 23;
-            this.MBNT_Localizar.Text = "Localizar Usuário";
+            this.MBNT_Localizar.Text = "&Localizar Usuário";
             this.MBNT_Localizar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MBNT_Localizar.Click += new System.EventHandler(this.MBNT_Localizar_Click);
             // 
@@ -289,6 +293,7 @@
             // 
             // Grupo_Dados_P_Funcionarios
             // 
+            this.Grupo_Dados_P_Funcionarios.Controls.Add(this.groupBox2);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.Grupo_Status);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label28);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label25);
@@ -311,6 +316,58 @@
             this.Grupo_Dados_P_Funcionarios.TabIndex = 20;
             this.Grupo_Dados_P_Funcionarios.TabStop = false;
             this.Grupo_Dados_P_Funcionarios.Text = "DADOS PESSOAIS";
+            // 
+            // Grupo_Status
+            // 
+            this.Grupo_Status.Controls.Add(this.MrB_Inativo_Edit);
+            this.Grupo_Status.Controls.Add(this.MrB_Ativo_Edit);
+            this.Grupo_Status.ForeColor = System.Drawing.Color.White;
+            this.Grupo_Status.Location = new System.Drawing.Point(575, 125);
+            this.Grupo_Status.Margin = new System.Windows.Forms.Padding(4);
+            this.Grupo_Status.Name = "Grupo_Status";
+            this.Grupo_Status.Padding = new System.Windows.Forms.Padding(4);
+            this.Grupo_Status.Size = new System.Drawing.Size(308, 88);
+            this.Grupo_Status.TabIndex = 41;
+            this.Grupo_Status.TabStop = false;
+            this.Grupo_Status.Text = "STATUS";
+            // 
+            // MrB_Inativo_Edit
+            // 
+            this.MrB_Inativo_Edit.AutoSize = true;
+            this.MrB_Inativo_Edit.CustomBackground = false;
+            this.MrB_Inativo_Edit.FontSize = MetroFramework.MetroLinkSize.Small;
+            this.MrB_Inativo_Edit.FontWeight = MetroFramework.MetroLinkWeight.Regular;
+            this.MrB_Inativo_Edit.Location = new System.Drawing.Point(207, 25);
+            this.MrB_Inativo_Edit.Margin = new System.Windows.Forms.Padding(4);
+            this.MrB_Inativo_Edit.Name = "MrB_Inativo_Edit";
+            this.MrB_Inativo_Edit.Size = new System.Drawing.Size(59, 15);
+            this.MrB_Inativo_Edit.Style = MetroFramework.MetroColorStyle.Blue;
+            this.MrB_Inativo_Edit.StyleManager = null;
+            this.MrB_Inativo_Edit.TabIndex = 1;
+            this.MrB_Inativo_Edit.TabStop = true;
+            this.MrB_Inativo_Edit.Text = "Inativo";
+            this.MrB_Inativo_Edit.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MrB_Inativo_Edit.UseStyleColors = false;
+            this.MrB_Inativo_Edit.UseVisualStyleBackColor = true;
+            // 
+            // MrB_Ativo_Edit
+            // 
+            this.MrB_Ativo_Edit.AutoSize = true;
+            this.MrB_Ativo_Edit.CustomBackground = false;
+            this.MrB_Ativo_Edit.FontSize = MetroFramework.MetroLinkSize.Small;
+            this.MrB_Ativo_Edit.FontWeight = MetroFramework.MetroLinkWeight.Regular;
+            this.MrB_Ativo_Edit.Location = new System.Drawing.Point(24, 25);
+            this.MrB_Ativo_Edit.Margin = new System.Windows.Forms.Padding(4);
+            this.MrB_Ativo_Edit.Name = "MrB_Ativo_Edit";
+            this.MrB_Ativo_Edit.Size = new System.Drawing.Size(51, 15);
+            this.MrB_Ativo_Edit.Style = MetroFramework.MetroColorStyle.Blue;
+            this.MrB_Ativo_Edit.StyleManager = null;
+            this.MrB_Ativo_Edit.TabIndex = 0;
+            this.MrB_Ativo_Edit.TabStop = true;
+            this.MrB_Ativo_Edit.Text = "Ativo";
+            this.MrB_Ativo_Edit.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MrB_Ativo_Edit.UseStyleColors = false;
+            this.MrB_Ativo_Edit.UseVisualStyleBackColor = true;
             // 
             // label28
             // 
@@ -452,58 +509,6 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Nome Completo:";
             // 
-            // Grupo_Status
-            // 
-            this.Grupo_Status.Controls.Add(this.MrB_Inativo_Edit);
-            this.Grupo_Status.Controls.Add(this.MrB_Ativo_Edit);
-            this.Grupo_Status.ForeColor = System.Drawing.Color.White;
-            this.Grupo_Status.Location = new System.Drawing.Point(575, 125);
-            this.Grupo_Status.Margin = new System.Windows.Forms.Padding(4);
-            this.Grupo_Status.Name = "Grupo_Status";
-            this.Grupo_Status.Padding = new System.Windows.Forms.Padding(4);
-            this.Grupo_Status.Size = new System.Drawing.Size(308, 88);
-            this.Grupo_Status.TabIndex = 41;
-            this.Grupo_Status.TabStop = false;
-            this.Grupo_Status.Text = "STATUS";
-            // 
-            // MrB_Inativo_Edit
-            // 
-            this.MrB_Inativo_Edit.AutoSize = true;
-            this.MrB_Inativo_Edit.CustomBackground = false;
-            this.MrB_Inativo_Edit.FontSize = MetroFramework.MetroLinkSize.Small;
-            this.MrB_Inativo_Edit.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.MrB_Inativo_Edit.Location = new System.Drawing.Point(207, 25);
-            this.MrB_Inativo_Edit.Margin = new System.Windows.Forms.Padding(4);
-            this.MrB_Inativo_Edit.Name = "MrB_Inativo_Edit";
-            this.MrB_Inativo_Edit.Size = new System.Drawing.Size(59, 15);
-            this.MrB_Inativo_Edit.Style = MetroFramework.MetroColorStyle.Blue;
-            this.MrB_Inativo_Edit.StyleManager = null;
-            this.MrB_Inativo_Edit.TabIndex = 1;
-            this.MrB_Inativo_Edit.TabStop = true;
-            this.MrB_Inativo_Edit.Text = "Inativo";
-            this.MrB_Inativo_Edit.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.MrB_Inativo_Edit.UseStyleColors = false;
-            this.MrB_Inativo_Edit.UseVisualStyleBackColor = true;
-            // 
-            // MrB_Ativo_Edit
-            // 
-            this.MrB_Ativo_Edit.AutoSize = true;
-            this.MrB_Ativo_Edit.CustomBackground = false;
-            this.MrB_Ativo_Edit.FontSize = MetroFramework.MetroLinkSize.Small;
-            this.MrB_Ativo_Edit.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.MrB_Ativo_Edit.Location = new System.Drawing.Point(24, 25);
-            this.MrB_Ativo_Edit.Margin = new System.Windows.Forms.Padding(4);
-            this.MrB_Ativo_Edit.Name = "MrB_Ativo_Edit";
-            this.MrB_Ativo_Edit.Size = new System.Drawing.Size(51, 15);
-            this.MrB_Ativo_Edit.Style = MetroFramework.MetroColorStyle.Blue;
-            this.MrB_Ativo_Edit.StyleManager = null;
-            this.MrB_Ativo_Edit.TabIndex = 0;
-            this.MrB_Ativo_Edit.TabStop = true;
-            this.MrB_Ativo_Edit.Text = "Ativo";
-            this.MrB_Ativo_Edit.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.MrB_Ativo_Edit.UseStyleColors = false;
-            this.MrB_Ativo_Edit.UseVisualStyleBackColor = true;
-            // 
             // BNT_Salvar_Edit
             // 
             this.BNT_Salvar_Edit.Highlight = false;
@@ -517,6 +522,58 @@
             this.BNT_Salvar_Edit.Text = "Salvar";
             this.BNT_Salvar_Edit.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BNT_Salvar_Edit.Click += new System.EventHandler(this.BNT_Salvar_Edit_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.MtB_Clien_Edit);
+            this.groupBox2.Controls.Add(this.MtB_Oper_Edit);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(953, 125);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(308, 88);
+            this.groupBox2.TabIndex = 42;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "TIPO DE USUÁRIO";
+            // 
+            // MtB_Clien_Edit
+            // 
+            this.MtB_Clien_Edit.AutoSize = true;
+            this.MtB_Clien_Edit.CustomBackground = false;
+            this.MtB_Clien_Edit.FontSize = MetroFramework.MetroLinkSize.Small;
+            this.MtB_Clien_Edit.FontWeight = MetroFramework.MetroLinkWeight.Regular;
+            this.MtB_Clien_Edit.Location = new System.Drawing.Point(207, 25);
+            this.MtB_Clien_Edit.Margin = new System.Windows.Forms.Padding(4);
+            this.MtB_Clien_Edit.Name = "MtB_Clien_Edit";
+            this.MtB_Clien_Edit.Size = new System.Drawing.Size(60, 15);
+            this.MtB_Clien_Edit.Style = MetroFramework.MetroColorStyle.Blue;
+            this.MtB_Clien_Edit.StyleManager = null;
+            this.MtB_Clien_Edit.TabIndex = 1;
+            this.MtB_Clien_Edit.TabStop = true;
+            this.MtB_Clien_Edit.Text = "Cliente";
+            this.MtB_Clien_Edit.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MtB_Clien_Edit.UseStyleColors = false;
+            this.MtB_Clien_Edit.UseVisualStyleBackColor = true;
+            // 
+            // MtB_Oper_Edit
+            // 
+            this.MtB_Oper_Edit.AutoSize = true;
+            this.MtB_Oper_Edit.CustomBackground = false;
+            this.MtB_Oper_Edit.FontSize = MetroFramework.MetroLinkSize.Small;
+            this.MtB_Oper_Edit.FontWeight = MetroFramework.MetroLinkWeight.Regular;
+            this.MtB_Oper_Edit.Location = new System.Drawing.Point(24, 25);
+            this.MtB_Oper_Edit.Margin = new System.Windows.Forms.Padding(4);
+            this.MtB_Oper_Edit.Name = "MtB_Oper_Edit";
+            this.MtB_Oper_Edit.Size = new System.Drawing.Size(73, 15);
+            this.MtB_Oper_Edit.Style = MetroFramework.MetroColorStyle.Blue;
+            this.MtB_Oper_Edit.StyleManager = null;
+            this.MtB_Oper_Edit.TabIndex = 0;
+            this.MtB_Oper_Edit.TabStop = true;
+            this.MtB_Oper_Edit.Text = "Operador";
+            this.MtB_Oper_Edit.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MtB_Oper_Edit.UseStyleColors = false;
+            this.MtB_Oper_Edit.UseVisualStyleBackColor = true;
             // 
             // EditarForm
             // 
@@ -542,6 +599,8 @@
             this.Grupo_Dados_P_Funcionarios.PerformLayout();
             this.Grupo_Status.ResumeLayout(false);
             this.Grupo_Status.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -579,5 +638,8 @@
         private MetroFramework.Controls.MetroRadioButton MrB_Inativo_Edit;
         private MetroFramework.Controls.MetroRadioButton MrB_Ativo_Edit;
         public MetroFramework.Controls.MetroButton BNT_Salvar_Edit;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private MetroFramework.Controls.MetroRadioButton MtB_Clien_Edit;
+        private MetroFramework.Controls.MetroRadioButton MtB_Oper_Edit;
     }
 }

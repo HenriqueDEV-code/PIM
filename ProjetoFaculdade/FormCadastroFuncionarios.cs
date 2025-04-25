@@ -477,6 +477,12 @@ namespace ProjetoFaculdade
             return string.Empty;
         }
 
+        private string TipoUsuario()
+        {
+            if (MtB_Oper.Checked) return "Operador";
+            if (MtB_Clien_Edit.Checked) return "Cliente";
+            return string.Empty;
+        }
 
         #endregion
 
@@ -564,7 +570,7 @@ namespace ProjetoFaculdade
                         conn.Open();
 
                         // QUERY
-                        string sql = @"DELETE FROM funcionarios WHERE uid_funcionario = @uid";
+                        string sql = @"DELETE FROM pessoas WHERE uid_funcionario = @uid";
 
                         using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                         {
@@ -633,6 +639,7 @@ namespace ProjetoFaculdade
                     Data_Admissao = DateTime.ParseExact(MtB_Admissao.Text, "dd/MM/yyyy", null),
                     Salario = tB_Salario.Text,
                     Status = StatusFuncionario(),
+                    Tipo_De_Usuario = TipoUsuario(),
                 };
                
 
@@ -641,13 +648,13 @@ namespace ProjetoFaculdade
                 {
                     conn.Open();
 
-                    string sql = @"INSERT INTO funcionarios (
+                    string sql = @"INSERT INTO pessoas (
                          uid_funcionario, nomecompleto_funcionario, cpf, nascimento, idade, sexo, telefone, email, cep,
-                            logradouro, bairro, cidade, uf, cargo, data_admissao, salario, status)
+                            logradouro, bairro, cidade, uf, cargo, data_admissao, salario, status, tipo_de_usuario)
 
                             VALUES (
                             @uid, @nome, @cpf, @nascimento, @idade, @sexo, @telefone, @email, @cep,
-                            @logradouro, @bairro, @cidade, @uf, @cargo, @admissao, @salario, @status)
+                            @logradouro, @bairro, @cidade, @uf, @cargo, @admissao, @salario, @status, @tipo_de_usuario)
                          ";
 
                     using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
@@ -669,6 +676,7 @@ namespace ProjetoFaculdade
                         cmd.Parameters.AddWithValue("@admissao", f.Data_Admissao);
                         cmd.Parameters.AddWithValue("@salario", f.Salario);
                         cmd.Parameters.AddWithValue("@status", f.Status);
+                        cmd.Parameters.AddWithValue("@tipo_de_usuario", f.Tipo_De_Usuario);
                         
 
                         cmd.ExecuteNonQuery();
@@ -733,7 +741,7 @@ namespace ProjetoFaculdade
                     conn.Open();
 
                     // QUERY
-                    string sql = @"SELECT nomecompleto_funcionario, cpf, nascimento, idade, sexo, telefone, email, cep, logradouro, bairro, cidade, uf, cargo, data_admissao, salario, status FROM funcionarios WHERE uid_funcionario = @uid";
+                    string sql = @"SELECT nomecompleto_funcionario, cpf, nascimento, idade, sexo, telefone, email, cep, logradouro, bairro, cidade, uf, cargo, data_admissao, salario, status, tipo_de_usuario FROM pessoas WHERE uid_funcionario = @uid";
 
                     using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                     {
@@ -778,6 +786,13 @@ namespace ProjetoFaculdade
                                 else if (Status == "Inativo")
                                     MrB_Inativo.Checked = true;
 
+                                string Tipo = reader["tipo_de_usuario"].ToString();
+
+                                if (Tipo == "Operador")
+                                    MtB_Oper.Checked = true;
+                                else if (Tipo == "Cliente")
+                                    MtB_Clien_Edit.Checked = true;
+
                             }
                             else
                             {
@@ -800,6 +815,5 @@ namespace ProjetoFaculdade
 
 
         #endregion
-
     }
 }
