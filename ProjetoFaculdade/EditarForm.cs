@@ -154,6 +154,8 @@ namespace ProjetoFaculdade
 
         private void BNT_Salvar_Edit_Click(object sender, EventArgs e)
         {
+            
+
             try
             {
                 // Obter a string de conexão
@@ -171,7 +173,8 @@ namespace ProjetoFaculdade
                     Bairro = tB_Bairro_Edit.Text,
                     Cidade = tB_Cidade_Edit.Text,
                     UF = tB_UF_Edit.Text,
-                    Status = MrB_Ativo_Edit.Checked ? "Ativo" : "Inativo"
+                    Status = MrB_Ativo_Edit.Checked ? "Ativo" : "Inativo",
+                    Tipo_De_Usuario = MtB_Oper_Edit.Checked ? "Operador" : "Cliente"
                 };
 
                 using (NpgsqlConnection conn = new NpgsqlConnection(conexao))

@@ -93,9 +93,11 @@ namespace ProjetoFaculdade
         {
             if (string.IsNullOrWhiteSpace(tB_NomeCompleto.Text))
             {
-                MessageBox.Show("Valor inválido. Campo não pode estar vazio!", "Aviso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tB_NomeCompleto.Focus();
+                errorProvider1.SetError(tB_NomeCompleto, "O campo é obrigatório. ");
+            }
+            else
+            {
+                errorProvider1.SetError(tB_NomeCompleto, "");
             }
 
         }

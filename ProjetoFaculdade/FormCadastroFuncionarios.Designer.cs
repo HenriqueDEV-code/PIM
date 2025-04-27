@@ -45,6 +45,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.Grupo_Dados_P_Funcionarios = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.MtB_Clien_Edit = new MetroFramework.Controls.MetroRadioButton();
+            this.MtB_Oper = new MetroFramework.Controls.MetroRadioButton();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -106,12 +110,10 @@
             this.ToolTip_mensagens = new System.Windows.Forms.ToolTip(this.components);
             this.tB_Busca_Matricula = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.MtB_Clien_Edit = new MetroFramework.Controls.MetroRadioButton();
-            this.MtB_Oper = new MetroFramework.Controls.MetroRadioButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.Grupo_Dados_P_Funcionarios.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.Grupo_Sexo.SuspendLayout();
             this.Grupo_Endereco.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -119,7 +121,7 @@
             this.Grupo_Status.SuspendLayout();
             this.Grupo_Funcoes.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -387,6 +389,73 @@
             this.Grupo_Dados_P_Funcionarios.TabIndex = 1;
             this.Grupo_Dados_P_Funcionarios.TabStop = false;
             this.Grupo_Dados_P_Funcionarios.Text = "DADOS PESSOAIS";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(1471, 296);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(13, 17);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "*";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.MtB_Clien_Edit);
+            this.groupBox2.Controls.Add(this.MtB_Oper);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(1162, 296);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(308, 88);
+            this.groupBox2.TabIndex = 41;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "TIPO DE USUÁRIO";
+            // 
+            // MtB_Clien_Edit
+            // 
+            this.MtB_Clien_Edit.AutoSize = true;
+            this.MtB_Clien_Edit.CustomBackground = false;
+            this.MtB_Clien_Edit.FontSize = MetroFramework.MetroLinkSize.Small;
+            this.MtB_Clien_Edit.FontWeight = MetroFramework.MetroLinkWeight.Regular;
+            this.MtB_Clien_Edit.Location = new System.Drawing.Point(207, 25);
+            this.MtB_Clien_Edit.Margin = new System.Windows.Forms.Padding(4);
+            this.MtB_Clien_Edit.Name = "MtB_Clien_Edit";
+            this.MtB_Clien_Edit.Size = new System.Drawing.Size(60, 15);
+            this.MtB_Clien_Edit.Style = MetroFramework.MetroColorStyle.Blue;
+            this.MtB_Clien_Edit.StyleManager = null;
+            this.MtB_Clien_Edit.TabIndex = 1;
+            this.MtB_Clien_Edit.TabStop = true;
+            this.MtB_Clien_Edit.Text = "Cliente";
+            this.MtB_Clien_Edit.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MtB_Clien_Edit.UseStyleColors = false;
+            this.MtB_Clien_Edit.UseVisualStyleBackColor = true;
+            // 
+            // MtB_Oper
+            // 
+            this.MtB_Oper.AutoSize = true;
+            this.MtB_Oper.CustomBackground = false;
+            this.MtB_Oper.FontSize = MetroFramework.MetroLinkSize.Small;
+            this.MtB_Oper.FontWeight = MetroFramework.MetroLinkWeight.Regular;
+            this.MtB_Oper.Location = new System.Drawing.Point(24, 25);
+            this.MtB_Oper.Margin = new System.Windows.Forms.Padding(4);
+            this.MtB_Oper.Name = "MtB_Oper";
+            this.MtB_Oper.Size = new System.Drawing.Size(73, 15);
+            this.MtB_Oper.Style = MetroFramework.MetroColorStyle.Blue;
+            this.MtB_Oper.StyleManager = null;
+            this.MtB_Oper.TabIndex = 0;
+            this.MtB_Oper.TabStop = true;
+            this.MtB_Oper.Text = "Operador";
+            this.MtB_Oper.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MtB_Oper.UseStyleColors = false;
+            this.MtB_Oper.UseVisualStyleBackColor = true;
             // 
             // label28
             // 
@@ -1268,72 +1337,9 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "BUSCA";
             // 
-            // groupBox2
+            // errorProvider1
             // 
-            this.groupBox2.Controls.Add(this.MtB_Clien_Edit);
-            this.groupBox2.Controls.Add(this.MtB_Oper);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(1162, 296);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(308, 88);
-            this.groupBox2.TabIndex = 41;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "TIPO DE USUÁRIO";
-            // 
-            // MtB_Clien_Edit
-            // 
-            this.MtB_Clien_Edit.AutoSize = true;
-            this.MtB_Clien_Edit.CustomBackground = false;
-            this.MtB_Clien_Edit.FontSize = MetroFramework.MetroLinkSize.Small;
-            this.MtB_Clien_Edit.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.MtB_Clien_Edit.Location = new System.Drawing.Point(207, 25);
-            this.MtB_Clien_Edit.Margin = new System.Windows.Forms.Padding(4);
-            this.MtB_Clien_Edit.Name = "MtB_Clien_Edit";
-            this.MtB_Clien_Edit.Size = new System.Drawing.Size(60, 15);
-            this.MtB_Clien_Edit.Style = MetroFramework.MetroColorStyle.Blue;
-            this.MtB_Clien_Edit.StyleManager = null;
-            this.MtB_Clien_Edit.TabIndex = 1;
-            this.MtB_Clien_Edit.TabStop = true;
-            this.MtB_Clien_Edit.Text = "Cliente";
-            this.MtB_Clien_Edit.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.MtB_Clien_Edit.UseStyleColors = false;
-            this.MtB_Clien_Edit.UseVisualStyleBackColor = true;
-            // 
-            // MtB_Oper
-            // 
-            this.MtB_Oper.AutoSize = true;
-            this.MtB_Oper.CustomBackground = false;
-            this.MtB_Oper.FontSize = MetroFramework.MetroLinkSize.Small;
-            this.MtB_Oper.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.MtB_Oper.Location = new System.Drawing.Point(24, 25);
-            this.MtB_Oper.Margin = new System.Windows.Forms.Padding(4);
-            this.MtB_Oper.Name = "MtB_Oper";
-            this.MtB_Oper.Size = new System.Drawing.Size(73, 15);
-            this.MtB_Oper.Style = MetroFramework.MetroColorStyle.Blue;
-            this.MtB_Oper.StyleManager = null;
-            this.MtB_Oper.TabIndex = 0;
-            this.MtB_Oper.TabStop = true;
-            this.MtB_Oper.Text = "Operador";
-            this.MtB_Oper.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.MtB_Oper.UseStyleColors = false;
-            this.MtB_Oper.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(1471, 296);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 17);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "*";
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormCadastroFuncionarios
             // 
@@ -1363,6 +1369,8 @@
             this.panel1.PerformLayout();
             this.Grupo_Dados_P_Funcionarios.ResumeLayout(false);
             this.Grupo_Dados_P_Funcionarios.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.Grupo_Sexo.ResumeLayout(false);
             this.Grupo_Sexo.PerformLayout();
             this.Grupo_Endereco.ResumeLayout(false);
@@ -1375,8 +1383,7 @@
             this.Grupo_Funcoes.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1464,5 +1471,6 @@
         private MetroFramework.Controls.MetroRadioButton MtB_Clien_Edit;
         private MetroFramework.Controls.MetroRadioButton MtB_Oper;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

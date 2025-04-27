@@ -29,6 +29,8 @@ namespace ProjetoFaculdade
         public string Senha { get; set; }
 
     }
+
+   
 }
 
 
