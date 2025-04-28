@@ -894,7 +894,7 @@
             this.MBNT_Pesquisa_CEP.Style = MetroFramework.MetroColorStyle.Blue;
             this.MBNT_Pesquisa_CEP.StyleManager = null;
             this.MBNT_Pesquisa_CEP.TabIndex = 19;
-            this.MBNT_Pesquisa_CEP.Text = "Pesquisar";
+            this.MBNT_Pesquisa_CEP.Text = "&Pesquisar";
             this.MBNT_Pesquisa_CEP.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MBNT_Pesquisa_CEP.Click += new System.EventHandler(this.MBNT_Pesquisa_CEP_Click);
             // 
@@ -1250,7 +1250,7 @@
             this.MBNT_Salvar.Style = MetroFramework.MetroColorStyle.Blue;
             this.MBNT_Salvar.StyleManager = null;
             this.MBNT_Salvar.TabIndex = 24;
-            this.MBNT_Salvar.Text = "Salvar";
+            this.MBNT_Salvar.Text = "&Salvar";
             this.MBNT_Salvar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MBNT_Salvar.Click += new System.EventHandler(this.MBNT_Salvar_Click);
             // 
@@ -1264,7 +1264,7 @@
             this.MBNT_Excluir.Style = MetroFramework.MetroColorStyle.Blue;
             this.MBNT_Excluir.StyleManager = null;
             this.MBNT_Excluir.TabIndex = 22;
-            this.MBNT_Excluir.Text = "Excluir Usuário";
+            this.MBNT_Excluir.Text = "Excluir &Usuário";
             this.MBNT_Excluir.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MBNT_Excluir.Click += new System.EventHandler(this.MBNT_Excluir_Click);
             // 
@@ -1278,7 +1278,7 @@
             this.MBNT_Editar.Style = MetroFramework.MetroColorStyle.Blue;
             this.MBNT_Editar.StyleManager = null;
             this.MBNT_Editar.TabIndex = 21;
-            this.MBNT_Editar.Text = "Editar Usuário";
+            this.MBNT_Editar.Text = "&Editar Usuário";
             this.MBNT_Editar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MBNT_Editar.Click += new System.EventHandler(this.MBNT_Editar_Click);
             // 
@@ -1292,7 +1292,7 @@
             this.MBNT_Limpar.Style = MetroFramework.MetroColorStyle.Blue;
             this.MBNT_Limpar.StyleManager = null;
             this.MBNT_Limpar.TabIndex = 20;
-            this.MBNT_Limpar.Text = "Novo Usuário";
+            this.MBNT_Limpar.Text = "&Novo Usuário";
             this.MBNT_Limpar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MBNT_Limpar.Click += new System.EventHandler(this.MBNT_Limpar_Click);
             // 
@@ -1306,7 +1306,7 @@
             this.MBNT_Localizar.Style = MetroFramework.MetroColorStyle.Blue;
             this.MBNT_Localizar.StyleManager = null;
             this.MBNT_Localizar.TabIndex = 23;
-            this.MBNT_Localizar.Text = "Localizar Usuário";
+            this.MBNT_Localizar.Text = "&Localizar Usuário";
             this.MBNT_Localizar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MBNT_Localizar.Click += new System.EventHandler(this.MBNT_Localizar_Click);
             // 

@@ -93,13 +93,12 @@ namespace ProjetoFaculdade
         {
             if (string.IsNullOrWhiteSpace(tB_NomeCompleto.Text))
             {
-                errorProvider1.SetError(tB_NomeCompleto, "O campo é obrigatório. ");
+                errorProvider1.SetError(tB_NomeCompleto, "O campo NOME é obrigatório.");
             }
             else
             {
                 errorProvider1.SetError(tB_NomeCompleto, "");
             }
-
         }
 
         private void tB_Email_Leave(object sender, EventArgs e)
@@ -120,10 +119,13 @@ namespace ProjetoFaculdade
 
             if (!email.Contains("@") || email.Split('@').Length != 2)
             {
-                MessageBox.Show("E-mail inválido!", "Erro",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tB_Email.Focus();
+                errorProvider1.SetError(tB_Email, "Email Invalido");
+                tB_Email.Clear();
                 return;
+            }
+            else
+            {
+                errorProvider1.SetError(tB_Email, "");
             }
 
             // Obtem o dominio digitado pelo usuario
@@ -134,25 +136,24 @@ namespace ProjetoFaculdade
 
             if (!dominioValido)
             {
-                MessageBox.Show("Dominio de E-mail inválido!", "Erro",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                errorProvider1.SetError(tB_Email, "Dominio {@} inválido");
                 tB_Email.Focus();
+            }
+            else
+            {
+                errorProvider1.SetError(tB_Email, "");
             }
         }
 
         private void MtB_Nascimento_Leave(object sender, EventArgs e)
         {
-            // vamos verificar se o campo esta vazio
-            if (string.IsNullOrWhiteSpace(MtB_Nascimento.Text))
-            {
-                return; // sai da funcao sem calcular nada
-            }
+
 
             if (DateTime.TryParseExact(MtB_Nascimento.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataNascimento))
             {
                 // Calcular a idade
                 int idade = Calc_Idade(dataNascimento);
-                
+
                 // Validação da idade permitida
                 if (idade <= 16)
                 {
@@ -179,7 +180,7 @@ namespace ProjetoFaculdade
             {
                 MessageBox.Show("Data inválida! Informe no formato dd/MM/yyyy.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 MtB_Nascimento.Clear();
-                MtB_Nascimento.Focus();
+
             }
 
         }
@@ -204,19 +205,16 @@ namespace ProjetoFaculdade
         {
             string cpf = new string(MtB_CPF.Text.Where(char.IsDigit).ToArray()); // Remove tudo exceto números
 
-            if (string.IsNullOrWhiteSpace(cpf))
-            {
-                MessageBox.Show("Valor inválido. O campo não pode estar vazio!", "Aviso",
-                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                MtB_CPF.Focus();
-                return;
-            }
+
 
             if (!ValidarCPF(cpf))
             {
-                MessageBox.Show("CPF inválido! Digite um CPF válido.", "Erro",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MtB_CPF.Focus();
+                errorProvider1.SetError(MtB_CPF, "CPF inválido! Digite um válido");
+                MtB_CPF.Clear();
+            }
+            else
+            {
+                errorProvider1.SetError(MtB_CPF, "");
             }
 
 
@@ -261,12 +259,7 @@ namespace ProjetoFaculdade
             // Remover espaços e caracteres desnecessários
             cep = cep.Trim().Replace(" ", "").Replace("-", "");
 
-            if (string.IsNullOrWhiteSpace(cep))
-            {
-                MessageBox.Show("Valor inválido. Campo não pode estar vazio!", "Aviso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                MtB_Cep.Focus();
-            }
+
         }
 
 
@@ -335,11 +328,23 @@ namespace ProjetoFaculdade
         private void tB_Cargo_Leave(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(tB_Cargo.Text))
+            if (MtB_Clien_Edit.Checked) // Se for cliente
             {
-                MessageBox.Show("Valor inválido. Campo não pode estar vazio!", "Aviso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tB_Cargo.Focus();
+                tB_Cargo.Enabled = false;
+                errorProvider1.SetError(tB_Cargo, ""); // Sem erro, não é necessário cargo
+            }
+            else // Não é cliente
+            {
+                tB_Cargo.Enabled = true;
+
+                if (string.IsNullOrWhiteSpace(tB_Cargo.Text))
+                {
+                    errorProvider1.SetError(tB_Cargo, "O campo CARGO é obrigatório.");
+                }
+                else
+                {
+                    errorProvider1.SetError(tB_Cargo, ""); 
+                }
             }
 
         }
@@ -367,24 +372,28 @@ namespace ProjetoFaculdade
 
         private void MtB_Telefone_Leave(object sender, EventArgs e)
         {
-            string Telefone = new string(MtB_Telefone.Text.Where(char.IsDigit).ToArray()); // Remove tudo exceto números
+            // Obtem o valor digitado
+            string tel = MtB_Cep.Text;
 
-            if (string.IsNullOrWhiteSpace(Telefone))
+            // Remover espaços e caracteres desnecessários
+            tel = tel.Trim().Replace(" ", "").Replace("-", "").Replace("(", "").Replace(")", "");
+
+            if (string.IsNullOrWhiteSpace(tel))
             {
-                MessageBox.Show("Valor inválido. Campo não pode estar vazio!", "Aviso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                MtB_Telefone.Focus();
-                return;
+                errorProvider1.SetError(MtB_Telefone, "O campo TELEFONE é obrigatório.");
+            }else
+            {
+                errorProvider1.SetError(MtB_Telefone, "");
             }
+
+                string Telefone = new string(MtB_Telefone.Text.Where(char.IsDigit).ToArray()); // Remove tudo exceto números
+
 
             // validar repetiçoes
 
             if (Digito(Telefone))
             {
-                MessageBox.Show("Telefone inválido. Número repetitivo detectado.",
-                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                MtB_Telefone.Clear();
-                MtB_Telefone.Focus();
+                errorProvider1.SetError(MtB_Telefone, "Telefone inválido. Número repetitivo detectado.");
                 return;
             }
 
@@ -395,11 +404,7 @@ namespace ProjetoFaculdade
         private void MtB_Admissao_Leave(object sender, EventArgs e)
         {
 
-            // vamos verificar se o campo esta vazio
-            if (string.IsNullOrWhiteSpace(MtB_Admissao.Text))
-            {
-                return;
-            }
+
 
             // Campo para converte o texto para uma data
 
@@ -442,8 +447,7 @@ namespace ProjetoFaculdade
         {
 
             TextBox txt = sender as TextBox;
-            if (string.IsNullOrWhiteSpace(txt.Text))
-                return;
+
 
             // Remove tudo que não é número
             string valor = new string(txt.Text.Where(char.IsDigit).ToArray());
@@ -532,6 +536,7 @@ namespace ProjetoFaculdade
 
             DefinirEnabledNosCampos(this, true);
             tB_Busca_Matricula.Enabled = false;
+            tB_id_Matricula.Enabled = false;
 
 
         }
@@ -539,6 +544,7 @@ namespace ProjetoFaculdade
 
         private void MBNT_Editar_Click(object sender, EventArgs e)
         {
+           
             EditarForm Edit = new EditarForm();
             Edit.ShowDialog();
             this.Show();
@@ -643,7 +649,7 @@ namespace ProjetoFaculdade
                     Status = StatusFuncionario(),
                     Tipo_De_Usuario = TipoUsuario(),
                 };
-               
+
 
                 // Abrir conexão com o banco
                 using (NpgsqlConnection conn = new NpgsqlConnection(conexao))
@@ -679,27 +685,12 @@ namespace ProjetoFaculdade
                         cmd.Parameters.AddWithValue("@salario", f.Salario);
                         cmd.Parameters.AddWithValue("@status", f.Status);
                         cmd.Parameters.AddWithValue("@tipo_de_usuario", f.Tipo_De_Usuario);
-                        
+
 
                         cmd.ExecuteNonQuery();
                     }
                     MessageBox.Show("Funcionário salvo com sucesso!");
-                    tB_NomeCompleto.Clear();
-                    tB_Email.Clear();
-                    MtB_Telefone.Clear();
-                    MtB_CPF.Clear();
-                    MtB_Nascimento.Clear();
-                    MtB_Cep.Clear();
-                    tB_Logradouro.Clear();
-                    tB_Bairro.Clear();
-                    tB_Cidade.Clear();
-                    tB_UF.Clear();
-                    tB_Cargo.Clear();
-                    MtB_Admissao.Clear();
-                    tB_Salario.Clear();
-                    tB_id_Matricula.Clear();
-
-                    DefinirEnabledNosCampos(this, false);
+                    this.Close();
 
                 }
 

@@ -214,6 +214,16 @@ namespace ProjetoFaculdade
                         if (linhasAfetadas > 0)
                         {
                             MessageBox.Show("Funcionário atualizado com sucesso!");
+                            tB_NomeCompleto_Edit.Clear();
+                            tB_Email_Edit.Clear();
+                            MtB_Telefone_Edit.Clear();
+                            MtB_Cep_Edit.Clear();
+                            tB_Logradouro_Edit.Clear();
+                            tB_Bairro_Edit.Clear();
+                            tB_Cidade_Edit.Clear();
+                            tB_UF_Edit.Clear();
+                            tB_Busca_Matricula_Edit.Clear();
+                            this.Close();
                         }
                         else
                         {
