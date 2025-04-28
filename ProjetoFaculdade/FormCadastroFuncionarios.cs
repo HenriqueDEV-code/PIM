@@ -530,7 +530,7 @@ namespace ProjetoFaculdade
             tB_Salario.Clear();
             tB_id_Matricula.Clear();
             tB_Busca_Matricula.Clear();
-            tB_id_Matricula.Focus();
+            tB_NomeCompleto.Focus();
 
             tB_id_Matricula.Text = GerarMatricula();
 
