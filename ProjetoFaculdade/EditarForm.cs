@@ -76,7 +76,7 @@ namespace ProjetoFaculdade
             DefinirEnabledNosCampos(this, true);
             tB_Busca_Matricula_Edit.Focus();
 
-            if (string.IsNullOrEmpty(tB_Busca_Matricula_Edit.Text))
+            if (string.IsNullOrWhiteSpace(tB_Busca_Matricula_Edit.Text))
             {
                 return;
             }
@@ -274,9 +274,8 @@ namespace ProjetoFaculdade
 
             if (!dominioValido)
             {
-                MessageBox.Show("Dominio de E-mail inválido!", "Erro",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tB_Email_Edit.Focus();
+                errorProvider1.SetError(tB_NomeCompleto_Edit, "Dominio de E-mail inválido!");
+                
             }
         }
 
@@ -306,21 +305,23 @@ namespace ProjetoFaculdade
 
             if (string.IsNullOrWhiteSpace(Telefone))
             {
-                MessageBox.Show("Valor inválido. Campo não pode estar vazio!", "Aviso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                MtB_Telefone_Edit.Focus();
-                return;
+                errorProvider1.SetError(MtB_Telefone_Edit, "O campo TELEFONE deve ser preenchido");
+            }
+            else
+            {
+                errorProvider1.SetError(MtB_Telefone_Edit, "");
             }
 
             // validar repetiçoes
 
             if (Digito(Telefone))
             {
-                MessageBox.Show("Telefone inválido. Número repetitivo detectado.",
-                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                MtB_Telefone_Edit.Clear();
-                MtB_Telefone_Edit.Focus();
+                errorProvider1.SetError(MtB_Telefone_Edit, "Telefone inválido. Número repetitivo detectado.");
                 return;
+            }
+            else
+            {
+                errorProvider1.SetError(MtB_Telefone_Edit, "");
             }
 
         }
@@ -333,9 +334,11 @@ namespace ProjetoFaculdade
 
             if (string.IsNullOrWhiteSpace(cep))
             {
-                MessageBox.Show("Valor inválido. Campo não pode estar vazio!", "Aviso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                MtB_Cep_Edit.Focus();
+                errorProvider1.SetError(MtB_Cep_Edit, "O campo CEP deve ser preenchido");
+            }
+           else
+            {
+                errorProvider1.SetError(MtB_Cep_Edit, "");
             }
 
         }
@@ -405,9 +408,11 @@ namespace ProjetoFaculdade
         {
             if (string.IsNullOrWhiteSpace(tB_NomeCompleto_Edit.Text))
             {
-                MessageBox.Show("Valor inválido. Campo não pode estar vazio!", "Aviso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tB_NomeCompleto_Edit.Focus();
+                errorProvider1.SetError(tB_NomeCompleto_Edit, "O campo NOME deve ser preenchido");
+            }
+            else
+            {
+                errorProvider1.SetError(tB_NomeCompleto_Edit, "");
             }
         }
 

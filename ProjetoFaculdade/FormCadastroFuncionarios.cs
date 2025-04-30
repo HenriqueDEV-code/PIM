@@ -530,13 +530,14 @@ namespace ProjetoFaculdade
             tB_Salario.Clear();
             tB_id_Matricula.Clear();
             tB_Busca_Matricula.Clear();
-            tB_NomeCompleto.Focus();
+            
 
             tB_id_Matricula.Text = GerarMatricula();
 
             DefinirEnabledNosCampos(this, true);
             tB_Busca_Matricula.Enabled = false;
             tB_id_Matricula.Enabled = false;
+            tB_NomeCompleto.Focus();
 
 
         }

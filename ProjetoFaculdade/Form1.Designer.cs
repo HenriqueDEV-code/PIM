@@ -81,7 +81,7 @@
             this.MButon_Login.Style = MetroFramework.MetroColorStyle.Blue;
             this.MButon_Login.StyleManager = null;
             this.MButon_Login.TabIndex = 17;
-            this.MButon_Login.Text = "Login";
+            this.MButon_Login.Text = "&Login";
             this.MButon_Login.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MButon_Login.Click += new System.EventHandler(this.MButon_Login_Click);
             // 
@@ -124,7 +124,7 @@
             this.Esqueceu_Senha.Name = "Esqueceu_Senha";
             this.Esqueceu_Senha.Size = new System.Drawing.Size(203, 25);
             this.Esqueceu_Senha.TabIndex = 14;
-            this.Esqueceu_Senha.Text = "Esqueceu a senha?";
+            this.Esqueceu_Senha.Text = "&Esqueceu a senha?";
             this.toolTip1.SetToolTip(this.Esqueceu_Senha, "Esqueceu Senha ou                             \r\nÉ seu primeiro Acesso!           " +
         "               \r\nCique aqui.                                             ");
             this.Esqueceu_Senha.Click += new System.EventHandler(this.Esqueceu_Senha_Click);

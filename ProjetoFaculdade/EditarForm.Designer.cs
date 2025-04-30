@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.MBNT_Localizar = new MetroFramework.Controls.MetroButton();
             this.tB_Busca_Matricula_Edit = new System.Windows.Forms.TextBox();
@@ -62,11 +63,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.BNT_Salvar_Edit = new MetroFramework.Controls.MetroButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.Grupo_Endereco.SuspendLayout();
             this.Grupo_Dados_P_Funcionarios.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.Grupo_Status.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -575,6 +578,10 @@
             this.BNT_Salvar_Edit.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BNT_Salvar_Edit.Click += new System.EventHandler(this.BNT_Salvar_Edit_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // EditarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -601,6 +608,7 @@
             this.groupBox2.PerformLayout();
             this.Grupo_Status.ResumeLayout(false);
             this.Grupo_Status.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -641,5 +649,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private MetroFramework.Controls.MetroRadioButton MtB_Clien_Edit;
         private MetroFramework.Controls.MetroRadioButton MtB_Oper_Edit;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -111,7 +111,7 @@
             this.MBNT_Verificar_Codigo.Style = MetroFramework.MetroColorStyle.Blue;
             this.MBNT_Verificar_Codigo.StyleManager = null;
             this.MBNT_Verificar_Codigo.TabIndex = 44;
-            this.MBNT_Verificar_Codigo.Text = "Verificar";
+            this.MBNT_Verificar_Codigo.Text = "&Verificar";
             this.MBNT_Verificar_Codigo.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MBNT_Verificar_Codigo.Click += new System.EventHandler(this.MBNT_Verificar_Click);
             // 
@@ -161,7 +161,7 @@
             this.BnT_Verificar_Senha_Temp.Style = MetroFramework.MetroColorStyle.Blue;
             this.BnT_Verificar_Senha_Temp.StyleManager = null;
             this.BnT_Verificar_Senha_Temp.TabIndex = 48;
-            this.BnT_Verificar_Senha_Temp.Text = "Verificar";
+            this.BnT_Verificar_Senha_Temp.Text = "Verifica&r";
             this.BnT_Verificar_Senha_Temp.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BnT_Verificar_Senha_Temp.Visible = false;
             this.BnT_Verificar_Senha_Temp.Click += new System.EventHandler(this.BnT_Verificar_Senha_Temp_Click);
@@ -187,7 +187,7 @@
             this.metroButton1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroButton1.StyleManager = null;
             this.metroButton1.TabIndex = 51;
-            this.metroButton1.Text = "Enviar Código";
+            this.metroButton1.Text = "&Enviar Código";
             this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
