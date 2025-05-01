@@ -40,7 +40,7 @@
             this.MButton_Cadastro.Style = MetroFramework.MetroColorStyle.Blue;
             this.MButton_Cadastro.StyleManager = null;
             this.MButton_Cadastro.TabIndex = 17;
-            this.MButton_Cadastro.Text = "Cadastrar";
+            this.MButton_Cadastro.Text = "&Cadastrar";
             this.MButton_Cadastro.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MButton_Cadastro.Click += new System.EventHandler(this.MButton_Cadastro_Click);
             // 

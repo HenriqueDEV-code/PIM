@@ -137,7 +137,7 @@ namespace ProjetoFaculdade
             if (!dominioValido)
             {
                 errorProvider1.SetError(tB_Email, "Dominio {@} inválido");
-                tB_Email.Focus();
+                return;
             }
             else
             {
@@ -255,11 +255,15 @@ namespace ProjetoFaculdade
 
         private void MtB_Cep_Leave(object sender, EventArgs e)
         {
-            string cep = MtB_Cep.Text;
-            // Remover espaços e caracteres desnecessários
-            cep = cep.Trim().Replace(" ", "").Replace("-", "");
+            string cep = MtB_Cep.Text.Trim().Replace(" ", "").Replace("-", "");
+            MtB_Cep.Text = cep; // Atualiza o texto no campo, se desejar
+            MBNT_Pesquisa_CEP_Click(sender, e);
 
+        }
 
+        private string LimparCep(string cep)
+        {
+            return cep.Trim().Replace(" ", "").Replace("-", "");
         }
 
 
@@ -268,8 +272,7 @@ namespace ProjetoFaculdade
             // Obtem o valor digitado
             string cep = MtB_Cep.Text;
 
-            // Remover espaços e caracteres desnecessários
-            cep = cep.Trim().Replace(" ", "").Replace("-", "");
+            cep = LimparCep(cep);
 
             try
             {
@@ -332,7 +335,9 @@ namespace ProjetoFaculdade
             {
                 tB_Cargo.Enabled = false;
                 errorProvider1.SetError(tB_Cargo, ""); // Sem erro, não é necessário cargo
+               
             }
+
             else // Não é cliente
             {
                 tB_Cargo.Enabled = true;
@@ -372,32 +377,27 @@ namespace ProjetoFaculdade
 
         private void MtB_Telefone_Leave(object sender, EventArgs e)
         {
-            // Obtem o valor digitado
-            string tel = MtB_Cep.Text;
+            string telefone = new string(MtB_Telefone.Text.Where(char.IsDigit).ToArray());
 
-            // Remover espaços e caracteres desnecessários
-            tel = tel.Trim().Replace(" ", "").Replace("-", "").Replace("(", "").Replace(")", "");
-
-            if (string.IsNullOrWhiteSpace(tel))
+            if (string.IsNullOrWhiteSpace(telefone))
             {
                 errorProvider1.SetError(MtB_Telefone, "O campo TELEFONE é obrigatório.");
-            }else
+                return;
+            }
+            else
             {
                 errorProvider1.SetError(MtB_Telefone, "");
             }
 
-                string Telefone = new string(MtB_Telefone.Text.Where(char.IsDigit).ToArray()); // Remove tudo exceto números
-
-
-            // validar repetiçoes
-
-            if (Digito(Telefone))
+            if (Digito(telefone))
             {
                 errorProvider1.SetError(MtB_Telefone, "Telefone inválido. Número repetitivo detectado.");
                 return;
             }
-
-
+            else
+            {
+                errorProvider1.SetError(MtB_Telefone, "");
+            }
         }
 
 
@@ -486,7 +486,7 @@ namespace ProjetoFaculdade
         private string TipoUsuario()
         {
             if (MtB_Oper.Checked) return "Operador";
-            if (MtB_Clien_Edit.Checked) return "Cliente";
+            if (MtB_Clien_Edit.Checked) return "Clientes";
             return string.Empty;
         }
 
@@ -512,8 +512,7 @@ namespace ProjetoFaculdade
             return matricula.ToString();
         }
 
-
-        private void MBNT_Limpar_Click(object sender, EventArgs e)
+         private void Clear()
         {
             tB_NomeCompleto.Clear();
             tB_Email.Clear();
@@ -530,6 +529,11 @@ namespace ProjetoFaculdade
             tB_Salario.Clear();
             tB_id_Matricula.Clear();
             tB_Busca_Matricula.Clear();
+        }
+
+        private void MBNT_Limpar_Click(object sender, EventArgs e)
+        {
+            Clear();
             
 
             tB_id_Matricula.Text = GerarMatricula();
@@ -657,6 +661,48 @@ namespace ProjetoFaculdade
                 {
                     conn.Open();
 
+
+                    // Verificar se o e-mail, CPF ou telefone já existem
+                    string sqlVerificaDuplicados = @"SELECT email, cpf, telefone FROM pessoas 
+                                                   WHERE email = @verifica_email OR cpf = @verifica_cpf OR telefone = @verifica_telefone";
+
+                    using (NpgsqlCommand cmdVerifica = new NpgsqlCommand(sqlVerificaDuplicados, conn))
+                    {
+                        cmdVerifica.Parameters.AddWithValue("@verifica_email", f.Email);
+                        cmdVerifica.Parameters.AddWithValue("@verifica_cpf", f.CPF);
+                        cmdVerifica.Parameters.AddWithValue("@verifica_telefone", f.Telefone);
+
+                        using (var reader = cmdVerifica.ExecuteReader())
+                        {
+                            bool duplicado = false;
+
+                            while (reader.Read())
+                            {
+                                if (reader["email"].ToString() == f.Email)
+                                {
+                                    errorProvider1.SetError(tB_Email, "Este e-mail já está cadastrado.");
+                                    duplicado = true;
+                                }
+
+                                if (reader["cpf"].ToString() == f.CPF)
+                                {
+                                    errorProvider1.SetError(MtB_CPF, "Este CPF já está cadastrado.");
+                                    duplicado = true;
+                                }
+
+                                if (reader["telefone"].ToString() == f.Telefone)
+                                {
+                                    errorProvider1.SetError(MtB_Telefone, "Este telefone já está cadastrado.");
+                                    duplicado = true;
+                                }
+                            }
+
+                            if (duplicado)
+                            {
+                                return; // Sai do método sem tentar inserir
+                            }
+                        }
+                    }
                     string sql = @"INSERT INTO pessoas (
                          uid_funcionario, nomecompleto_funcionario, cpf, nascimento, idade, sexo, telefone, email, cep,
                             logradouro, bairro, cidade, uf, cargo, data_admissao, salario, status, tipo_de_usuario)
@@ -707,9 +753,11 @@ namespace ProjetoFaculdade
 
         private void MBNT_Localizar_Click(object sender, EventArgs e)
         {
+            Clear();
             DefinirEnabledNosCampos(this, false);
             tB_Busca_Matricula.Enabled = true;
             tB_id_Matricula.Clear();
+            tB_Busca_Matricula.Focus();
 
 
 
