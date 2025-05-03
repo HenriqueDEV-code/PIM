@@ -753,7 +753,6 @@ namespace ProjetoFaculdade
 
         private void MBNT_Localizar_Click(object sender, EventArgs e)
         {
-            Clear();
             DefinirEnabledNosCampos(this, false);
             tB_Busca_Matricula.Enabled = true;
             tB_id_Matricula.Clear();
