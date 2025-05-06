@@ -10,6 +10,10 @@ using System.Net;
 using System.Net.Mail;
 using System.Windows.Forms;
 using Npgsql;
+
+
+
+
 using static ProjetoFaculdade.EsquecerSenha;
 
 namespace ProjetoFaculdade
@@ -109,10 +113,13 @@ namespace ProjetoFaculdade
                     using (var conexao = new NpgsqlConnection("Host=localhost;Port=5432;Database=car_tech_assist;Username=postgres;Password=1@2b3!4?5#C;"))
                     {
                         conexao.Open();
+
+                        string senhaCriptografada = Seguranca.GerarHashSHA256(senhaTemporaria);
+
                         string query = @"UPDATE pessoas SET senha = @senha WHERE email = @email";
                         using (var comando = new NpgsqlCommand(query, conexao))
                         {
-                            comando.Parameters.AddWithValue("@senha", senhaTemporaria);
+                            comando.Parameters.AddWithValue("@senha", senhaCriptografada);
                             comando.Parameters.AddWithValue("@email", emailFuncionario);
                             comando.ExecuteNonQuery();
                         }
@@ -210,11 +217,12 @@ namespace ProjetoFaculdade
                 using (var conn = new NpgsqlConnection(conexao))
                 {
                     conn.Open();
+                    string senhaCriptografada = Seguranca.GerarHashSHA256(tB_New_Senha.Text);
                     string sql = @"UPDATE pessoas SET senha = @novaSenha WHERE email = @Email";
 
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
-                        cmd.Parameters.AddWithValue("@novaSenha", tB_New_Senha.Text); 
+                        cmd.Parameters.AddWithValue("@novaSenha", senhaCriptografada); 
                         cmd.Parameters.AddWithValue("@Email", emailFuncionario);
 
                         int linhasAfetadas = cmd.ExecuteNonQuery();

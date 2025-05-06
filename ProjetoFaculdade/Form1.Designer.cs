@@ -147,6 +147,7 @@
             this.tB_Usuario_Login.Size = new System.Drawing.Size(524, 53);
             this.tB_Usuario_Login.TabIndex = 13;
             this.toolTip1.SetToolTip(this.tB_Usuario_Login, "Digite a sua Matricula.");
+            this.tB_Usuario_Login.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tB_Usuario_Login_KeyPress);
             // 
             // pictureBox1
             // 
