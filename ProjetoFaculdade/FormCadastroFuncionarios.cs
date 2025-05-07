@@ -486,7 +486,7 @@ namespace ProjetoFaculdade
         private string TipoUsuario()
         {
             if (MtB_Oper.Checked) return "Operador";
-            if (MtB_Clien_Edit.Checked) return "Clientes";
+            if (MtB_Clien_Edit.Checked) return "Cliente";
             return string.Empty;
         }
 

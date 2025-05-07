@@ -213,7 +213,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(-2, 581);
+            this.label6.Location = new System.Drawing.Point(-2, 368);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(398, 29);
@@ -228,7 +228,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(47, 524);
+            this.label5.Location = new System.Drawing.Point(47, 311);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(301, 29);
@@ -243,7 +243,7 @@
             this.label_BemVindo.AutoSize = true;
             this.label_BemVindo.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
             this.label_BemVindo.ForeColor = System.Drawing.Color.White;
-            this.label_BemVindo.Location = new System.Drawing.Point(87, 258);
+            this.label_BemVindo.Location = new System.Drawing.Point(72, 194);
             this.label_BemVindo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_BemVindo.Name = "label_BemVindo";
             this.label_BemVindo.Size = new System.Drawing.Size(221, 47);
@@ -258,7 +258,7 @@
             this.abel_Support_Titulo_Cadastro.AutoSize = true;
             this.abel_Support_Titulo_Cadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F);
             this.abel_Support_Titulo_Cadastro.ForeColor = System.Drawing.Color.White;
-            this.abel_Support_Titulo_Cadastro.Location = new System.Drawing.Point(209, 23);
+            this.abel_Support_Titulo_Cadastro.Location = new System.Drawing.Point(226, 21);
             this.abel_Support_Titulo_Cadastro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.abel_Support_Titulo_Cadastro.Name = "abel_Support_Titulo_Cadastro";
             this.abel_Support_Titulo_Cadastro.Size = new System.Drawing.Size(149, 54);
@@ -273,7 +273,7 @@
             this.abel_Tech_Titulo_Cadastro.AutoSize = true;
             this.abel_Tech_Titulo_Cadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F);
             this.abel_Tech_Titulo_Cadastro.ForeColor = System.Drawing.Color.Yellow;
-            this.abel_Tech_Titulo_Cadastro.Location = new System.Drawing.Point(94, 23);
+            this.abel_Tech_Titulo_Cadastro.Location = new System.Drawing.Point(111, 21);
             this.abel_Tech_Titulo_Cadastro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.abel_Tech_Titulo_Cadastro.Name = "abel_Tech_Titulo_Cadastro";
             this.abel_Tech_Titulo_Cadastro.Size = new System.Drawing.Size(128, 54);
@@ -288,7 +288,7 @@
             this.label_Car_Titulo_Cadastro.AutoSize = true;
             this.label_Car_Titulo_Cadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F);
             this.label_Car_Titulo_Cadastro.ForeColor = System.Drawing.Color.White;
-            this.label_Car_Titulo_Cadastro.Location = new System.Drawing.Point(4, 23);
+            this.label_Car_Titulo_Cadastro.Location = new System.Drawing.Point(21, 21);
             this.label_Car_Titulo_Cadastro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Car_Titulo_Cadastro.Name = "label_Car_Titulo_Cadastro";
             this.label_Car_Titulo_Cadastro.Size = new System.Drawing.Size(99, 54);
@@ -1323,6 +1323,7 @@
             this.tB_Busca_Matricula.Name = "tB_Busca_Matricula";
             this.tB_Busca_Matricula.Size = new System.Drawing.Size(242, 31);
             this.tB_Busca_Matricula.TabIndex = 29;
+            this.ToolTip_mensagens.SetToolTip(this.tB_Busca_Matricula, "Clica em Localizar Usuário ou clica ALT+L");
             this.tB_Busca_Matricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tB_Busca_Matricula_KeyPress);
             // 
             // groupBox1

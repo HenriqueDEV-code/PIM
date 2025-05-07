@@ -1,8 +1,4 @@
-﻿
-
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,10 +39,12 @@ namespace ProjetoFaculdade
 
         private void MButon_Login_Click(object sender, EventArgs e)
         {
+
             string connectionString = "Host=localhost;Port=5432;Database=car_tech_assist;Username=postgres;Password=1@2b3!4?5#C;";
 
             string matricula = tB_Usuario_Login.Text.Trim();
             string senha = tB_Senha_Usuario.Text.Trim();
+            string nome = "";
 
             if (string.IsNullOrEmpty(matricula) || string.IsNullOrEmpty(senha))
             {
@@ -63,7 +61,8 @@ namespace ProjetoFaculdade
             Funcionarios f = new Funcionarios()
             {
                 UID_Funcionario = uidFuncionario,
-                Senha = senha
+                Senha = senha,
+                
             };
 
             using (var conn = new NpgsqlConnection(connectionString))
@@ -72,19 +71,21 @@ namespace ProjetoFaculdade
                 {
                     conn.Open();
                     string senhaCriptografada = Seguranca.GerarHashSHA256(f.Senha);
-                    string sql = "SELECT COUNT(*) FROM pessoas WHERE uid_funcionario = @matricula AND senha = @senha";
+                    string sql = @"SELECT COUNT(*) FROM pessoas WHERE uid_funcionario = @matricula AND senha = @senha";
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@matricula", f.UID_Funcionario);
                         cmd.Parameters.AddWithValue("@senha", senhaCriptografada);
-
+                        
                         int count = Convert.ToInt32(cmd.ExecuteScalar());
                         if (count > 0)
                         {
-                            AreaDeChamados Chamados = new AreaDeChamados();
+                            AreaDeChamados Chamados = new AreaDeChamados(tB_Usuario_Login.Text);
                             this.Hide();
                             Chamados.ShowDialog();
                             this.Show();
+                            tB_Senha_Usuario.Clear();
+                            
                         }
                         else
                         {
@@ -99,5 +100,42 @@ namespace ProjetoFaculdade
             }
         }
 
+        private void tB_Usuario_Login_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tB_Usuario_Login.Text))
+            {
+                errorProvider1.SetError(tB_Usuario_Login, "O campo Matricula é obrigatório.");
+            }
+            else
+            {
+                errorProvider1.SetError(tB_Usuario_Login, "");
+            }
+        }
+
+        private void tB_Senha_Usuario_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tB_Senha_Usuario.Text))
+            {
+                errorProvider1.SetError(tB_Senha_Usuario, "O campo Senha é obrigatório.");
+            }
+            else
+            {
+                errorProvider1.SetError(tB_Senha_Usuario, "");
+            }
+        }
+
+        private void Ocultar_Senha_Click(object sender, EventArgs e)
+        {
+            tB_Senha_Usuario.PasswordChar = '\0';
+            Ocultar_Senha.Visible = false;
+            Mostrar_Senha.Visible = true;
+        }
+
+        private void Mostrar_Senha_Click(object sender, EventArgs e)
+        {
+            tB_Senha_Usuario.PasswordChar = '*';
+            Mostrar_Senha.Visible = false;
+            Ocultar_Senha.Visible = true;
+        }
     }
 }

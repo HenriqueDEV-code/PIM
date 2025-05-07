@@ -163,6 +163,16 @@ namespace ProjetoFaculdade.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_ocultar_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ocultar-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_pesquisar_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-pesquisar-30", resourceCulture);
@@ -196,6 +206,16 @@ namespace ProjetoFaculdade.Properties {
         internal static System.Drawing.Bitmap icons8_usuário_60 {
             get {
                 object obj = ResourceManager.GetObject("icons8-usuário-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_visão_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-visão-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
