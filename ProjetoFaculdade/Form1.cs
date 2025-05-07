@@ -41,10 +41,8 @@ namespace ProjetoFaculdade
         {
 
             string connectionString = "Host=localhost;Port=5432;Database=car_tech_assist;Username=postgres;Password=1@2b3!4?5#C;";
-
             string matricula = tB_Usuario_Login.Text.Trim();
             string senha = tB_Senha_Usuario.Text.Trim();
-            string nome = "";
 
             if (string.IsNullOrEmpty(matricula) || string.IsNullOrEmpty(senha))
             {
@@ -62,30 +60,48 @@ namespace ProjetoFaculdade
             {
                 UID_Funcionario = uidFuncionario,
                 Senha = senha,
-                
             };
 
-            using (var conn = new NpgsqlConnection(connectionString))
+            try
             {
-                try
+                using (var conn = new NpgsqlConnection(connectionString))
                 {
                     conn.Open();
                     string senhaCriptografada = Seguranca.GerarHashSHA256(f.Senha);
-                    string sql = @"SELECT COUNT(*) FROM pessoas WHERE uid_funcionario = @matricula AND senha = @senha";
+
+                    string sql = @"SELECT tipo_de_usuario FROM pessoas WHERE uid_funcionario = @matricula AND senha = @senha";
+
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@matricula", f.UID_Funcionario);
                         cmd.Parameters.AddWithValue("@senha", senhaCriptografada);
-                        
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
-                        if (count > 0)
+
+                        object tipoObj = cmd.ExecuteScalar();
+
+                        if (tipoObj != null)
                         {
-                            AreaDeChamados Chamados = new AreaDeChamados(tB_Usuario_Login.Text);
-                            this.Hide();
-                            Chamados.ShowDialog();
-                            this.Show();
-                            tB_Senha_Usuario.Clear();
-                            
+                            string tipoUsuario = tipoObj.ToString().Trim().ToLower();
+                           
+
+                            if (tipoUsuario == "cliente")
+                            {
+                                TelaCliente cliente = new TelaCliente(matricula);
+                                this.Hide();
+                                cliente.ShowDialog();
+                                this.Show();
+                            }
+                            else if (tipoUsuario == "operador")
+                            {
+                                AreaDeChamados chamados = new AreaDeChamados(matricula);
+                                this.Hide();
+                                chamados.ShowDialog();
+                                this.Show();
+                                tB_Senha_Usuario.Clear();
+                            }
+                            else
+                            {
+                                MessageBox.Show($"Tipo de usuário não reconhecido: {tipoUsuario}");
+                            }
                         }
                         else
                         {
@@ -93,10 +109,10 @@ namespace ProjetoFaculdade
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao conectar ao banco: " + ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao conectar ao banco: " + ex.Message);
             }
         }
 

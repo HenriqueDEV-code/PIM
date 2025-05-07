@@ -11,24 +11,23 @@ using System.Windows.Forms;
 
 namespace ProjetoFaculdade
 {
-    public partial class AreaDeChamados : Form
+    public partial class TelaCliente : Form
     {
         private string matricula;
         private string nomeCompleto;
-        private string tipoUsuario;
+       
 
-        public AreaDeChamados(string matricula)
+        public TelaCliente(string matricula)
         {
             InitializeComponent();
             this.matricula = matricula;
             BuscarNomeNoBanco();
-            
         }
 
         private void BuscarNomeNoBanco()
         {
             string connectionString = "Host=localhost;Port=5432;Database=car_tech_assist;Username=postgres;Password=1@2b3!4?5#C;";
-            string query = "SELECT nomecompleto_funcionario, tipo_de_usuario FROM pessoas WHERE uid_funcionario = @matricula";
+            string query = "SELECT nomecompleto_funcionario FROM pessoas WHERE uid_funcionario = @matricula";
 
             try
             {
@@ -45,8 +44,6 @@ namespace ProjetoFaculdade
                         {
                             MessageBox.Show("Erro: matrícula inválida.");
                             nomeCompleto = "Inválida";
-                            tipoUsuario = "Desconhecido";
-                            MButton_Cadastro.Visible = false;
                             return;
                         }
 
@@ -55,37 +52,25 @@ namespace ProjetoFaculdade
                             if (reader.Read())
                             {
                                 nomeCompleto = reader["nomecompleto_funcionario"].ToString();
-                                tipoUsuario = reader["tipo_de_usuario"].ToString();
                             }
                             else
                             {
                                 nomeCompleto = "Não encontrado";
-                                tipoUsuario = "Desconhecido";
                             }
                         }
                     }
                 }
 
-                this.Text = $"Área de Chamados - {matricula} - {nomeCompleto}";
-                MButton_Cadastro.Visible = tipoUsuario.Trim().ToLower() != "cliente";
-               
+                // Define o título da janela
+                this.Text = $"Área do Cliente - {matricula} - {nomeCompleto}";
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao buscar nome no banco: " + ex.Message);
                 nomeCompleto = "Erro";
-                tipoUsuario = "Erro";
-                MButton_Cadastro.Visible = false;
+                this.Text = $"Área do Cliente - {matricula} - {nomeCompleto}";
             }
-        }
-
-        private void MButton_Cadastro_Click(object sender, EventArgs e)
-        {
-            FormCadastroFuncionarios cadastro = new FormCadastroFuncionarios();
-            this.Hide();
-            cadastro.ShowDialog();
-            this.Show();
-            
         }
     }
 }
+ 
