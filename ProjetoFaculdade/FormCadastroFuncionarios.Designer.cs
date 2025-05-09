@@ -53,6 +53,9 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.Grupo_Status = new System.Windows.Forms.GroupBox();
+            this.MrB_Inativo = new MetroFramework.Controls.MetroRadioButton();
+            this.MrB_Ativo = new MetroFramework.Controls.MetroRadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.MtB_Nascimento = new System.Windows.Forms.MaskedTextBox();
@@ -90,13 +93,9 @@
             this.Grupo_Dados_Contrato = new System.Windows.Forms.GroupBox();
             this.label36 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.tB_Salario = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.Grupo_Status = new System.Windows.Forms.GroupBox();
-            this.MrB_Inativo = new MetroFramework.Controls.MetroRadioButton();
-            this.MrB_Ativo = new MetroFramework.Controls.MetroRadioButton();
             this.MtB_Admissao = new System.Windows.Forms.MaskedTextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.tB_Cargo = new System.Windows.Forms.TextBox();
@@ -111,14 +110,15 @@
             this.tB_Busca_Matricula = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.Grupo_Dados_P_Funcionarios.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.Grupo_Status.SuspendLayout();
             this.Grupo_Sexo.SuspendLayout();
             this.Grupo_Endereco.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.Grupo_Dados_Contrato.SuspendLayout();
-            this.Grupo_Status.SuspendLayout();
             this.Grupo_Funcoes.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -303,7 +303,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(21, 93);
+            this.label7.Location = new System.Drawing.Point(21, 86);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(177, 26);
@@ -318,7 +318,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(116, 150);
+            this.label8.Location = new System.Drawing.Point(116, 137);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 26);
@@ -333,7 +333,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(97, 210);
+            this.label9.Location = new System.Drawing.Point(97, 190);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(101, 26);
@@ -348,7 +348,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(136, 269);
+            this.label10.Location = new System.Drawing.Point(136, 242);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 26);
@@ -357,12 +357,17 @@
             // 
             // Grupo_Dados_P_Funcionarios
             // 
+            this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label2);
+            this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label36);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label1);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.groupBox2);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label28);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label27);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label26);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label25);
+            this.Grupo_Dados_P_Funcionarios.Controls.Add(this.MtB_Admissao);
+            this.Grupo_Dados_P_Funcionarios.Controls.Add(this.Grupo_Status);
+            this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label21);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label3);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label4);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.MtB_Nascimento);
@@ -385,7 +390,7 @@
             this.Grupo_Dados_P_Funcionarios.Margin = new System.Windows.Forms.Padding(4);
             this.Grupo_Dados_P_Funcionarios.Name = "Grupo_Dados_P_Funcionarios";
             this.Grupo_Dados_P_Funcionarios.Padding = new System.Windows.Forms.Padding(4);
-            this.Grupo_Dados_P_Funcionarios.Size = new System.Drawing.Size(1488, 407);
+            this.Grupo_Dados_P_Funcionarios.Size = new System.Drawing.Size(1488, 440);
             this.Grupo_Dados_P_Funcionarios.TabIndex = 1;
             this.Grupo_Dados_P_Funcionarios.TabStop = false;
             this.Grupo_Dados_P_Funcionarios.Text = "DADOS PESSOAIS";
@@ -398,7 +403,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(1471, 296);
+            this.label1.Location = new System.Drawing.Point(1467, 196);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(13, 17);
@@ -410,7 +415,7 @@
             this.groupBox2.Controls.Add(this.MtB_Clien_Edit);
             this.groupBox2.Controls.Add(this.MtB_Oper);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(1162, 296);
+            this.groupBox2.Location = new System.Drawing.Point(1153, 186);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -437,6 +442,7 @@
             this.MtB_Clien_Edit.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MtB_Clien_Edit.UseStyleColors = false;
             this.MtB_Clien_Edit.UseVisualStyleBackColor = true;
+            this.MtB_Clien_Edit.Leave += new System.EventHandler(this.MtB_Clien_Edit_Leave);
             // 
             // MtB_Oper
             // 
@@ -480,7 +486,7 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label27.ForeColor = System.Drawing.Color.Red;
-            this.label27.Location = new System.Drawing.Point(453, 312);
+            this.label27.Location = new System.Drawing.Point(455, 312);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(13, 17);
@@ -517,6 +523,58 @@
             this.label25.TabIndex = 37;
             this.label25.Text = "*";
             // 
+            // Grupo_Status
+            // 
+            this.Grupo_Status.Controls.Add(this.MrB_Inativo);
+            this.Grupo_Status.Controls.Add(this.MrB_Ativo);
+            this.Grupo_Status.ForeColor = System.Drawing.Color.White;
+            this.Grupo_Status.Location = new System.Drawing.Point(1153, 296);
+            this.Grupo_Status.Margin = new System.Windows.Forms.Padding(4);
+            this.Grupo_Status.Name = "Grupo_Status";
+            this.Grupo_Status.Padding = new System.Windows.Forms.Padding(4);
+            this.Grupo_Status.Size = new System.Drawing.Size(308, 88);
+            this.Grupo_Status.TabIndex = 36;
+            this.Grupo_Status.TabStop = false;
+            this.Grupo_Status.Text = "STATUS";
+            // 
+            // MrB_Inativo
+            // 
+            this.MrB_Inativo.AutoSize = true;
+            this.MrB_Inativo.CustomBackground = false;
+            this.MrB_Inativo.FontSize = MetroFramework.MetroLinkSize.Small;
+            this.MrB_Inativo.FontWeight = MetroFramework.MetroLinkWeight.Regular;
+            this.MrB_Inativo.Location = new System.Drawing.Point(207, 25);
+            this.MrB_Inativo.Margin = new System.Windows.Forms.Padding(4);
+            this.MrB_Inativo.Name = "MrB_Inativo";
+            this.MrB_Inativo.Size = new System.Drawing.Size(59, 15);
+            this.MrB_Inativo.Style = MetroFramework.MetroColorStyle.Blue;
+            this.MrB_Inativo.StyleManager = null;
+            this.MrB_Inativo.TabIndex = 1;
+            this.MrB_Inativo.TabStop = true;
+            this.MrB_Inativo.Text = "Inativo";
+            this.MrB_Inativo.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MrB_Inativo.UseStyleColors = false;
+            this.MrB_Inativo.UseVisualStyleBackColor = true;
+            // 
+            // MrB_Ativo
+            // 
+            this.MrB_Ativo.AutoSize = true;
+            this.MrB_Ativo.CustomBackground = false;
+            this.MrB_Ativo.FontSize = MetroFramework.MetroLinkSize.Small;
+            this.MrB_Ativo.FontWeight = MetroFramework.MetroLinkWeight.Regular;
+            this.MrB_Ativo.Location = new System.Drawing.Point(24, 25);
+            this.MrB_Ativo.Margin = new System.Windows.Forms.Padding(4);
+            this.MrB_Ativo.Name = "MrB_Ativo";
+            this.MrB_Ativo.Size = new System.Drawing.Size(51, 15);
+            this.MrB_Ativo.Style = MetroFramework.MetroColorStyle.Blue;
+            this.MrB_Ativo.StyleManager = null;
+            this.MrB_Ativo.TabIndex = 0;
+            this.MrB_Ativo.TabStop = true;
+            this.MrB_Ativo.Text = "Ativo";
+            this.MrB_Ativo.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MrB_Ativo.UseStyleColors = false;
+            this.MrB_Ativo.UseVisualStyleBackColor = true;
+            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -551,7 +609,7 @@
             // 
             this.MtB_Nascimento.BackColor = System.Drawing.Color.White;
             this.MtB_Nascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.MtB_Nascimento.Location = new System.Drawing.Point(217, 333);
+            this.MtB_Nascimento.Location = new System.Drawing.Point(217, 294);
             this.MtB_Nascimento.Margin = new System.Windows.Forms.Padding(4);
             this.MtB_Nascimento.Mask = "00/00/0000";
             this.MtB_Nascimento.Name = "MtB_Nascimento";
@@ -564,7 +622,7 @@
             // 
             this.MtB_CPF.BackColor = System.Drawing.Color.White;
             this.MtB_CPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.MtB_CPF.Location = new System.Drawing.Point(217, 264);
+            this.MtB_CPF.Location = new System.Drawing.Point(217, 237);
             this.MtB_CPF.Margin = new System.Windows.Forms.Padding(4);
             this.MtB_CPF.Mask = "999.999.999 - 99";
             this.MtB_CPF.Name = "MtB_CPF";
@@ -576,7 +634,7 @@
             // 
             this.MtB_Telefone.BackColor = System.Drawing.Color.White;
             this.MtB_Telefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.MtB_Telefone.Location = new System.Drawing.Point(216, 205);
+            this.MtB_Telefone.Location = new System.Drawing.Point(216, 185);
             this.MtB_Telefone.Margin = new System.Windows.Forms.Padding(4);
             this.MtB_Telefone.Mask = "(99) 0 0000 - 0000";
             this.MtB_Telefone.Name = "MtB_Telefone";
@@ -588,7 +646,7 @@
             // 
             this.tB_Email.BackColor = System.Drawing.Color.White;
             this.tB_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.tB_Email.Location = new System.Drawing.Point(217, 145);
+            this.tB_Email.Location = new System.Drawing.Point(217, 132);
             this.tB_Email.Margin = new System.Windows.Forms.Padding(4);
             this.tB_Email.Name = "tB_Email";
             this.tB_Email.Size = new System.Drawing.Size(920, 31);
@@ -599,7 +657,7 @@
             // 
             this.tB_NomeCompleto.BackColor = System.Drawing.Color.White;
             this.tB_NomeCompleto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.tB_NomeCompleto.Location = new System.Drawing.Point(216, 88);
+            this.tB_NomeCompleto.Location = new System.Drawing.Point(216, 81);
             this.tB_NomeCompleto.Margin = new System.Windows.Forms.Padding(4);
             this.tB_NomeCompleto.Name = "tB_NomeCompleto";
             this.tB_NomeCompleto.Size = new System.Drawing.Size(921, 31);
@@ -734,7 +792,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(58, 338);
+            this.label11.Location = new System.Drawing.Point(63, 299);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(140, 26);
@@ -756,11 +814,11 @@
             this.Grupo_Endereco.Controls.Add(this.MtB_Cep);
             this.Grupo_Endereco.Controls.Add(this.label12);
             this.Grupo_Endereco.ForeColor = System.Drawing.Color.White;
-            this.Grupo_Endereco.Location = new System.Drawing.Point(403, 524);
+            this.Grupo_Endereco.Location = new System.Drawing.Point(403, 569);
             this.Grupo_Endereco.Margin = new System.Windows.Forms.Padding(4);
             this.Grupo_Endereco.Name = "Grupo_Endereco";
             this.Grupo_Endereco.Padding = new System.Windows.Forms.Padding(4);
-            this.Grupo_Endereco.Size = new System.Drawing.Size(1488, 190);
+            this.Grupo_Endereco.Size = new System.Drawing.Size(1488, 211);
             this.Grupo_Endereco.TabIndex = 2;
             this.Grupo_Endereco.TabStop = false;
             this.Grupo_Endereco.Text = "ENDEREÇO";
@@ -1010,23 +1068,18 @@
             // 
             // Grupo_Dados_Contrato
             // 
-            this.Grupo_Dados_Contrato.Controls.Add(this.label36);
             this.Grupo_Dados_Contrato.Controls.Add(this.label32);
-            this.Grupo_Dados_Contrato.Controls.Add(this.label31);
             this.Grupo_Dados_Contrato.Controls.Add(this.label30);
             this.Grupo_Dados_Contrato.Controls.Add(this.tB_Salario);
             this.Grupo_Dados_Contrato.Controls.Add(this.label22);
-            this.Grupo_Dados_Contrato.Controls.Add(this.Grupo_Status);
-            this.Grupo_Dados_Contrato.Controls.Add(this.MtB_Admissao);
-            this.Grupo_Dados_Contrato.Controls.Add(this.label21);
             this.Grupo_Dados_Contrato.Controls.Add(this.tB_Cargo);
             this.Grupo_Dados_Contrato.Controls.Add(this.label20);
             this.Grupo_Dados_Contrato.ForeColor = System.Drawing.Color.White;
-            this.Grupo_Dados_Contrato.Location = new System.Drawing.Point(403, 722);
+            this.Grupo_Dados_Contrato.Location = new System.Drawing.Point(403, 800);
             this.Grupo_Dados_Contrato.Margin = new System.Windows.Forms.Padding(4);
             this.Grupo_Dados_Contrato.Name = "Grupo_Dados_Contrato";
             this.Grupo_Dados_Contrato.Padding = new System.Windows.Forms.Padding(4);
-            this.Grupo_Dados_Contrato.Size = new System.Drawing.Size(1488, 214);
+            this.Grupo_Dados_Contrato.Size = new System.Drawing.Size(1488, 127);
             this.Grupo_Dados_Contrato.TabIndex = 17;
             this.Grupo_Dados_Contrato.TabStop = false;
             this.Grupo_Dados_Contrato.Text = "DADOS DE CONTRATO";
@@ -1039,7 +1092,7 @@
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label36.ForeColor = System.Drawing.Color.Red;
-            this.label36.Location = new System.Drawing.Point(1471, 60);
+            this.label36.Location = new System.Drawing.Point(1469, 302);
             this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(13, 17);
@@ -1054,27 +1107,12 @@
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label32.ForeColor = System.Drawing.Color.Red;
-            this.label32.Location = new System.Drawing.Point(426, 110);
+            this.label32.Location = new System.Drawing.Point(431, 73);
             this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(13, 17);
             this.label32.TabIndex = 45;
             this.label32.Text = "*";
-            // 
-            // label31
-            // 
-            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label31.ForeColor = System.Drawing.Color.Red;
-            this.label31.Location = new System.Drawing.Point(424, 60);
-            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(13, 17);
-            this.label31.TabIndex = 44;
-            this.label31.Text = "*";
             // 
             // label30
             // 
@@ -1095,7 +1133,7 @@
             // 
             this.tB_Salario.BackColor = System.Drawing.Color.White;
             this.tB_Salario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.tB_Salario.Location = new System.Drawing.Point(216, 122);
+            this.tB_Salario.Location = new System.Drawing.Point(216, 73);
             this.tB_Salario.Margin = new System.Windows.Forms.Padding(4);
             this.tB_Salario.Name = "tB_Salario";
             this.tB_Salario.Size = new System.Drawing.Size(207, 31);
@@ -1110,74 +1148,22 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(111, 124);
+            this.label22.Location = new System.Drawing.Point(111, 75);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(86, 26);
             this.label22.TabIndex = 37;
             this.label22.Text = "Salário:";
             // 
-            // Grupo_Status
-            // 
-            this.Grupo_Status.Controls.Add(this.MrB_Inativo);
-            this.Grupo_Status.Controls.Add(this.MrB_Ativo);
-            this.Grupo_Status.ForeColor = System.Drawing.Color.White;
-            this.Grupo_Status.Location = new System.Drawing.Point(1162, 62);
-            this.Grupo_Status.Margin = new System.Windows.Forms.Padding(4);
-            this.Grupo_Status.Name = "Grupo_Status";
-            this.Grupo_Status.Padding = new System.Windows.Forms.Padding(4);
-            this.Grupo_Status.Size = new System.Drawing.Size(308, 88);
-            this.Grupo_Status.TabIndex = 36;
-            this.Grupo_Status.TabStop = false;
-            this.Grupo_Status.Text = "STATUS";
-            // 
-            // MrB_Inativo
-            // 
-            this.MrB_Inativo.AutoSize = true;
-            this.MrB_Inativo.CustomBackground = false;
-            this.MrB_Inativo.FontSize = MetroFramework.MetroLinkSize.Small;
-            this.MrB_Inativo.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.MrB_Inativo.Location = new System.Drawing.Point(207, 25);
-            this.MrB_Inativo.Margin = new System.Windows.Forms.Padding(4);
-            this.MrB_Inativo.Name = "MrB_Inativo";
-            this.MrB_Inativo.Size = new System.Drawing.Size(59, 15);
-            this.MrB_Inativo.Style = MetroFramework.MetroColorStyle.Blue;
-            this.MrB_Inativo.StyleManager = null;
-            this.MrB_Inativo.TabIndex = 1;
-            this.MrB_Inativo.TabStop = true;
-            this.MrB_Inativo.Text = "Inativo";
-            this.MrB_Inativo.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.MrB_Inativo.UseStyleColors = false;
-            this.MrB_Inativo.UseVisualStyleBackColor = true;
-            // 
-            // MrB_Ativo
-            // 
-            this.MrB_Ativo.AutoSize = true;
-            this.MrB_Ativo.CustomBackground = false;
-            this.MrB_Ativo.FontSize = MetroFramework.MetroLinkSize.Small;
-            this.MrB_Ativo.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.MrB_Ativo.Location = new System.Drawing.Point(24, 25);
-            this.MrB_Ativo.Margin = new System.Windows.Forms.Padding(4);
-            this.MrB_Ativo.Name = "MrB_Ativo";
-            this.MrB_Ativo.Size = new System.Drawing.Size(51, 15);
-            this.MrB_Ativo.Style = MetroFramework.MetroColorStyle.Blue;
-            this.MrB_Ativo.StyleManager = null;
-            this.MrB_Ativo.TabIndex = 0;
-            this.MrB_Ativo.TabStop = true;
-            this.MrB_Ativo.Text = "Ativo";
-            this.MrB_Ativo.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.MrB_Ativo.UseStyleColors = false;
-            this.MrB_Ativo.UseVisualStyleBackColor = true;
-            // 
             // MtB_Admissao
             // 
             this.MtB_Admissao.BackColor = System.Drawing.Color.White;
             this.MtB_Admissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.MtB_Admissao.Location = new System.Drawing.Point(216, 74);
+            this.MtB_Admissao.Location = new System.Drawing.Point(216, 346);
             this.MtB_Admissao.Margin = new System.Windows.Forms.Padding(4);
             this.MtB_Admissao.Mask = "00/00/0000";
             this.MtB_Admissao.Name = "MtB_Admissao";
-            this.MtB_Admissao.Size = new System.Drawing.Size(205, 31);
+            this.MtB_Admissao.Size = new System.Drawing.Size(238, 31);
             this.MtB_Admissao.TabIndex = 35;
             this.MtB_Admissao.ValidatingType = typeof(System.DateTime);
             this.MtB_Admissao.Leave += new System.EventHandler(this.MtB_Admissao_Leave);
@@ -1190,12 +1176,12 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(82, 79);
+            this.label21.Location = new System.Drawing.Point(15, 351);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(115, 26);
+            this.label21.Size = new System.Drawing.Size(188, 26);
             this.label21.TabIndex = 34;
-            this.label21.Text = "Admissão:";
+            this.label21.Text = "Data de Cadastro:";
             // 
             // tB_Cargo
             // 
@@ -1231,11 +1217,11 @@
             this.Grupo_Funcoes.Controls.Add(this.MBNT_Editar);
             this.Grupo_Funcoes.Controls.Add(this.MBNT_Limpar);
             this.Grupo_Funcoes.ForeColor = System.Drawing.Color.White;
-            this.Grupo_Funcoes.Location = new System.Drawing.Point(403, 944);
+            this.Grupo_Funcoes.Location = new System.Drawing.Point(403, 947);
             this.Grupo_Funcoes.Margin = new System.Windows.Forms.Padding(4);
             this.Grupo_Funcoes.Name = "Grupo_Funcoes";
             this.Grupo_Funcoes.Padding = new System.Windows.Forms.Padding(4);
-            this.Grupo_Funcoes.Size = new System.Drawing.Size(1488, 94);
+            this.Grupo_Funcoes.Size = new System.Drawing.Size(1488, 85);
             this.Grupo_Funcoes.TabIndex = 18;
             this.Grupo_Funcoes.TabStop = false;
             this.Grupo_Funcoes.Text = "FUNÇÕES";
@@ -1342,6 +1328,21 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(455, 346);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(13, 17);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "*";
+            // 
             // FormCadastroFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -1372,6 +1373,8 @@
             this.Grupo_Dados_P_Funcionarios.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.Grupo_Status.ResumeLayout(false);
+            this.Grupo_Status.PerformLayout();
             this.Grupo_Sexo.ResumeLayout(false);
             this.Grupo_Sexo.PerformLayout();
             this.Grupo_Endereco.ResumeLayout(false);
@@ -1379,8 +1382,6 @@
             this.groupBox4.ResumeLayout(false);
             this.Grupo_Dados_Contrato.ResumeLayout(false);
             this.Grupo_Dados_Contrato.PerformLayout();
-            this.Grupo_Status.ResumeLayout(false);
-            this.Grupo_Status.PerformLayout();
             this.Grupo_Funcoes.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1452,7 +1453,6 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
         public System.Windows.Forms.MaskedTextBox MtB_Cep;
         public System.Windows.Forms.MaskedTextBox MtB_Nascimento;
@@ -1473,5 +1473,6 @@
         private MetroFramework.Controls.MetroRadioButton MtB_Oper;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -89,6 +89,7 @@ namespace ProjetoFaculdade
                                 this.Hide();
                                 cliente.ShowDialog();
                                 this.Show();
+                                tB_Senha_Usuario.Clear();
                             }
                             else if (tipoUsuario == "operador")
                             {

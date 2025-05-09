@@ -335,7 +335,7 @@ namespace ProjetoFaculdade
             {
                 tB_Cargo.Enabled = false;
                 errorProvider1.SetError(tB_Cargo, ""); // Sem erro, não é necessário cargo
-               
+
             }
 
             else // Não é cliente
@@ -348,7 +348,7 @@ namespace ProjetoFaculdade
                 }
                 else
                 {
-                    errorProvider1.SetError(tB_Cargo, ""); 
+                    errorProvider1.SetError(tB_Cargo, "");
                 }
             }
 
@@ -404,26 +404,25 @@ namespace ProjetoFaculdade
         private void MtB_Admissao_Leave(object sender, EventArgs e)
         {
 
-
-
-            // Campo para converte o texto para uma data
-
+            // Tenta converter o texto para uma data
             if (DateTime.TryParse(MtB_Admissao.Text, out DateTime dataAdmissao))
             {
-                DateTime hoje = DateTime.Today;
-                DateTime limiteMaximo = hoje.AddMonths(1);
 
-                // verificar se a data utrapassa o limite
+                DateTime hoje = DateTime.Today;
+                DateTime limiteMaximo = hoje.AddDays(30); // Mais preciso que AddMonths(1)
+
+                // Verifica se a data ultrapassa o limite de 30 dias
                 if (dataAdmissao > limiteMaximo)
                 {
                     MessageBox.Show("Data de admissão inválida. Não pode ultrapassar 30 dias a partir de hoje!", "Aviso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     MtB_Admissao.Focus();
                     return;
                 }
 
-                // Segundo: não pode ser de mês anterior ao atual
-                if (dataAdmissao.Month < hoje.Month || dataAdmissao.Year < hoje.Year)
+                // Verifica se a data é de mês anterior ao atual (considerando o ano)
+                if (dataAdmissao.Year < hoje.Year ||
+                    (dataAdmissao.Year == hoje.Year && dataAdmissao.Month < hoje.Month))
                 {
                     MessageBox.Show("Data de admissão inválida. Não pode ser de mês anterior ao atual!", "Aviso",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -431,38 +430,50 @@ namespace ProjetoFaculdade
                     return;
                 }
 
+                // Tudo certo, remove erros anteriores
+                errorProvider1.SetError(MtB_Admissao, "");
             }
             else
             {
+
+
                 // Se não conseguir converter, mostra erro
                 MessageBox.Show("Data inválida. Por favor, insira uma data válida!", "Erro",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MtB_Admissao.Focus();
             }
-
-
         }
 
         private void tB_Salario_TextChanged(object sender, EventArgs e)
         {
 
-            TextBox txt = sender as TextBox;
+            if (MtB_Clien_Edit.Checked)
+            {
+                tB_Salario.Enabled = false;
+                errorProvider1.SetError(tB_Salario, "");
+            }
+            else
+            {
+                tB_Salario.Enabled = true;
+
+                TextBox txt = sender as TextBox;
 
 
-            // Remove tudo que não é número
-            string valor = new string(txt.Text.Where(char.IsDigit).ToArray());
+                // Remove tudo que não é número
+                string valor = new string(txt.Text.Where(char.IsDigit).ToArray());
 
-            if (string.IsNullOrEmpty(valor))
-                valor = "0";
+                if (string.IsNullOrEmpty(valor))
+                    valor = "0";
 
-            // Converte para decimal e divide por 100 para colocar as casas decimais
-            decimal valorDecimal = decimal.Parse(valor) / 100;
+                // Converte para decimal e divide por 100 para colocar as casas decimais
+                decimal valorDecimal = decimal.Parse(valor) / 100;
 
-            // Atualiza o texto formatado
-            txt.Text = string.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", valorDecimal);
+                // Atualiza o texto formatado
+                txt.Text = string.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", valorDecimal);
 
-            // Move o cursor para o final
-            txt.SelectionStart = txt.Text.Length;
+                // Move o cursor para o final
+                txt.SelectionStart = txt.Text.Length;
+            }
         }
 
 
@@ -490,6 +501,7 @@ namespace ProjetoFaculdade
             return string.Empty;
         }
 
+
         #endregion
 
 
@@ -512,7 +524,7 @@ namespace ProjetoFaculdade
             return matricula.ToString();
         }
 
-         private void Clear()
+        private void Clear()
         {
             tB_NomeCompleto.Clear();
             tB_Email.Clear();
@@ -534,7 +546,7 @@ namespace ProjetoFaculdade
         private void MBNT_Limpar_Click(object sender, EventArgs e)
         {
             Clear();
-            
+
 
             tB_id_Matricula.Text = GerarMatricula();
 
@@ -549,7 +561,7 @@ namespace ProjetoFaculdade
 
         private void MBNT_Editar_Click(object sender, EventArgs e)
         {
-           
+
             EditarForm Edit = new EditarForm();
             Edit.ShowDialog();
             this.Show();
@@ -856,5 +868,25 @@ namespace ProjetoFaculdade
 
 
         #endregion
+
+
+        
+
+        private void MtB_Clien_Edit_Leave(object sender, EventArgs e)
+        {
+            string texto = MtB_Clien_Edit.Text.Trim();
+
+            if (texto.Equals("Cliente", StringComparison.OrdinalIgnoreCase))
+            {
+                Grupo_Dados_Contrato.Visible = false;
+            }
+            else
+            {
+                Grupo_Dados_Contrato.Visible = true;
+            }
+
+        }
+
+        
     }
 }

@@ -41,6 +41,18 @@
             this.MtB_Busca_Matricula_Senha = new System.Windows.Forms.MaskedTextBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.MtB_Codigo_Verificacao = new System.Windows.Forms.TextBox();
+            this.Ocultar_Senha = new System.Windows.Forms.PictureBox();
+            this.Mostrar_Senha = new System.Windows.Forms.PictureBox();
+            this.Ocultar_Senha_ = new System.Windows.Forms.PictureBox();
+            this.Mostrar_Senha_ = new System.Windows.Forms.PictureBox();
+            this.Mostrar_Senha_Confir = new System.Windows.Forms.PictureBox();
+            this.Ocultar_Senha_Confir = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Ocultar_Senha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mostrar_Senha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ocultar_Senha_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mostrar_Senha_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mostrar_Senha_Confir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ocultar_Senha_Confir)).BeginInit();
             this.SuspendLayout();
             // 
             // Esqueceu_Senha
@@ -64,7 +76,6 @@
             this.label_Senha_Temp.Size = new System.Drawing.Size(195, 25);
             this.label_Senha_Temp.TabIndex = 34;
             this.label_Senha_Temp.Text = "Senha Temporária:";
-            this.label_Senha_Temp.Visible = false;
             // 
             // label_Senha
             // 
@@ -76,7 +87,6 @@
             this.label_Senha.Size = new System.Drawing.Size(80, 25);
             this.label_Senha.TabIndex = 35;
             this.label_Senha.Text = "Senha:";
-            this.label_Senha.Visible = false;
             // 
             // label_Senha_Confirm
             // 
@@ -88,7 +98,6 @@
             this.label_Senha_Confirm.Size = new System.Drawing.Size(197, 25);
             this.label_Senha_Confirm.TabIndex = 36;
             this.label_Senha_Confirm.Text = "Conforme a Senha:";
-            this.label_Senha_Confirm.Visible = false;
             // 
             // label4
             // 
@@ -118,6 +127,7 @@
             // tB_Senha_Temp
             // 
             this.tB_Senha_Temp.BackColor = System.Drawing.Color.White;
+            this.tB_Senha_Temp.Enabled = false;
             this.tB_Senha_Temp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.tB_Senha_Temp.Location = new System.Drawing.Point(214, 184);
             this.tB_Senha_Temp.Margin = new System.Windows.Forms.Padding(4);
@@ -125,11 +135,11 @@
             this.tB_Senha_Temp.PasswordChar = '*';
             this.tB_Senha_Temp.Size = new System.Drawing.Size(294, 31);
             this.tB_Senha_Temp.TabIndex = 45;
-            this.tB_Senha_Temp.Visible = false;
             // 
             // tB_New_Senha
             // 
             this.tB_New_Senha.BackColor = System.Drawing.Color.White;
+            this.tB_New_Senha.Enabled = false;
             this.tB_New_Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.tB_New_Senha.Location = new System.Drawing.Point(214, 237);
             this.tB_New_Senha.Margin = new System.Windows.Forms.Padding(4);
@@ -137,11 +147,11 @@
             this.tB_New_Senha.PasswordChar = '*';
             this.tB_New_Senha.Size = new System.Drawing.Size(294, 31);
             this.tB_New_Senha.TabIndex = 46;
-            this.tB_New_Senha.Visible = false;
             // 
             // tB_Confir_New_Senha
             // 
             this.tB_Confir_New_Senha.BackColor = System.Drawing.Color.White;
+            this.tB_Confir_New_Senha.Enabled = false;
             this.tB_Confir_New_Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.tB_Confir_New_Senha.Location = new System.Drawing.Point(214, 289);
             this.tB_Confir_New_Senha.Margin = new System.Windows.Forms.Padding(4);
@@ -149,7 +159,6 @@
             this.tB_Confir_New_Senha.PasswordChar = '*';
             this.tB_Confir_New_Senha.Size = new System.Drawing.Size(294, 31);
             this.tB_Confir_New_Senha.TabIndex = 47;
-            this.tB_Confir_New_Senha.Visible = false;
             // 
             // BnT_Verificar_Senha_Temp
             // 
@@ -163,7 +172,6 @@
             this.BnT_Verificar_Senha_Temp.TabIndex = 48;
             this.BnT_Verificar_Senha_Temp.Text = "Verifica&r";
             this.BnT_Verificar_Senha_Temp.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.BnT_Verificar_Senha_Temp.Visible = false;
             this.BnT_Verificar_Senha_Temp.Click += new System.EventHandler(this.BnT_Verificar_Senha_Temp_Click);
             // 
             // MtB_Busca_Matricula_Senha
@@ -202,6 +210,72 @@
             this.MtB_Codigo_Verificacao.TabIndex = 52;
             this.MtB_Codigo_Verificacao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MtB_Codigo_Verificacao_KeyPress);
             // 
+            // Ocultar_Senha
+            // 
+            this.Ocultar_Senha.Image = global::ProjetoFaculdade.Properties.Resources.icons8_visão_30;
+            this.Ocultar_Senha.Location = new System.Drawing.Point(515, 181);
+            this.Ocultar_Senha.Name = "Ocultar_Senha";
+            this.Ocultar_Senha.Size = new System.Drawing.Size(39, 34);
+            this.Ocultar_Senha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Ocultar_Senha.TabIndex = 54;
+            this.Ocultar_Senha.TabStop = false;
+            this.Ocultar_Senha.Click += new System.EventHandler(this.Ocultar_Senha_Click);
+            // 
+            // Mostrar_Senha
+            // 
+            this.Mostrar_Senha.Image = global::ProjetoFaculdade.Properties.Resources.icons8_ocultar_24;
+            this.Mostrar_Senha.Location = new System.Drawing.Point(514, 181);
+            this.Mostrar_Senha.Name = "Mostrar_Senha";
+            this.Mostrar_Senha.Size = new System.Drawing.Size(40, 34);
+            this.Mostrar_Senha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Mostrar_Senha.TabIndex = 53;
+            this.Mostrar_Senha.TabStop = false;
+            this.Mostrar_Senha.Click += new System.EventHandler(this.Mostrar_Senha_Click);
+            // 
+            // Ocultar_Senha_
+            // 
+            this.Ocultar_Senha_.Image = global::ProjetoFaculdade.Properties.Resources.icons8_visão_30;
+            this.Ocultar_Senha_.Location = new System.Drawing.Point(515, 234);
+            this.Ocultar_Senha_.Name = "Ocultar_Senha_";
+            this.Ocultar_Senha_.Size = new System.Drawing.Size(39, 34);
+            this.Ocultar_Senha_.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Ocultar_Senha_.TabIndex = 56;
+            this.Ocultar_Senha_.TabStop = false;
+            this.Ocultar_Senha_.Click += new System.EventHandler(this.Ocultar_Senha__Click);
+            // 
+            // Mostrar_Senha_
+            // 
+            this.Mostrar_Senha_.Image = global::ProjetoFaculdade.Properties.Resources.icons8_ocultar_24;
+            this.Mostrar_Senha_.Location = new System.Drawing.Point(514, 234);
+            this.Mostrar_Senha_.Name = "Mostrar_Senha_";
+            this.Mostrar_Senha_.Size = new System.Drawing.Size(40, 34);
+            this.Mostrar_Senha_.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Mostrar_Senha_.TabIndex = 55;
+            this.Mostrar_Senha_.TabStop = false;
+            this.Mostrar_Senha_.Click += new System.EventHandler(this.Mostrar_Senha__Click);
+            // 
+            // Mostrar_Senha_Confir
+            // 
+            this.Mostrar_Senha_Confir.Image = global::ProjetoFaculdade.Properties.Resources.icons8_ocultar_24;
+            this.Mostrar_Senha_Confir.Location = new System.Drawing.Point(514, 285);
+            this.Mostrar_Senha_Confir.Name = "Mostrar_Senha_Confir";
+            this.Mostrar_Senha_Confir.Size = new System.Drawing.Size(40, 34);
+            this.Mostrar_Senha_Confir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Mostrar_Senha_Confir.TabIndex = 57;
+            this.Mostrar_Senha_Confir.TabStop = false;
+            this.Mostrar_Senha_Confir.Click += new System.EventHandler(this.Mostrar_Senha_Confir_Click);
+            // 
+            // Ocultar_Senha_Confir
+            // 
+            this.Ocultar_Senha_Confir.Image = global::ProjetoFaculdade.Properties.Resources.icons8_visão_30;
+            this.Ocultar_Senha_Confir.Location = new System.Drawing.Point(515, 285);
+            this.Ocultar_Senha_Confir.Name = "Ocultar_Senha_Confir";
+            this.Ocultar_Senha_Confir.Size = new System.Drawing.Size(39, 34);
+            this.Ocultar_Senha_Confir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Ocultar_Senha_Confir.TabIndex = 58;
+            this.Ocultar_Senha_Confir.TabStop = false;
+            this.Ocultar_Senha_Confir.Click += new System.EventHandler(this.Ocultar_Senha_Confir_Click);
+            // 
             // EsquecerSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,12 +295,24 @@
             this.Controls.Add(this.label_Senha);
             this.Controls.Add(this.label_Senha_Temp);
             this.Controls.Add(this.Esqueceu_Senha);
+            this.Controls.Add(this.Ocultar_Senha);
+            this.Controls.Add(this.Ocultar_Senha_);
+            this.Controls.Add(this.Ocultar_Senha_Confir);
+            this.Controls.Add(this.Mostrar_Senha);
+            this.Controls.Add(this.Mostrar_Senha_);
+            this.Controls.Add(this.Mostrar_Senha_Confir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "EsquecerSenha";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Primeiro Acesso ou Esqueceu a senha";
+            ((System.ComponentModel.ISupportInitialize)(this.Ocultar_Senha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mostrar_Senha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ocultar_Senha_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mostrar_Senha_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mostrar_Senha_Confir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ocultar_Senha_Confir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,5 +333,11 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         public System.Windows.Forms.TextBox MtB_Codigo_Verificacao;
         public MetroFramework.Controls.MetroButton MBNT_Verificar_Codigo;
+        private System.Windows.Forms.PictureBox Ocultar_Senha;
+        private System.Windows.Forms.PictureBox Mostrar_Senha;
+        private System.Windows.Forms.PictureBox Ocultar_Senha_;
+        private System.Windows.Forms.PictureBox Mostrar_Senha_;
+        private System.Windows.Forms.PictureBox Mostrar_Senha_Confir;
+        private System.Windows.Forms.PictureBox Ocultar_Senha_Confir;
     }
 }

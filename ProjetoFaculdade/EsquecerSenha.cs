@@ -83,13 +83,9 @@ namespace ProjetoFaculdade
 
             if (MtB_Codigo_Verificacao.Text == codigoVerificacao)
             {
-                label_Senha_Temp.Visible = true;
-                label_Senha.Visible = true;
-                label_Senha_Confirm.Visible = true;
-                tB_Senha_Temp.Visible = true;
-                tB_New_Senha.Visible = true;
-                tB_Confir_New_Senha.Visible = true;
-                BnT_Verificar_Senha_Temp.Visible = true;
+                tB_Senha_Temp.Enabled = true;
+                tB_New_Senha.Enabled = true;
+                tB_Confir_New_Senha.Enabled = true;
 
                 MessageBox.Show("Código verificado! Gerando e enviando senha temporária...");
 
@@ -245,8 +241,51 @@ namespace ProjetoFaculdade
             }
 
         }
+
+
+
+        private void Ocultar_Senha_Click(object sender, EventArgs e)
+        {
+            tB_Senha_Temp.PasswordChar = '\0';
+            Ocultar_Senha.Visible = false;
+            Mostrar_Senha.Visible = true;
+        }
+
+        private void Mostrar_Senha_Click(object sender, EventArgs e)
+        {
+            tB_Senha_Temp.PasswordChar = '*';
+            Mostrar_Senha.Visible = false;
+            Ocultar_Senha.Visible = true;
+        }
+
+        private void Mostrar_Senha__Click(object sender, EventArgs e)
+        {
+            tB_New_Senha.PasswordChar = '*';
+            Mostrar_Senha_.Visible = false;
+            Ocultar_Senha_.Visible = true;
+        }
+
+        private void Ocultar_Senha__Click(object sender, EventArgs e)
+        {
+            tB_New_Senha.PasswordChar = '\0';
+            Ocultar_Senha_.Visible = false;
+            Mostrar_Senha_.Visible = true;
+        }
+
+
+        private void Mostrar_Senha_Confir_Click(object sender, EventArgs e)
+        {
+            tB_Confir_New_Senha.PasswordChar = '*';
+            Mostrar_Senha_Confir.Visible = false;
+            Ocultar_Senha_Confir.Visible = true;
+        }
+
+        private void Ocultar_Senha_Confir_Click(object sender, EventArgs e)
+        {
+            tB_Confir_New_Senha.PasswordChar = '\0';
+            Ocultar_Senha_Confir.Visible = false;
+            Mostrar_Senha_Confir.Visible = true;
+        }
     }
-
-
 
 }

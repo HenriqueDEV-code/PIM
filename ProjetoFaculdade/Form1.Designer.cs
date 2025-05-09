@@ -166,7 +166,7 @@
             // Ocultar_Senha
             // 
             this.Ocultar_Senha.Image = global::ProjetoFaculdade.Properties.Resources.icons8_visão_30;
-            this.Ocultar_Senha.Location = new System.Drawing.Point(634, 322);
+            this.Ocultar_Senha.Location = new System.Drawing.Point(635, 321);
             this.Ocultar_Senha.Name = "Ocultar_Senha";
             this.Ocultar_Senha.Size = new System.Drawing.Size(39, 34);
             this.Ocultar_Senha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
