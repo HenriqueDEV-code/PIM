@@ -151,6 +151,12 @@
       <DependentUpon>AreaDeChamados.cs</DependentUpon>
     </Compile>
     <Compile Include="Class_Funcionarios.cs" />
+    <Compile Include="DetalheChamado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalheChamado.Designer.cs">
+      <DependentUpon>DetalheChamado.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,12 @@
     <Compile Include="FormCadastroFuncionarios.Designer.cs">
       <DependentUpon>FormCadastroFuncionarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="novoChamado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="novoChamado.Designer.cs">
+      <DependentUpon>novoChamado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguranca.cs" />
@@ -187,6 +199,9 @@
     <EmbeddedResource Include="AreaDeChamados.resx">
       <DependentUpon>AreaDeChamados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DetalheChamado.resx">
+      <DependentUpon>DetalheChamado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditarForm.resx">
       <DependentUpon>EditarForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroFuncionarios.resx">
       <DependentUpon>FormCadastroFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="novoChamado.resx">
+      <DependentUpon>novoChamado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

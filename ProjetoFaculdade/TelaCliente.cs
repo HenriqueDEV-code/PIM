@@ -17,11 +17,15 @@ namespace ProjetoFaculdade
         private string nomeCompleto;
        
 
+
         public TelaCliente(string matricula)
         {
             InitializeComponent();
             this.matricula = matricula;
             BuscarNomeNoBanco();
+            tB_Exibe_Maticula_Cliente.Enabled = false;
+            tB_Exibe_Maticula_Cliente.Text = matricula;
+            
         }
 
         private void BuscarNomeNoBanco()
@@ -52,6 +56,7 @@ namespace ProjetoFaculdade
                             if (reader.Read())
                             {
                                 nomeCompleto = reader["nomecompleto_funcionario"].ToString();
+                                LB_Nome_Cliente.Text = nomeCompleto;
                             }
                             else
                             {
@@ -71,6 +76,52 @@ namespace ProjetoFaculdade
                 this.Text = $"Área do Cliente - {matricula} - {nomeCompleto}";
             }
         }
+
+        private void CarregarChamados()
+        {
+            string connString = "Host=localhost;Username=postgres;Password=1@2b3!4?5#C;Database=pim";
+            try
+            {
+                using (var conn = new NpgsqlConnection(connString))
+                {
+                    conn.Open();
+                    string query = "SELECT id, matricula, descricao, status, operador, data_abertura FROM pim ORDER BY id ASC";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(reader);
+                            dataGridView_Cliente.DataSource = dt;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar chamados: " + ex.Message);
+            }
+        }
+
+        private void BT_Atualizar_Tabela_Click(object sender, EventArgs e)
+        {
+            CarregarChamados();
+        }
+
+        private void TelaCliente_Load(object sender, EventArgs e)
+        {
+            CarregarChamados();
+        }
+
+        private void BT_Novo_Chamado_Click(object sender, EventArgs e)
+        {
+            novoChamado novaTela = new novoChamado();
+            novaTela.ShowDialog();
+            this.Show();
+        }
+
+
+
     }
 }
  

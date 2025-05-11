@@ -89,6 +89,23 @@ namespace ProjetoFaculdade
 
         #region TRATAMENTO DE DADOS NULOS
 
+
+        private void MtB_Clien_Edit_Leave(object sender, EventArgs e)
+        {
+            string texto = MtB_Clien_Edit.Text.Trim();
+
+            if (texto.Equals("Cliente", StringComparison.OrdinalIgnoreCase))
+            {
+                Grupo_Dados_Contrato.Visible = false;
+            }
+            else
+            {
+                Grupo_Dados_Contrato.Visible = true;
+            }
+
+        }
+
+
         private void tB_NomeCompleto_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tB_NomeCompleto.Text))
@@ -872,20 +889,7 @@ namespace ProjetoFaculdade
 
         
 
-        private void MtB_Clien_Edit_Leave(object sender, EventArgs e)
-        {
-            string texto = MtB_Clien_Edit.Text.Trim();
-
-            if (texto.Equals("Cliente", StringComparison.OrdinalIgnoreCase))
-            {
-                Grupo_Dados_Contrato.Visible = false;
-            }
-            else
-            {
-                Grupo_Dados_Contrato.Visible = true;
-            }
-
-        }
+       
 
         
     }
