@@ -14,17 +14,52 @@ namespace ProjetoFaculdade
     public partial class DetalheChamado : Form
     {
         private int chamadoId;
-        public DetalheChamado(int ID)
+        private string matricula;
+        private string nome;
+        public DetalheChamado(int ID, string matricula)
         {
             InitializeComponent();
             chamadoId = ID;
+            this.matricula = matricula;
+
         }
 
         private void DetalheChamado_Load(object sender, EventArgs e)
         {
             ConfigurarComboStatus();
-            ConfigurarComboOperador();
+            BuscarOperador();
             CarregarChamado();
+        }
+
+        private void BuscarOperador()
+        {
+            CB_Operador_Detalhes.Items.Clear();
+
+            string connectionString = "Host=localhost;Port=5432;Database=car_tech_assist;Username=postgres;Password=1@2b3!4?5#C;";
+            string query = "SELECT nomecompleto_funcionario FROM pessoas WHERE tipo_de_usuario = 'Operador'";
+
+            try
+            {
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string nome = reader["nomecompleto_funcionario"].ToString();
+                                CB_Operador_Detalhes.Items.Add(nome);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao buscar operadores: " + ex.Message);
+            }
         }
 
 
@@ -41,14 +76,7 @@ namespace ProjetoFaculdade
             // Deixar dinamico vindo do banco de dados LEMBRETE
 
 
-            CB_Operador_Detalhes.Items.Clear();
-            CB_Operador_Detalhes.Items.Add("Eduarda");
-            CB_Operador_Detalhes.Items.Add("Manoela");
-            CB_Operador_Detalhes.Items.Add("Jordan");
-            CB_Operador_Detalhes.Items.Add("Henrique");
-            CB_Operador_Detalhes.Items.Add("Ana");
-            CB_Operador_Detalhes.Items.Add("Lucas");
-            CB_Operador_Detalhes.Items.Add("Miguel");
+           
         }
 
         private void CarregarChamado()

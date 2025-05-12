@@ -131,7 +131,7 @@ namespace ProjetoFaculdade
                 int chamadoId = Convert.ToInt32(dataGridView_Oper.Rows[e.RowIndex].Cells["id"].Value);
 
                 // Abre o novo formulário e passa o ID do chamado
-                DetalheChamado detalhesForm = new DetalheChamado(chamadoId);
+                DetalheChamado detalhesForm = new DetalheChamado(chamadoId, matricula);
                 detalhesForm.ShowDialog();
             }
         }
