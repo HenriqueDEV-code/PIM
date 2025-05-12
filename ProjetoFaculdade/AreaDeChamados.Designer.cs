@@ -171,6 +171,7 @@
             this.dataGridView_Oper.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView_Oper.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Oper.EnableHeadersVisualStyles = false;
+            this.dataGridView_Oper.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridView_Oper.Location = new System.Drawing.Point(1, 7);
             this.dataGridView_Oper.Name = "dataGridView_Oper";
             this.dataGridView_Oper.Size = new System.Drawing.Size(963, 333);

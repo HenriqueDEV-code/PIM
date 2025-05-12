@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BT_Criar_Chamado = new MetroFramework.Controls.MetroButton();
             this.tB_Informe_Matricula_Client = new System.Windows.Forms.TextBox();
@@ -36,8 +37,10 @@
             this.tB_Descricao_Erro = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.errorProvider_Erro = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_Erro)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -54,7 +57,7 @@
             // BT_Criar_Chamado
             // 
             this.BT_Criar_Chamado.Highlight = false;
-            this.BT_Criar_Chamado.Location = new System.Drawing.Point(486, 35);
+            this.BT_Criar_Chamado.Location = new System.Drawing.Point(317, 35);
             this.BT_Criar_Chamado.Margin = new System.Windows.Forms.Padding(4);
             this.BT_Criar_Chamado.Name = "BT_Criar_Chamado";
             this.BT_Criar_Chamado.Size = new System.Drawing.Size(114, 31);
@@ -68,11 +71,12 @@
             // tB_Informe_Matricula_Client
             // 
             this.tB_Informe_Matricula_Client.BackColor = System.Drawing.Color.White;
+            this.tB_Informe_Matricula_Client.Enabled = false;
             this.tB_Informe_Matricula_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.tB_Informe_Matricula_Client.Location = new System.Drawing.Point(342, 35);
+            this.tB_Informe_Matricula_Client.Location = new System.Drawing.Point(175, 35);
             this.tB_Informe_Matricula_Client.Margin = new System.Windows.Forms.Padding(4);
             this.tB_Informe_Matricula_Client.Name = "tB_Informe_Matricula_Client";
-            this.tB_Informe_Matricula_Client.Size = new System.Drawing.Size(101, 31);
+            this.tB_Informe_Matricula_Client.Size = new System.Drawing.Size(112, 31);
             this.tB_Informe_Matricula_Client.TabIndex = 30;
             this.tB_Informe_Matricula_Client.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tB_Informe_Matricula_Client_KeyPress);
             // 
@@ -83,9 +87,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
             this.label2.Location = new System.Drawing.Point(9, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(339, 29);
+            this.label2.Size = new System.Drawing.Size(170, 29);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Informe a matricula do cliente: ";
+            this.label2.Text = "Sua matricula: ";
             // 
             // groupBox2
             // 
@@ -129,6 +133,10 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "DESCRIÇÃO DO ERRO";
             // 
+            // errorProvider_Erro
+            // 
+            this.errorProvider_Erro.ContainerControl = this;
+            // 
             // novoChamado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,6 +159,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_Erro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,5 +175,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox tB_Descricao_Erro;
+        private System.Windows.Forms.ErrorProvider errorProvider_Erro;
     }
 }

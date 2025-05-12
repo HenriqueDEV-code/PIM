@@ -13,11 +13,19 @@ namespace ProjetoFaculdade
 {
     public partial class novoChamado : Form
     {
-        private object matricula;
-        public novoChamado()
+        private string matricula;
+        public novoChamado(string matricula)
         {
             InitializeComponent();
+            this.matricula = matricula;
+            
+            tB_Informe_Matricula_Client.Enabled = false;
+            tB_Informe_Matricula_Client.Text = matricula;
         }
+
+
+
+
 
         private void tB_Informe_Matricula_Client_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -37,6 +45,8 @@ namespace ProjetoFaculdade
                 MessageBox.Show("Por favor, insira uma descrição.");
                 return;
             }
+
+
 
             string connString = "Host=localhost;Username=postgres;Password=1@2b3!4?5#C;Database=pim";
 

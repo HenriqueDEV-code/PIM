@@ -30,13 +30,13 @@
         {
             this.LB_Nome_Cliente = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tB_Exibe_Maticula_Cliente = new System.Windows.Forms.TextBox();
-            this.BT_Novo_Chamado = new MetroFramework.Controls.MetroButton();
             this.BT_Atualizar_Tabela = new MetroFramework.Controls.MetroButton();
+            this.BT_Novo_Chamado = new MetroFramework.Controls.MetroButton();
+            this.tB_Exibe_Maticula_Cliente = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.dataGridView_Cliente = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cliente)).BeginInit();
@@ -65,26 +65,19 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // label2
+            // BT_Atualizar_Tabela
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(9, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 29);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Sua matricula: ";
-            // 
-            // tB_Exibe_Maticula_Cliente
-            // 
-            this.tB_Exibe_Maticula_Cliente.BackColor = System.Drawing.Color.White;
-            this.tB_Exibe_Maticula_Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.tB_Exibe_Maticula_Cliente.Location = new System.Drawing.Point(186, 37);
-            this.tB_Exibe_Maticula_Cliente.Margin = new System.Windows.Forms.Padding(4);
-            this.tB_Exibe_Maticula_Cliente.Name = "tB_Exibe_Maticula_Cliente";
-            this.tB_Exibe_Maticula_Cliente.Size = new System.Drawing.Size(90, 31);
-            this.tB_Exibe_Maticula_Cliente.TabIndex = 30;
+            this.BT_Atualizar_Tabela.Highlight = false;
+            this.BT_Atualizar_Tabela.Location = new System.Drawing.Point(827, 37);
+            this.BT_Atualizar_Tabela.Margin = new System.Windows.Forms.Padding(4);
+            this.BT_Atualizar_Tabela.Name = "BT_Atualizar_Tabela";
+            this.BT_Atualizar_Tabela.Size = new System.Drawing.Size(114, 31);
+            this.BT_Atualizar_Tabela.Style = MetroFramework.MetroColorStyle.Blue;
+            this.BT_Atualizar_Tabela.StyleManager = null;
+            this.BT_Atualizar_Tabela.TabIndex = 33;
+            this.BT_Atualizar_Tabela.Text = "&Atualizar";
+            this.BT_Atualizar_Tabela.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.BT_Atualizar_Tabela.Click += new System.EventHandler(this.BT_Atualizar_Tabela_Click);
             // 
             // BT_Novo_Chamado
             // 
@@ -100,19 +93,26 @@
             this.BT_Novo_Chamado.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BT_Novo_Chamado.Click += new System.EventHandler(this.BT_Novo_Chamado_Click);
             // 
-            // BT_Atualizar_Tabela
+            // tB_Exibe_Maticula_Cliente
             // 
-            this.BT_Atualizar_Tabela.Highlight = false;
-            this.BT_Atualizar_Tabela.Location = new System.Drawing.Point(827, 37);
-            this.BT_Atualizar_Tabela.Margin = new System.Windows.Forms.Padding(4);
-            this.BT_Atualizar_Tabela.Name = "BT_Atualizar_Tabela";
-            this.BT_Atualizar_Tabela.Size = new System.Drawing.Size(114, 31);
-            this.BT_Atualizar_Tabela.Style = MetroFramework.MetroColorStyle.Blue;
-            this.BT_Atualizar_Tabela.StyleManager = null;
-            this.BT_Atualizar_Tabela.TabIndex = 33;
-            this.BT_Atualizar_Tabela.Text = "&Atualizar";
-            this.BT_Atualizar_Tabela.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.BT_Atualizar_Tabela.Click += new System.EventHandler(this.BT_Atualizar_Tabela_Click);
+            this.tB_Exibe_Maticula_Cliente.BackColor = System.Drawing.Color.White;
+            this.tB_Exibe_Maticula_Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.tB_Exibe_Maticula_Cliente.Location = new System.Drawing.Point(186, 37);
+            this.tB_Exibe_Maticula_Cliente.Margin = new System.Windows.Forms.Padding(4);
+            this.tB_Exibe_Maticula_Cliente.Name = "tB_Exibe_Maticula_Cliente";
+            this.tB_Exibe_Maticula_Cliente.Size = new System.Drawing.Size(90, 31);
+            this.tB_Exibe_Maticula_Cliente.TabIndex = 30;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
+            this.label2.Location = new System.Drawing.Point(9, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(170, 29);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Sua matricula: ";
             // 
             // groupBox2
             // 
@@ -122,6 +122,16 @@
             this.groupBox2.Size = new System.Drawing.Size(966, 342);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
+            // 
+            // dataGridView_Cliente
+            // 
+            this.dataGridView_Cliente.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView_Cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Cliente.GridColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridView_Cliente.Location = new System.Drawing.Point(1, 7);
+            this.dataGridView_Cliente.Name = "dataGridView_Cliente";
+            this.dataGridView_Cliente.Size = new System.Drawing.Size(963, 333);
+            this.dataGridView_Cliente.TabIndex = 0;
             // 
             // label3
             // 
@@ -133,15 +143,6 @@
             this.label3.Size = new System.Drawing.Size(260, 29);
             this.label3.TabIndex = 3;
             this.label3.Text = "LISTA DE CHAMADOS";
-            // 
-            // dataGridView_Cliente
-            // 
-            this.dataGridView_Cliente.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView_Cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Cliente.Location = new System.Drawing.Point(1, 7);
-            this.dataGridView_Cliente.Name = "dataGridView_Cliente";
-            this.dataGridView_Cliente.Size = new System.Drawing.Size(963, 333);
-            this.dataGridView_Cliente.TabIndex = 0;
             // 
             // TelaCliente
             // 

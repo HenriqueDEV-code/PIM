@@ -515,6 +515,16 @@ namespace ProjetoFaculdade
         {
             if (MtB_Oper.Checked) return "Operador";
             if (MtB_Clien_Edit.Checked) return "Cliente";
+            if (MtB_Clien_Edit.Checked == true)
+            {
+                Grupo_Dados_Contrato.Visible = false;
+                
+            }
+            else
+            {
+                Grupo_Dados_Contrato.Visible = true;
+
+            }
             return string.Empty;
         }
 
@@ -783,6 +793,7 @@ namespace ProjetoFaculdade
         private void MBNT_Localizar_Click(object sender, EventArgs e)
         {
             DefinirEnabledNosCampos(this, false);
+            tB_Salario.Enabled = false;
             tB_Busca_Matricula.Enabled = true;
             tB_id_Matricula.Clear();
             tB_Busca_Matricula.Focus();
@@ -863,6 +874,16 @@ namespace ProjetoFaculdade
                                 else if (Tipo == "Cliente")
                                     MtB_Clien_Edit.Checked = true;
 
+                                if (MtB_Clien_Edit.Checked == true)
+                                {
+                                    Grupo_Dados_Contrato.Visible = false;
+                                    return;
+                                }
+                                else
+                                {
+                                    Grupo_Dados_Contrato.Visible = true;
+
+                                }
                             }
                             else
                             {

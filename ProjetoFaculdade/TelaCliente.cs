@@ -80,19 +80,38 @@ namespace ProjetoFaculdade
         private void CarregarChamados()
         {
             string connString = "Host=localhost;Username=postgres;Password=1@2b3!4?5#C;Database=pim";
+
             try
             {
                 using (var conn = new NpgsqlConnection(connString))
                 {
                     conn.Open();
-                    string query = "SELECT id, matricula, descricao, status, operador, data_abertura FROM pim ORDER BY id ASC";
+
+                    // Query sem a coluna "id"
+                    string query = "SELECT matricula, descricao, status, operador, data_abertura FROM pim WHERE matricula = @matricula ORDER BY id ASC";
+
                     using (var cmd = new NpgsqlCommand(query, conn))
                     {
+                        cmd.Parameters.AddWithValue("@matricula", matricula);
+
                         using (var reader = cmd.ExecuteReader())
                         {
                             DataTable dt = new DataTable();
                             dt.Load(reader);
                             dataGridView_Cliente.DataSource = dt;
+
+                            // Ajusta larguras das colunas restantes
+                            if (dataGridView_Cliente.Columns.Contains("descricao"))
+                                dataGridView_Cliente.Columns["descricao"].Width = 480;
+
+                            if (dataGridView_Cliente.Columns.Contains("status"))
+                                dataGridView_Cliente.Columns["status"].Width = 120;
+
+                            if (dataGridView_Cliente.Columns.Contains("operador"))
+                                dataGridView_Cliente.Columns["operador"].Width = 120;
+
+                            if (dataGridView_Cliente.Columns.Contains("data_abertura"))
+                                dataGridView_Cliente.Columns["data_abertura"].Width = 140;
                         }
                     }
                 }
@@ -115,7 +134,7 @@ namespace ProjetoFaculdade
 
         private void BT_Novo_Chamado_Click(object sender, EventArgs e)
         {
-            novoChamado novaTela = new novoChamado();
+            novoChamado novaTela = new novoChamado(matricula);
             novaTela.ShowDialog();
             this.Show();
         }

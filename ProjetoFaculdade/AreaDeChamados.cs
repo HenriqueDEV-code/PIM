@@ -198,7 +198,7 @@ namespace ProjetoFaculdade
 
         private void BT_Novo_Chamado_Oper_Click(object sender, EventArgs e)
         {
-            novoChamado novaTela = new novoChamado();
+            novoChamado novaTela = new novoChamado(matricula);
             novaTela.ShowDialog();
             this.Show();
 
