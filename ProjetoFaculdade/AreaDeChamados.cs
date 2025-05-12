@@ -109,13 +109,29 @@ namespace ProjetoFaculdade
                             DataTable dt = new DataTable();
                             dt.Load(reader);
                             dataGridView_Oper.DataSource = dt;
+
+                            // Ajusta larguras das colunas se existirem
+                            if (dataGridView_Oper.Columns.Contains("id"))
+                                dataGridView_Oper.Columns["id"].Width = 40;
+
+                            if (dataGridView_Oper.Columns.Contains("descricao"))
+                                dataGridView_Oper.Columns["descricao"].Width = 448;
+
+                            if (dataGridView_Oper.Columns.Contains("status"))
+                                dataGridView_Oper.Columns["status"].Width = 100;
+
+                            if (dataGridView_Oper.Columns.Contains("operador"))
+                                dataGridView_Oper.Columns["operador"].Width = 120;
+
+                            if (dataGridView_Oper.Columns.Contains("data_abertura"))
+                                dataGridView_Oper.Columns["data_abertura"].Width = 130;
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar chamados: " + ex.Message);
+                MessageBox.Show("Erro ao carregar chamados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -126,13 +142,26 @@ namespace ProjetoFaculdade
 
         private void dataGridView_Oper_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            try
             {
-                int chamadoId = Convert.ToInt32(dataGridView_Oper.Rows[e.RowIndex].Cells["id"].Value);
+                if (e.RowIndex >= 0 && dataGridView_Oper.Columns.Contains("id"))
+                {
+                    var cellValue = dataGridView_Oper.Rows[e.RowIndex].Cells["id"].Value;
 
-                // Abre o novo formulário e passa o ID do chamado
-                DetalheChamado detalhesForm = new DetalheChamado(chamadoId, matricula);
-                detalhesForm.ShowDialog();
+                    if (cellValue != null && int.TryParse(cellValue.ToString(), out int chamadoId))
+                    {
+                        DetalheChamado detalhesForm = new DetalheChamado(chamadoId, matricula);
+                        detalhesForm.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ID do chamado inválido ou nulo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao abrir detalhes do chamado: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

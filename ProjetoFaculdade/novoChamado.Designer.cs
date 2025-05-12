@@ -54,7 +54,7 @@
             // BT_Criar_Chamado
             // 
             this.BT_Criar_Chamado.Highlight = false;
-            this.BT_Criar_Chamado.Location = new System.Drawing.Point(781, 37);
+            this.BT_Criar_Chamado.Location = new System.Drawing.Point(486, 35);
             this.BT_Criar_Chamado.Margin = new System.Windows.Forms.Padding(4);
             this.BT_Criar_Chamado.Name = "BT_Criar_Chamado";
             this.BT_Criar_Chamado.Size = new System.Drawing.Size(114, 31);
@@ -69,7 +69,7 @@
             // 
             this.tB_Informe_Matricula_Client.BackColor = System.Drawing.Color.White;
             this.tB_Informe_Matricula_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.tB_Informe_Matricula_Client.Location = new System.Drawing.Point(244, 37);
+            this.tB_Informe_Matricula_Client.Location = new System.Drawing.Point(342, 35);
             this.tB_Informe_Matricula_Client.Margin = new System.Windows.Forms.Padding(4);
             this.tB_Informe_Matricula_Client.Name = "tB_Informe_Matricula_Client";
             this.tB_Informe_Matricula_Client.Size = new System.Drawing.Size(101, 31);
@@ -83,9 +83,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
             this.label2.Location = new System.Drawing.Point(9, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(228, 29);
+            this.label2.Size = new System.Drawing.Size(339, 29);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Informe a matricula: ";
+            this.label2.Text = "Informe a matricula do cliente: ";
             // 
             // groupBox2
             // 
