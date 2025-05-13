@@ -522,6 +522,7 @@ namespace ProjetoFaculdade
             }
             else
             {
+
                 Grupo_Dados_Contrato.Visible = true;
 
             }

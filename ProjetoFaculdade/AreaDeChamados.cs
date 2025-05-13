@@ -17,6 +17,7 @@ namespace ProjetoFaculdade
         private string matricula;
         private string nomeCompleto;
         private string tipoUsuario;
+        private bool detalhe_Aberto = false;
 
         public AreaDeChamados(string matricula)
         {
@@ -142,26 +143,26 @@ namespace ProjetoFaculdade
 
         private void dataGridView_Oper_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                if (e.RowIndex >= 0 && dataGridView_Oper.Columns.Contains("id"))
-                {
-                    var cellValue = dataGridView_Oper.Rows[e.RowIndex].Cells["id"].Value;
+            if (e.RowIndex < 0 || !dataGridView_Oper.Columns.Contains("id"))
+                return;
 
-                    if (cellValue != null && int.TryParse(cellValue.ToString(), out int chamadoId))
-                    {
-                        DetalheChamado detalhesForm = new DetalheChamado(chamadoId, matricula);
-                        detalhesForm.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show("ID do chamado inválido ou nulo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-            catch (Exception ex)
+            var cellValue = dataGridView_Oper.Rows[e.RowIndex].Cells["id"].Value;
+
+            if (cellValue == null || !int.TryParse(cellValue.ToString(), out int chamadoId))
             {
-                MessageBox.Show("Erro ao abrir detalhes do chamado: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ID do chamado inválido ou nulo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (DetalheChamado detalhesForm = new DetalheChamado(chamadoId, matricula))
+            {
+                var result = detalhesForm.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    //  Atualize a grid após salvar
+                    CarregarChamados(); // Método que recarrega os dados no seu DataGridView
+                }
             }
         }
 
@@ -200,8 +201,7 @@ namespace ProjetoFaculdade
         {
             novoChamado novaTela = new novoChamado(matricula);
             novaTela.ShowDialog();
-            this.Show();
-
+        
         }
 
         private void tB_id_Chamado_KeyPress(object sender, KeyPressEventArgs e)

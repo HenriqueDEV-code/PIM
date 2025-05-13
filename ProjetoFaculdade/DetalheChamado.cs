@@ -71,13 +71,7 @@ namespace ProjetoFaculdade
             CB_Status_Detalhe.Items.Add("Resolvido");
             CB_Status_Detalhe.Items.Add("Fechado");
         }
-        private void ConfigurarComboOperador()
-        {
-            // Deixar dinamico vindo do banco de dados LEMBRETE
-
-
-           
-        }
+       
 
         private void CarregarChamado()
         {
@@ -123,7 +117,7 @@ namespace ProjetoFaculdade
                 string update = "UPDATE pim SET status = @status, operador = @operador WHERE id = @id";
                 using (NpgsqlCommand cmd = new NpgsqlCommand(update, conn))
                 {
-                    cmd.Parameters.AddWithValue("status", CB_Status_Detalhe.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("status", CB_Operador_Detalhes.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("operador", CB_Operador_Detalhes.Text);
                     cmd.Parameters.AddWithValue("id", chamadoId);
 
