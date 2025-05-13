@@ -511,24 +511,44 @@ namespace ProjetoFaculdade
             return string.Empty;
         }
 
+        private void AtualizarTipoUsuario()
+        {
+            if (MtB_Oper.Checked)
+            {
+                Grupo_Dados_Contrato.Visible = true;
+            }
+            else if (MtB_Clien_Edit.Checked)
+            {
+                Grupo_Dados_Contrato.Visible = false;
+            }
+
+            this.Refresh();
+            Application.DoEvents();
+        }
+
         private string TipoUsuario()
         {
             if (MtB_Oper.Checked) return "Operador";
             if (MtB_Clien_Edit.Checked) return "Cliente";
-            if (MtB_Clien_Edit.Checked == true)
-            {
-                Grupo_Dados_Contrato.Visible = false;
-                
-            }
-            else
-            {
-
-                Grupo_Dados_Contrato.Visible = true;
-
-            }
             return string.Empty;
         }
 
+
+        private void FormCadastroFuncionarios_Load(object sender, EventArgs e)
+        {
+            AtualizarTipoUsuario();
+        }
+        private void MtB_Oper_CheckedChanged(object sender, EventArgs e)
+        {
+            AtualizarTipoUsuario();
+
+        }
+
+        private void MtB_Clien_Edit_CheckedChanged(object sender, EventArgs e)
+        {
+            AtualizarTipoUsuario();
+
+        }
 
         #endregion
 
@@ -906,13 +926,15 @@ namespace ProjetoFaculdade
 
 
 
+
+
+
+
+
+
+
         #endregion
 
-
-        
-
        
-
-        
     }
 }

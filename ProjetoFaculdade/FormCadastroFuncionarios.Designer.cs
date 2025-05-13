@@ -45,6 +45,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.Grupo_Dados_P_Funcionarios = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.MtB_Clien_Edit = new MetroFramework.Controls.MetroRadioButton();
@@ -53,9 +55,11 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.MtB_Admissao = new System.Windows.Forms.MaskedTextBox();
             this.Grupo_Status = new System.Windows.Forms.GroupBox();
             this.MrB_Inativo = new MetroFramework.Controls.MetroRadioButton();
             this.MrB_Ativo = new MetroFramework.Controls.MetroRadioButton();
+            this.label21 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.MtB_Nascimento = new System.Windows.Forms.MaskedTextBox();
@@ -91,13 +95,10 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.metroButton6 = new MetroFramework.Controls.MetroButton();
             this.Grupo_Dados_Contrato = new System.Windows.Forms.GroupBox();
-            this.label36 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.tB_Salario = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.MtB_Admissao = new System.Windows.Forms.MaskedTextBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.tB_Cargo = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.Grupo_Funcoes = new System.Windows.Forms.GroupBox();
@@ -110,7 +111,6 @@
             this.tB_Busca_Matricula = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.Grupo_Dados_P_Funcionarios.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -395,6 +395,36 @@
             this.Grupo_Dados_P_Funcionarios.TabStop = false;
             this.Grupo_Dados_P_Funcionarios.Text = "DADOS PESSOAIS";
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(455, 346);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(13, 17);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "*";
+            // 
+            // label36
+            // 
+            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.label36.ForeColor = System.Drawing.Color.Red;
+            this.label36.Location = new System.Drawing.Point(1469, 302);
+            this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(13, 17);
+            this.label36.TabIndex = 48;
+            this.label36.Text = "*";
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -442,6 +472,7 @@
             this.MtB_Clien_Edit.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MtB_Clien_Edit.UseStyleColors = false;
             this.MtB_Clien_Edit.UseVisualStyleBackColor = true;
+            this.MtB_Clien_Edit.CheckedChanged += new System.EventHandler(this.MtB_Clien_Edit_CheckedChanged);
             this.MtB_Clien_Edit.Leave += new System.EventHandler(this.MtB_Clien_Edit_Leave);
             // 
             // MtB_Oper
@@ -462,6 +493,7 @@
             this.MtB_Oper.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MtB_Oper.UseStyleColors = false;
             this.MtB_Oper.UseVisualStyleBackColor = true;
+            this.MtB_Oper.CheckedChanged += new System.EventHandler(this.MtB_Oper_CheckedChanged);
             // 
             // label28
             // 
@@ -523,6 +555,19 @@
             this.label25.TabIndex = 37;
             this.label25.Text = "*";
             // 
+            // MtB_Admissao
+            // 
+            this.MtB_Admissao.BackColor = System.Drawing.Color.White;
+            this.MtB_Admissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.MtB_Admissao.Location = new System.Drawing.Point(216, 346);
+            this.MtB_Admissao.Margin = new System.Windows.Forms.Padding(4);
+            this.MtB_Admissao.Mask = "00/00/0000";
+            this.MtB_Admissao.Name = "MtB_Admissao";
+            this.MtB_Admissao.Size = new System.Drawing.Size(238, 31);
+            this.MtB_Admissao.TabIndex = 35;
+            this.MtB_Admissao.ValidatingType = typeof(System.DateTime);
+            this.MtB_Admissao.Leave += new System.EventHandler(this.MtB_Admissao_Leave);
+            // 
             // Grupo_Status
             // 
             this.Grupo_Status.Controls.Add(this.MrB_Inativo);
@@ -574,6 +619,21 @@
             this.MrB_Ativo.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.MrB_Ativo.UseStyleColors = false;
             this.MrB_Ativo.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(15, 351);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(188, 26);
+            this.label21.TabIndex = 34;
+            this.label21.Text = "Data de Cadastro:";
             // 
             // label3
             // 
@@ -1084,21 +1144,6 @@
             this.Grupo_Dados_Contrato.TabStop = false;
             this.Grupo_Dados_Contrato.Text = "DADOS DE CONTRATO";
             // 
-            // label36
-            // 
-            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label36.ForeColor = System.Drawing.Color.Red;
-            this.label36.Location = new System.Drawing.Point(1469, 302);
-            this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(13, 17);
-            this.label36.TabIndex = 48;
-            this.label36.Text = "*";
-            // 
             // label32
             // 
             this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1154,34 +1199,6 @@
             this.label22.Size = new System.Drawing.Size(86, 26);
             this.label22.TabIndex = 37;
             this.label22.Text = "Salário:";
-            // 
-            // MtB_Admissao
-            // 
-            this.MtB_Admissao.BackColor = System.Drawing.Color.White;
-            this.MtB_Admissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.MtB_Admissao.Location = new System.Drawing.Point(216, 346);
-            this.MtB_Admissao.Margin = new System.Windows.Forms.Padding(4);
-            this.MtB_Admissao.Mask = "00/00/0000";
-            this.MtB_Admissao.Name = "MtB_Admissao";
-            this.MtB_Admissao.Size = new System.Drawing.Size(238, 31);
-            this.MtB_Admissao.TabIndex = 35;
-            this.MtB_Admissao.ValidatingType = typeof(System.DateTime);
-            this.MtB_Admissao.Leave += new System.EventHandler(this.MtB_Admissao_Leave);
-            // 
-            // label21
-            // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(15, 351);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(188, 26);
-            this.label21.TabIndex = 34;
-            this.label21.Text = "Data de Cadastro:";
             // 
             // tB_Cargo
             // 
@@ -1328,21 +1345,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(455, 346);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 17);
-            this.label2.TabIndex = 49;
-            this.label2.Text = "*";
-            // 
             // FormCadastroFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -1367,6 +1369,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormCadastroFuncionarios_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.Grupo_Dados_P_Funcionarios.ResumeLayout(false);
