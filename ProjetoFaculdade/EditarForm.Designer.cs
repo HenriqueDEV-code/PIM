@@ -33,7 +33,6 @@
             this.MBNT_Localizar = new MetroFramework.Controls.MetroButton();
             this.tB_Busca_Matricula_Edit = new System.Windows.Forms.TextBox();
             this.Grupo_Endereco = new System.Windows.Forms.GroupBox();
-            this.label29 = new System.Windows.Forms.Label();
             this.tB_UF_Edit = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tB_Cidade_Edit = new System.Windows.Forms.TextBox();
@@ -52,10 +51,7 @@
             this.Grupo_Status = new System.Windows.Forms.GroupBox();
             this.MrB_Inativo_Edit = new MetroFramework.Controls.MetroRadioButton();
             this.MrB_Ativo_Edit = new MetroFramework.Controls.MetroRadioButton();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.MtB_Telefone_Edit = new System.Windows.Forms.MaskedTextBox();
             this.tB_Email_Edit = new System.Windows.Forms.TextBox();
             this.tB_NomeCompleto_Edit = new System.Windows.Forms.TextBox();
@@ -64,6 +60,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.BNT_Salvar_Edit = new MetroFramework.Controls.MetroButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.Grupo_Endereco.SuspendLayout();
             this.Grupo_Dados_P_Funcionarios.SuspendLayout();
@@ -74,6 +71,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.MBNT_Localizar);
             this.groupBox1.Controls.Add(this.tB_Busca_Matricula_Edit);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -87,10 +85,10 @@
             // MBNT_Localizar
             // 
             this.MBNT_Localizar.Highlight = false;
-            this.MBNT_Localizar.Location = new System.Drawing.Point(276, 18);
+            this.MBNT_Localizar.Location = new System.Drawing.Point(417, 20);
             this.MBNT_Localizar.Margin = new System.Windows.Forms.Padding(4);
             this.MBNT_Localizar.Name = "MBNT_Localizar";
-            this.MBNT_Localizar.Size = new System.Drawing.Size(114, 36);
+            this.MBNT_Localizar.Size = new System.Drawing.Size(114, 31);
             this.MBNT_Localizar.Style = MetroFramework.MetroColorStyle.Blue;
             this.MBNT_Localizar.StyleManager = null;
             this.MBNT_Localizar.TabIndex = 23;
@@ -102,16 +100,15 @@
             // 
             this.tB_Busca_Matricula_Edit.BackColor = System.Drawing.Color.White;
             this.tB_Busca_Matricula_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.tB_Busca_Matricula_Edit.Location = new System.Drawing.Point(26, 21);
+            this.tB_Busca_Matricula_Edit.Location = new System.Drawing.Point(241, 20);
             this.tB_Busca_Matricula_Edit.Margin = new System.Windows.Forms.Padding(4);
             this.tB_Busca_Matricula_Edit.Name = "tB_Busca_Matricula_Edit";
-            this.tB_Busca_Matricula_Edit.Size = new System.Drawing.Size(242, 31);
+            this.tB_Busca_Matricula_Edit.Size = new System.Drawing.Size(163, 31);
             this.tB_Busca_Matricula_Edit.TabIndex = 29;
             this.tB_Busca_Matricula_Edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tB_Busca_Matricula_Edit_KeyPress);
             // 
             // Grupo_Endereco
             // 
-            this.Grupo_Endereco.Controls.Add(this.label29);
             this.Grupo_Endereco.Controls.Add(this.tB_UF_Edit);
             this.Grupo_Endereco.Controls.Add(this.label16);
             this.Grupo_Endereco.Controls.Add(this.tB_Cidade_Edit);
@@ -132,21 +129,6 @@
             this.Grupo_Endereco.TabIndex = 21;
             this.Grupo_Endereco.TabStop = false;
             this.Grupo_Endereco.Text = "ENDEREÇO";
-            // 
-            // label29
-            // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label29.ForeColor = System.Drawing.Color.Red;
-            this.label29.Location = new System.Drawing.Point(390, 9);
-            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(13, 17);
-            this.label29.TabIndex = 37;
-            this.label29.Text = "*";
             // 
             // tB_UF_Edit
             // 
@@ -298,10 +280,7 @@
             // 
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.groupBox2);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.Grupo_Status);
-            this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label28);
-            this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label25);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label3);
-            this.Grupo_Dados_P_Funcionarios.Controls.Add(this.label4);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.MtB_Telefone_Edit);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.tB_Email_Edit);
             this.Grupo_Dados_P_Funcionarios.Controls.Add(this.tB_NomeCompleto_Edit);
@@ -424,36 +403,6 @@
             this.MrB_Ativo_Edit.UseStyleColors = false;
             this.MrB_Ativo_Edit.UseVisualStyleBackColor = true;
             // 
-            // label28
-            // 
-            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label28.ForeColor = System.Drawing.Color.Red;
-            this.label28.Location = new System.Drawing.Point(891, 125);
-            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(13, 17);
-            this.label28.TabIndex = 40;
-            this.label28.Text = "*";
-            // 
-            // label25
-            // 
-            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label25.ForeColor = System.Drawing.Color.Red;
-            this.label25.Location = new System.Drawing.Point(453, 125);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(13, 17);
-            this.label25.TabIndex = 37;
-            this.label25.Text = "*";
-            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -468,21 +417,6 @@
             this.label3.Size = new System.Drawing.Size(13, 17);
             this.label3.TabIndex = 36;
             this.label3.Text = "*";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(1135, 67);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 17);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "*";
             // 
             // MtB_Telefone_Edit
             // 
@@ -567,10 +501,10 @@
             // BNT_Salvar_Edit
             // 
             this.BNT_Salvar_Edit.Highlight = false;
-            this.BNT_Salvar_Edit.Location = new System.Drawing.Point(1398, 583);
+            this.BNT_Salvar_Edit.Location = new System.Drawing.Point(1345, 570);
             this.BNT_Salvar_Edit.Margin = new System.Windows.Forms.Padding(4);
             this.BNT_Salvar_Edit.Name = "BNT_Salvar_Edit";
-            this.BNT_Salvar_Edit.Size = new System.Drawing.Size(114, 36);
+            this.BNT_Salvar_Edit.Size = new System.Drawing.Size(156, 49);
             this.BNT_Salvar_Edit.Style = MetroFramework.MetroColorStyle.Blue;
             this.BNT_Salvar_Edit.StyleManager = null;
             this.BNT_Salvar_Edit.TabIndex = 24;
@@ -581,6 +515,21 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(22, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(211, 26);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Informe o matrícula: ";
             // 
             // EditarForm
             // 
@@ -619,7 +568,6 @@
         public MetroFramework.Controls.MetroButton MBNT_Localizar;
         public System.Windows.Forms.TextBox tB_Busca_Matricula_Edit;
         private System.Windows.Forms.GroupBox Grupo_Endereco;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox tB_UF_Edit;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox tB_Cidade_Edit;
@@ -632,10 +580,7 @@
         public System.Windows.Forms.MaskedTextBox MtB_Cep_Edit;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox Grupo_Dados_P_Funcionarios;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         public System.Windows.Forms.MaskedTextBox MtB_Telefone_Edit;
         public System.Windows.Forms.TextBox tB_Email_Edit;
         public System.Windows.Forms.TextBox tB_NomeCompleto_Edit;
@@ -650,5 +595,6 @@
         private MetroFramework.Controls.MetroRadioButton MtB_Clien_Edit;
         private MetroFramework.Controls.MetroRadioButton MtB_Oper_Edit;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label1;
     }
 }

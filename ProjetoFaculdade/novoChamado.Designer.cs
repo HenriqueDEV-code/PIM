@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider_Erro = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_Erro)).BeginInit();
@@ -57,15 +58,16 @@
             // BT_Criar_Chamado
             // 
             this.BT_Criar_Chamado.Highlight = false;
-            this.BT_Criar_Chamado.Location = new System.Drawing.Point(317, 35);
+            this.BT_Criar_Chamado.Location = new System.Drawing.Point(360, 30);
             this.BT_Criar_Chamado.Margin = new System.Windows.Forms.Padding(4);
             this.BT_Criar_Chamado.Name = "BT_Criar_Chamado";
-            this.BT_Criar_Chamado.Size = new System.Drawing.Size(114, 31);
+            this.BT_Criar_Chamado.Size = new System.Drawing.Size(162, 40);
             this.BT_Criar_Chamado.Style = MetroFramework.MetroColorStyle.Blue;
             this.BT_Criar_Chamado.StyleManager = null;
             this.BT_Criar_Chamado.TabIndex = 33;
             this.BT_Criar_Chamado.Text = "&Criar Chamado";
             this.BT_Criar_Chamado.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.toolTip1.SetToolTip(this.BT_Criar_Chamado, "Para criar o chamado clique aqui ou\r\n use o atalho ALT + C");
             this.BT_Criar_Chamado.Click += new System.EventHandler(this.BT_Criar_Chamado_Click);
             // 
             // tB_Informe_Matricula_Client
@@ -73,7 +75,7 @@
             this.tB_Informe_Matricula_Client.BackColor = System.Drawing.Color.White;
             this.tB_Informe_Matricula_Client.Enabled = false;
             this.tB_Informe_Matricula_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.tB_Informe_Matricula_Client.Location = new System.Drawing.Point(175, 35);
+            this.tB_Informe_Matricula_Client.Location = new System.Drawing.Point(175, 37);
             this.tB_Informe_Matricula_Client.Margin = new System.Windows.Forms.Padding(4);
             this.tB_Informe_Matricula_Client.Name = "tB_Informe_Matricula_Client";
             this.tB_Informe_Matricula_Client.Size = new System.Drawing.Size(112, 31);
@@ -137,6 +139,14 @@
             // 
             this.errorProvider_Erro.ContainerControl = this;
             // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.White;
+            this.toolTip1.ForeColor = System.Drawing.Color.Black;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Informação!";
+            // 
             // novoChamado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,5 +186,6 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox tB_Descricao_Erro;
         private System.Windows.Forms.ErrorProvider errorProvider_Erro;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

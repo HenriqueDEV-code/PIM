@@ -170,7 +170,7 @@
             this.BnT_Verificar_Senha_Temp.Style = MetroFramework.MetroColorStyle.Blue;
             this.BnT_Verificar_Senha_Temp.StyleManager = null;
             this.BnT_Verificar_Senha_Temp.TabIndex = 48;
-            this.BnT_Verificar_Senha_Temp.Text = "Verifica&r";
+            this.BnT_Verificar_Senha_Temp.Text = "&Salvar";
             this.BnT_Verificar_Senha_Temp.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BnT_Verificar_Senha_Temp.Click += new System.EventHandler(this.BnT_Verificar_Senha_Temp_Click);
             // 

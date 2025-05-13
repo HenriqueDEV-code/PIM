@@ -669,6 +669,7 @@ namespace ProjetoFaculdade
                         MtB_Admissao.Clear();
                         tB_Salario.Clear();
                         tB_id_Matricula.Clear();
+                        tB_Busca_Matricula.Clear();
 
                         DefinirEnabledNosCampos(this, false);
                     }
@@ -923,15 +924,6 @@ namespace ProjetoFaculdade
                     );
             }
         }
-
-
-
-
-
-
-
-
-
 
         #endregion
 

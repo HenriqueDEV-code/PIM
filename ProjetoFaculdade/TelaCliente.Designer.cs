@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LB_Nome_Cliente = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BT_Atualizar_Tabela = new MetroFramework.Controls.MetroButton();
@@ -37,6 +38,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView_Cliente = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.label_BemVindo = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cliente)).BeginInit();
@@ -45,11 +48,11 @@
             // LB_Nome_Cliente
             // 
             this.LB_Nome_Cliente.AutoSize = true;
-            this.LB_Nome_Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Nome_Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.LB_Nome_Cliente.ForeColor = System.Drawing.Color.Yellow;
-            this.LB_Nome_Cliente.Location = new System.Drawing.Point(23, 9);
+            this.LB_Nome_Cliente.Location = new System.Drawing.Point(176, 6);
             this.LB_Nome_Cliente.Name = "LB_Nome_Cliente";
-            this.LB_Nome_Cliente.Size = new System.Drawing.Size(79, 29);
+            this.LB_Nome_Cliente.Size = new System.Drawing.Size(86, 31);
             this.LB_Nome_Cliente.TabIndex = 0;
             this.LB_Nome_Cliente.Text = "Nome";
             // 
@@ -68,29 +71,32 @@
             // BT_Atualizar_Tabela
             // 
             this.BT_Atualizar_Tabela.Highlight = false;
-            this.BT_Atualizar_Tabela.Location = new System.Drawing.Point(827, 37);
+            this.BT_Atualizar_Tabela.Location = new System.Drawing.Point(812, 26);
             this.BT_Atualizar_Tabela.Margin = new System.Windows.Forms.Padding(4);
             this.BT_Atualizar_Tabela.Name = "BT_Atualizar_Tabela";
-            this.BT_Atualizar_Tabela.Size = new System.Drawing.Size(114, 31);
+            this.BT_Atualizar_Tabela.Size = new System.Drawing.Size(164, 61);
             this.BT_Atualizar_Tabela.Style = MetroFramework.MetroColorStyle.Blue;
             this.BT_Atualizar_Tabela.StyleManager = null;
-            this.BT_Atualizar_Tabela.TabIndex = 33;
+            this.BT_Atualizar_Tabela.TabIndex = 3;
             this.BT_Atualizar_Tabela.Text = "&Atualizar";
             this.BT_Atualizar_Tabela.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.toolTip1.SetToolTip(this.BT_Atualizar_Tabela, "Clique aqui para atualizar as tabelas\r\n de chamados ou\r\n use um atalho ALT + A\r\n");
             this.BT_Atualizar_Tabela.Click += new System.EventHandler(this.BT_Atualizar_Tabela_Click);
             // 
             // BT_Novo_Chamado
             // 
             this.BT_Novo_Chamado.Highlight = false;
-            this.BT_Novo_Chamado.Location = new System.Drawing.Point(694, 37);
+            this.BT_Novo_Chamado.Location = new System.Drawing.Point(630, 26);
             this.BT_Novo_Chamado.Margin = new System.Windows.Forms.Padding(4);
             this.BT_Novo_Chamado.Name = "BT_Novo_Chamado";
-            this.BT_Novo_Chamado.Size = new System.Drawing.Size(114, 31);
+            this.BT_Novo_Chamado.Size = new System.Drawing.Size(164, 61);
             this.BT_Novo_Chamado.Style = MetroFramework.MetroColorStyle.Blue;
             this.BT_Novo_Chamado.StyleManager = null;
-            this.BT_Novo_Chamado.TabIndex = 32;
+            this.BT_Novo_Chamado.TabIndex = 2;
             this.BT_Novo_Chamado.Text = "+ &Novo chamado";
             this.BT_Novo_Chamado.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.toolTip1.SetToolTip(this.BT_Novo_Chamado, "Clique aqui para abrir uma nova janela criar\r\n novo chamado ou\r\n use um atalho AL" +
+        "T + N\r\n");
             this.BT_Novo_Chamado.Click += new System.EventHandler(this.BT_Novo_Chamado_Click);
             // 
             // tB_Exibe_Maticula_Cliente
@@ -101,7 +107,7 @@
             this.tB_Exibe_Maticula_Cliente.Margin = new System.Windows.Forms.Padding(4);
             this.tB_Exibe_Maticula_Cliente.Name = "tB_Exibe_Maticula_Cliente";
             this.tB_Exibe_Maticula_Cliente.Size = new System.Drawing.Size(90, 31);
-            this.tB_Exibe_Maticula_Cliente.TabIndex = 30;
+            this.tB_Exibe_Maticula_Cliente.TabIndex = 1;
             // 
             // label2
             // 
@@ -144,12 +150,37 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "LISTA DE CHAMADOS";
             // 
+            // label_BemVindo
+            // 
+            this.label_BemVindo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_BemVindo.AutoSize = true;
+            this.label_BemVindo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_BemVindo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.label_BemVindo.ForeColor = System.Drawing.Color.White;
+            this.label_BemVindo.Location = new System.Drawing.Point(7, 6);
+            this.label_BemVindo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_BemVindo.Name = "label_BemVindo";
+            this.label_BemVindo.Size = new System.Drawing.Size(162, 33);
+            this.label_BemVindo.TabIndex = 23;
+            this.label_BemVindo.Text = "Bem Vindo: ";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.White;
+            this.toolTip1.ForeColor = System.Drawing.Color.Black;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Informação!";
+            // 
             // TelaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1009, 583);
+            this.Controls.Add(this.label_BemVindo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.LB_Nome_Cliente);
@@ -183,5 +214,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView_Cliente;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label_BemVindo;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
