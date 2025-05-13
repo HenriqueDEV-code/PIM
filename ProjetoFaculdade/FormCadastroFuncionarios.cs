@@ -174,30 +174,41 @@ namespace ProjetoFaculdade
                 // Validação da idade permitida
                 if (idade <= 16)
                 {
-                    MessageBox.Show("Idade não permitida, funcionário parece ser menor de idade! ",
+                    MessageBox.Show("Idade não permitida, funcionário parece ser menor de idade!",
                         "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     MtB_Nascimento.Clear();
                     MtB_Nascimento.Focus();
                 }
-                else if (idade >= 16 && idade < 18 || idade >= 60 && idade <= 80)
+                else if ((idade >= 16 && idade < 18) || (idade >= 60 && idade <= 80))
                 {
-                    MessageBox.Show("Idade não parece permitida! Gostaria de inserir mesmo assim? ", "Aviso", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                    return;
+                    DialogResult resultado = MessageBox.Show("Idade não parece permitida! Gostaria de inserir mesmo assim?",
+                        "Aviso", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                    if (resultado == DialogResult.No)
+                    {
+                        MtB_Nascimento.Clear();
+                        MtB_Nascimento.Focus();
+                    }
+                    else if (resultado == DialogResult.Cancel)
+                    {
+                        MtB_Nascimento.Focus();
+                    }
+
+                    // Se for Yes, segue normalmente sem fazer nada
                 }
                 else if (idade >= 81)
                 {
-                    MessageBox.Show("Idade não permitida, funcionário parece que já aposentou! ",
-                     "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Idade não permitida, funcionário parece que já aposentou!",
+                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     MtB_Nascimento.Clear();
                     MtB_Nascimento.Focus();
                 }
-
             }
             else
             {
                 MessageBox.Show("Data inválida! Informe no formato dd/MM/yyyy.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 MtB_Nascimento.Clear();
-
+                MtB_Nascimento.Focus();
             }
 
         }
