@@ -44,12 +44,14 @@
             this.Mostrar_Senha = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ocultar_Senha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mostrar_Senha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_Tech_Titulo_Login
@@ -79,7 +81,7 @@
             // MButon_Login
             // 
             this.MButon_Login.Highlight = false;
-            this.MButon_Login.Location = new System.Drawing.Point(569, 436);
+            this.MButon_Login.Location = new System.Drawing.Point(378, 243);
             this.MButon_Login.Name = "MButon_Login";
             this.MButon_Login.Size = new System.Drawing.Size(200, 55);
             this.MButon_Login.Style = MetroFramework.MetroColorStyle.Blue;
@@ -93,7 +95,7 @@
             // 
             this.tB_Senha_Usuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tB_Senha_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
-            this.tB_Senha_Usuario.Location = new System.Drawing.Point(274, 367);
+            this.tB_Senha_Usuario.Location = new System.Drawing.Point(83, 174);
             this.tB_Senha_Usuario.Name = "tB_Senha_Usuario";
             this.tB_Senha_Usuario.PasswordChar = '*';
             this.tB_Senha_Usuario.Size = new System.Drawing.Size(495, 53);
@@ -106,7 +108,7 @@
             this.Esqueceu_Senha.AutoSize = true;
             this.Esqueceu_Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.Esqueceu_Senha.ForeColor = System.Drawing.Color.White;
-            this.Esqueceu_Senha.Location = new System.Drawing.Point(269, 456);
+            this.Esqueceu_Senha.Location = new System.Drawing.Point(78, 263);
             this.Esqueceu_Senha.Name = "Esqueceu_Senha";
             this.Esqueceu_Senha.Size = new System.Drawing.Size(203, 25);
             this.Esqueceu_Senha.TabIndex = 15;
@@ -120,7 +122,7 @@
             this.tB_Usuario_Login.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tB_Usuario_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
             this.tB_Usuario_Login.ForeColor = System.Drawing.Color.Black;
-            this.tB_Usuario_Login.Location = new System.Drawing.Point(275, 275);
+            this.tB_Usuario_Login.Location = new System.Drawing.Point(84, 82);
             this.tB_Usuario_Login.Name = "tB_Usuario_Login";
             this.tB_Usuario_Login.Size = new System.Drawing.Size(494, 53);
             this.tB_Usuario_Login.TabIndex = 13;
@@ -133,7 +135,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Location = new System.Drawing.Point(434, 203);
+            this.label1.Location = new System.Drawing.Point(243, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 54);
             this.label1.TabIndex = 18;
@@ -176,11 +178,13 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 22;
             this.pictureBox3.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox3, "FeedBack \r\n Leia o QR-Code para acessar\r\n o formulário e mostre o quanto gostou d" +
+        "o\r\n nosso sistema. Obrigado !");
             // 
             // Ocultar_Senha
             // 
             this.Ocultar_Senha.Image = global::ProjetoFaculdade.Properties.Resources.icons8_visão_30;
-            this.Ocultar_Senha.Location = new System.Drawing.Point(796, 376);
+            this.Ocultar_Senha.Location = new System.Drawing.Point(604, 183);
             this.Ocultar_Senha.Name = "Ocultar_Senha";
             this.Ocultar_Senha.Size = new System.Drawing.Size(39, 34);
             this.Ocultar_Senha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -191,7 +195,7 @@
             // Mostrar_Senha
             // 
             this.Mostrar_Senha.Image = global::ProjetoFaculdade.Properties.Resources.icons8_ocultar_24;
-            this.Mostrar_Senha.Location = new System.Drawing.Point(795, 376);
+            this.Mostrar_Senha.Location = new System.Drawing.Point(604, 183);
             this.Mostrar_Senha.Name = "Mostrar_Senha";
             this.Mostrar_Senha.Size = new System.Drawing.Size(40, 34);
             this.Mostrar_Senha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -202,7 +206,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ProjetoFaculdade.Properties.Resources.icons8_cadeado_2_60;
-            this.pictureBox2.Location = new System.Drawing.Point(206, 364);
+            this.pictureBox2.Location = new System.Drawing.Point(15, 171);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(63, 57);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -212,12 +216,28 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProjetoFaculdade.Properties.Resources.icons8_usuário_60;
-            this.pictureBox1.Location = new System.Drawing.Point(206, 271);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 78);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(63, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.MButon_Login);
+            this.panel1.Controls.Add(this.tB_Usuario_Login);
+            this.panel1.Controls.Add(this.Ocultar_Senha);
+            this.panel1.Controls.Add(this.tB_Senha_Usuario);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.Esqueceu_Senha);
+            this.panel1.Controls.Add(this.Mostrar_Senha);
+            this.panel1.Location = new System.Drawing.Point(199, 163);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(653, 320);
+            this.panel1.TabIndex = 23;
             // 
             // FormLogin
             // 
@@ -227,17 +247,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1009, 686);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.Ocultar_Senha);
-            this.Controls.Add(this.Mostrar_Senha);
-            this.Controls.Add(this.tB_Senha_Usuario);
-            this.Controls.Add(this.tB_Usuario_Login);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.abel_Support_Titulo_Cadastro);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.Esqueceu_Senha);
-            this.Controls.Add(this.MButon_Login);
             this.Controls.Add(this.label_Tech_Titulo_Login);
             this.Controls.Add(this.label_Car_Titulo_Login);
             this.ForeColor = System.Drawing.Color.Black;
@@ -249,13 +261,14 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login -  Car Tech Assist";
-            this.toolTip1.SetToolTip(this, "Informe a sua Matrícula.\r\n");
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ocultar_Senha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mostrar_Senha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,6 +290,7 @@
         private System.Windows.Forms.PictureBox Ocultar_Senha;
         public System.Windows.Forms.TextBox tB_Usuario_Login;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
