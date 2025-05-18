@@ -312,7 +312,7 @@ namespace ProjetoFaculdade
                         "Erro no CEP", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                //TESTE 123
+                
 
                 // URL da API ViaCEP
                 string url = $"https://viacep.com.br/ws/{cep}/json/";
