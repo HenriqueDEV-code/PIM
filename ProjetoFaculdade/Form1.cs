@@ -46,7 +46,7 @@ namespace ProjetoFaculdade
 
             if (string.IsNullOrEmpty(matricula) || string.IsNullOrEmpty(senha))
             {
-                MessageBox.Show("Preencha todos os campos."); //
+                MessageBox.Show("Preencha todos os campos."); 
                 return;
             }
 
