@@ -281,6 +281,7 @@ namespace ProjetoFaculdade
         }
 
 
+
         private void MtB_Cep_Leave(object sender, EventArgs e)
         {
             string cep = MtB_Cep.Text.Trim().Replace(" ", "").Replace("-", "");
@@ -311,7 +312,7 @@ namespace ProjetoFaculdade
                         "Erro no CEP", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
+                //TESTE 123
 
                 // URL da API ViaCEP
                 string url = $"https://viacep.com.br/ws/{cep}/json/";
