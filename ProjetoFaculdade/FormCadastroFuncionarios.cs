@@ -118,6 +118,11 @@ namespace ProjetoFaculdade
             }
         }
 
+
+
+
+
+
         private void tB_Email_Leave(object sender, EventArgs e)
         {
             string[] dominiosPermitidos =
