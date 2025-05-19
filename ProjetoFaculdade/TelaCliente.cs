@@ -9,13 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
+
+
+
+
 namespace ProjetoFaculdade
 {
     public partial class TelaCliente : Form
     {
         private string matricula;
         private string nomeCompleto;
-       
+
 
 
         public TelaCliente(string matricula)
@@ -25,7 +31,7 @@ namespace ProjetoFaculdade
             BuscarNomeNoBanco();
             tB_Exibe_Maticula_Cliente.Enabled = false;
             tB_Exibe_Maticula_Cliente.Text = matricula;
-            
+
         }
 
         private void BuscarNomeNoBanco()
@@ -143,4 +149,4 @@ namespace ProjetoFaculdade
 
     }
 }
- 
+

@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 
+
+
+
 namespace ProjetoFaculdade
 {
     public partial class AreaDeChamados : Form
@@ -74,7 +77,7 @@ namespace ProjetoFaculdade
 
                 this.Text = $"Área do Operador - {matricula} - {nomeCompleto}";
                 MButton_Cadastro.Visible = tipoUsuario.Trim().ToLower() != "cliente";
-               
+
             }
             catch (Exception ex)
             {
@@ -91,7 +94,7 @@ namespace ProjetoFaculdade
             this.Hide();
             cadastro.ShowDialog();
             this.Show();
-            
+
         }
 
         private void CarregarChamados()
@@ -201,7 +204,7 @@ namespace ProjetoFaculdade
         {
             novoChamado novaTela = new novoChamado(matricula);
             novaTela.ShowDialog();
-        
+
         }
 
         private void tB_id_Chamado_KeyPress(object sender, KeyPressEventArgs e)

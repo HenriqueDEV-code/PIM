@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
+
 namespace ProjetoFaculdade
 {
     public partial class DetalheChamado : Form
@@ -71,7 +74,7 @@ namespace ProjetoFaculdade
             CB_Status_Detalhe.Items.Add("Resolvido");
             CB_Status_Detalhe.Items.Add("Fechado");
         }
-       
+
 
         private void CarregarChamado()
         {
