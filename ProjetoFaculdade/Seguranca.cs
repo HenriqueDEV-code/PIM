@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoFaculdade
 {
+
     internal class Seguranca
     {
         public static string GerarHashSHA256(string senha)
