@@ -20,6 +20,7 @@
             base.Dispose(disposing);
         }
 
+
         #region Código gerado pelo Windows Form Designer
 
         /// <summary>
@@ -144,8 +145,8 @@
             // 
             // abel_Support_Titulo_Cadastro
             // 
-            this.abel_Support_Titulo_Cadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.abel_Support_Titulo_Cadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.abel_Support_Titulo_Cadastro.AutoSize = true;
             this.abel_Support_Titulo_Cadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F);
@@ -275,6 +276,7 @@
         }
 
         #endregion
+
         private System.Windows.Forms.Label label_Tech_Titulo_Login;
         private System.Windows.Forms.Label label_Car_Titulo_Login;
         private MetroFramework.Controls.MetroButton MButon_Login;
